@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>General on UMANG JAIN</title>
+    <link>https://umangja.github.io/tags/general/</link>
+    <description>Recent content in General on UMANG JAIN</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Thu, 22 Oct 2020 22:27:14 +0530</lastBuildDate><atom:link href="https://umangja.github.io/tags/general/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My First Blog</title>
+      <link>https://umangja.github.io/posts/2020/10/my-first-blog/</link>
+      <pubDate>Thu, 22 Oct 2020 22:27:14 +0530</pubDate>
+      
+      <guid>https://umangja.github.io/posts/2020/10/my-first-blog/</guid>
+      <description>Introduction Hey, Yesterday I have decided to makemyown blog, so after going through various options ranging from CMS such as wordpress, wix to stuff like gatsby I have decided to use hugo.</description>
+    </item>
+    
+  </channel>
+</rss>

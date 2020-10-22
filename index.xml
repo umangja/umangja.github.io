@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>UMANG JAIN</title>
+    <link>https://umangja.github.io/</link>
+    <description>Recent content on UMANG JAIN</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Thu, 22 Oct 2020 22:27:14 +0530</lastBuildDate><atom:link href="https://umangja.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My First Blog</title>
+      <link>https://umangja.github.io/posts/2020/10/my-first-blog/</link>
+      <pubDate>Thu, 22 Oct 2020 22:27:14 +0530</pubDate>
+      
+      <guid>https://umangja.github.io/posts/2020/10/my-first-blog/</guid>
+      <description>Introduction Hey, Yesterday I have decided to makemyown blog, so after going through various options ranging from CMS such as wordpress, wix to stuff like gatsby I have decided to use hugo.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://umangja.github.io/about/</link>
+      <pubDate>Thu, 22 Oct 2020 17:47:18 +0530</pubDate>
+      
+      <guid>https://umangja.github.io/about/</guid>
+      <description>Hey there, I am Umang Jain. I am not a geek who is interested in anything related to computers or science fiction.
+After years of slogging and hardwork, I finally managed to gain admission to the Indian Institute of Technology, Varanasi (IIT BHU) and currently pursuing my Integrated Dual Degree (IDD) in the Computer Science and Engineering Department. I’m currently very excited to join at oracle on 7th May, 2021 as an Application Developor.</description>
+    </item>
+    
+  </channel>
+</rss>
