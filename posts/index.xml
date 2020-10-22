@@ -21,18 +21,6 @@
         </item>
         
         <item>
-            <title>My Second Blog</title>
-            <link>https://umangja.github.io/posts/2020/10/my-second-blog/</link>
-            <pubDate>Fri, 23 Oct 2020 00:10:54 +0530</pubDate>
-            
-            <guid>https://umangja.github.io/posts/2020/10/my-second-blog/</guid>
-            <description>This is just a trial blog to see if i need to run hugo again or just runing hugoserver make changes to public directory. Thanks</description>
-            <content type="html"><![CDATA[<p>This is just a trial blog to see if i need to run hugo again or just runing hugoserver make changes to public directory.
-Thanks</p>
-]]></content>
-        </item>
-        
-        <item>
             <title>My First Blog</title>
             <link>https://umangja.github.io/posts/2020/10/my-first-blog/</link>
             <pubDate>Thu, 22 Oct 2020 22:27:14 +0530</pubDate>
