@@ -3,17 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://umangja.github.io/posts/2020/10/my-second-blog/</loc>
+    <lastmod>2020-10-23T00:10:54+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/posts/</loc>
+    <lastmod>2020-10-23T00:10:54+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/</loc>
+    <lastmod>2020-10-23T00:10:54+05:30</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://umangja.github.io/fr/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://umangja.github.io/"
+                />
+  </url>
+  
+  <url>
     <loc>https://umangja.github.io/tags/general/</loc>
     <lastmod>2020-10-22T22:27:14+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://umangja.github.io/posts/2020/10/my-first-blog/</loc>
-    <lastmod>2020-10-22T22:27:14+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://umangja.github.io/posts/</loc>
     <lastmod>2020-10-22T22:27:14+05:30</lastmod>
   </url>
   
@@ -29,21 +49,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://umangja.github.io/tags/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://umangja.github.io/</loc>
-    <lastmod>2020-10-22T22:27:14+05:30</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://umangja.github.io/fr/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://umangja.github.io/"
                 />
   </url>
   
