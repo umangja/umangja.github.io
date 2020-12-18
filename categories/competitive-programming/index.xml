@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Competitive Programming on UMANG JAIN</title>
+    <link>https://umangja.github.io/categories/competitive-programming/</link>
+    <description>Recent content in Competitive Programming on UMANG JAIN</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Fri, 18 Dec 2020 19:24:44 +0530</lastBuildDate><atom:link href="https://umangja.github.io/categories/competitive-programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Education Round 100</title>
+      <link>https://umangja.github.io/posts/2020/12/education-round-100/</link>
+      <pubDate>Fri, 18 Dec 2020 19:24:44 +0530</pubDate>
+      
+      <guid>https://umangja.github.io/posts/2020/12/education-round-100/</guid>
+      <description>Introduction Yesterday I participitated in 100th Educational Round on codeforces I performed decently but not satisfactory. I am able to do only ABC Problems and due to that got only +5 in rating which took my rating to 1893.
+Now lets jump directly to Explations/Solutions
+Solutions Problem A :- Dungeon Problem Link
+I tought like if we xth enchanced shot as the last one than total reduction will be
+TotalShotsFired = 7x // as every 7th shot will be enchanced</description>
+    </item>
+    
+  </channel>
+</rss>

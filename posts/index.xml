@@ -6,8 +6,99 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Thu, 22 Oct 2020 22:27:14 +0530</lastBuildDate>
+        <lastBuildDate>Fri, 18 Dec 2020 19:24:44 +0530</lastBuildDate>
         <atom:link href="https://umangja.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Education Round 100</title>
+            <link>https://umangja.github.io/posts/2020/12/education-round-100/</link>
+            <pubDate>Fri, 18 Dec 2020 19:24:44 +0530</pubDate>
+            
+            <guid>https://umangja.github.io/posts/2020/12/education-round-100/</guid>
+            <description>Introduction Yesterday I participitated in 100th Educational Round on codeforces I performed decently but not satisfactory. I am able to do only ABC Problems and due to that got only +5 in rating which took my rating to 1893.
+Now lets jump directly to Explations/Solutions
+Solutions Problem A :- Dungeon Problem Link
+I tought like if we xth enchanced shot as the last one than total reduction will be
+TotalShotsFired = 7x // as every 7th shot will be enchanced</description>
+            <content type="html"><![CDATA[<h2 id="introduction">Introduction</h2>
+<p>Yesterday I participitated in 100th Educational Round on codeforces I performed decently but not satisfactory. I am able to do only ABC Problems and due to that got only +5 in rating which took my rating to 1893.</p>
+<p>Now lets jump directly to Explations/Solutions</p>
+<h2 id="solutions">Solutions</h2>
+<h3 id="problem-a---dungeon">Problem A :- Dungeon</h3>
+<p><a href="https://codeforces.com/contest/1463/problem/A">Problem Link</a></p>
+<p>I tought like if we xth enchanced shot as the last one than total reduction will be</p>
+<p>TotalShotsFired   = 7x  // as every 7th shot will be enchanced</p>
+<p>TotalDamageCaused = 6x  (normal shots) +3x (there is x enhanced shots with each doing 3 damage in total) = 9x</p>
+<p>It implies</p>
+<pre><code>1. Total Health of all monster (A+B+C) has to be a multiple of 9  
+</code></pre>
+<p>As each enchanced shot will cause damage to each monster so</p>
+<pre><code>2. x&gt;=min(A,B,C);
+</code></pre>
+<h4 id="code">Code</h4>
+<p><a href="https://codeforces.com/contest/1463/submission/101516308">Codeforced Solution</a></p>
+<h3 id="problem-b---find-the-array">Problem B :- Find The Array</h3>
+<p><a href="https://codeforces.com/contest/1463/problem/B">Problem Link</a></p>
+<p>Just by reading the problem we can get the intution that it will have a constructive solution.
+By looking at the first test case I thought may be we can always form a solution containing a single element.</p>
+<p>So I tried element a[0] and a[n-1] and check condition three given in Problem but its not the case.</p>
+<p>Now, I am still struck on the idea that solutoin contain a single element so I tried to take any a[i] and tried to come up with some condition on basis of which I can choose &lsquo;i&rsquo; but its still wrong</p>
+<p>I wasted quite a lot of time on this idea</p>
+<p>Then I thought of making absolute difference between array &lsquo;a&rsquo; and &lsquo;b&rsquo; as less as possible  implies making array &lsquo;b&rsquo; equals to &lsquo;a&rsquo;</p>
+<p>Now only problem is to satisfy condition 2 which can be satisfied if every alternate element is 1</p>
+<p>Hence Solution is</p>
+<p><code>a[1] 1 a[3] 1 a[4] 1 ... </code></p>
+<p>or</p>
+<p><code>1 a[2] 1 a[4] 1 ...</code></p>
+<h4 id="code-1">Code</h4>
+<p><a href="https://codeforces.com/contest/1463/submission/101538104">Codeforced Solution</a></p>
+<h3 id="problem-3---busy-robot">Problem 3 :- Busy Robot</h3>
+<p><a href="https://codeforces.com/contest/1463/problem/C">Problem Link</a></p>
+<p>Now In this questions, First we can notice that it we can simulate the movement of robot and get which command is Good/Successfull. We can also store for each good command that during its execution it will move from X1 to X2.</p>
+<p>I have a poor implementation that took me a lot of time penalty.</p>
+<h4 id="code-2">Code</h4>
+<p><a href="https://codeforces.com/contest/1463/submission/101561020">Codeforces Solution</a></p>
+<h3 id="problem-4---pairs">Problem 4 :- Pairs</h3>
+<p><a href="https://codeforces.com/contest/1463/problem/D">Problem Link</a></p>
+<p>In this problem, Let&rsquo;s say we represent the problem as</p>
+<p><code>S = OXOXOXXOXOOX</code> where {  S[i] = &lsquo;X&rsquo;   -&gt; ith element is present</p>
+<pre><code>                          S[i] = 'O'   -&gt; ith element is not present }
+</code></pre>
+<p>Now Lets try :-</p>
+<pre><code>x=0, means we need to take maximum from each pair that is every 'X' must be paired with a previous 'O'
+
+x=1, means we need to take minimum from exacty one pair that is ( one 'O' must be paired with a previous 'X'  + exactly n-1 'X' must be paired with a previous 'O'. 
+
+x=2, means we need to take minimum from exacty 2 pair that is ( 2 'O' must be paired with a previous 'X'  + exactly n-2 'X' must be paired with a previous 'O'. 
+
+x=n-1, means we need to take minimum from exacty n-1 pair that is ( n-1 'O' must be paired with a previous 'X'  + exactly 1 'X' must be paired with a previous 'O'.
+
+x=n ,means we need to take minimum from exacty n pair that is ( n 'O' must be paired with a previous 'X'  + exactly 0 'X' must be paired with a previous 'O'.
+</code></pre>
+<p>Means maximum value of x will be the maximum &ldquo;OX&rdquo; subsequence that we can get</p>
+<p>And</p>
+<p>Means maximum value of n-x,meaning minimum of x, will be the maximum &ldquo;XO&rdquo; sub subsequence that we can get</p>
+<pre><code>ans = Xmax-Xmin+1;   
+</code></pre>
+<h4 id="code-3">code</h4>
+<p><a href="https://codeforces.com/contest/1463/submission/101620107">Codeforces Solution</a></p>
+<h3 id="problem-5----plan-of-lectures">Problem 5 :-  Plan of Lectures</h3>
+<p><a href="https://codeforces.com/contest/1463/problem/E">Problem Link</a></p>
+<p>This Problem also looks more of a inplementation problem.</p>
+<p>Taking care of requirement 1 is easy we just need to form a directed graph and find topological sorting
+for requirement 2, if T1 is supposed to be followed by T2 then ordering T1,T2 is fixed, now suppose T2 is to be followed by T3 then ordering T1,T2,T3 is fixed means we will chains of fixed ordering.</p>
+<p>so we can just compress these chain, then form graph based on prerequite, find topological sorting of graph and then decompress the nodes.</p>
+<h4 id="code-4">code</h4>
+<p><a href="https://codeforces.com/contest/1463/submission/101631862">Codeforces Solution</a></p>
+<h2 id="discussion">Discussion</h2>
+<p>I think I did A nicely.</p>
+<p>I took to much time on B, I completed at 33rd min which is too bad, actually I got struck on one idea and wasted lot of time on it
+I guess whenever sum/2 term comes we can think it in terms of Seven and Sodd or dividing sum in 2 groups. I should have looked at Sodd and Seven earlier.</p>
+<p>I also took a bit more time to implement C.</p>
+<p>I could not do D in contest, One thing to learn from this is whenever possible try to form Hotvector encoding and then think. Paranthesis should also be kelt in mind here. Also keep making cases and then think</p>
+<p>During upsolving E looked easy to me and idea came quite easly to me. Though I took quite a lot of time to implement.</p>
+]]></content>
+        </item>
         
         <item>
             <title>My First Blog</title>
