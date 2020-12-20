@@ -6,8 +6,95 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Fri, 18 Dec 2020 19:24:44 +0530</lastBuildDate>
+        <lastBuildDate>Sun, 20 Dec 2020 11:49:13 +0530</lastBuildDate>
         <atom:link href="https://umangja.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Atcoder ABC 186</title>
+            <link>https://umangja.github.io/posts/2020/12/atcoder-abc-186/</link>
+            <pubDate>Sun, 20 Dec 2020 11:49:13 +0530</pubDate>
+            
+            <guid>https://umangja.github.io/posts/2020/12/atcoder-abc-186/</guid>
+            <description>Introduction Yesterday, I participitated in 186th Atcoder beginners contest. I performed good on first 5 problems but then I on last problem I did something foolish and couldn&amp;rsquo;t complete it.
+Now lets jump directly to Explations/Solutions
+Solutions Problem - A Problem Link
+if we put X boxes than W*X &amp;lt;= N
+=&amp;gt; X &amp;lt;= (N/W);
+=&amp;gt; Xmax = floor(N/W);
+code Atcoder solution Link
+Problem - B Problem Link
+we need to decrease each cell to the minimum of whole matrix</description>
+            <content type="html"><![CDATA[<h2 id="introduction">Introduction</h2>
+<p>Yesterday, I participitated in 186th Atcoder beginners contest. I performed good on first 5 problems but then I on last problem I did something foolish and couldn&rsquo;t complete it.</p>
+<p>Now lets jump directly to Explations/Solutions</p>
+<h2 id="solutions">Solutions</h2>
+<h3 id="problem---a">Problem - A</h3>
+<p><a href="https://atcoder.jp/contests/abc186/tasks/abc186_a">Problem Link</a></p>
+<p>if we put X boxes than  W*X &lt;= N</p>
+<p>=&gt; X &lt;= (N/W);</p>
+<p>=&gt; Xmax = floor(N/W);</p>
+<h4 id="code">code</h4>
+<p><a href="https://atcoder.jp/contests/abc186/submissions/18860638">Atcoder solution Link</a></p>
+<h3 id="problem---b">Problem - B</h3>
+<p><a href="https://atcoder.jp/contests/abc186/tasks/abc186_b">Problem Link</a></p>
+<p>we need to decrease each cell to the minimum of whole matrix</p>
+<h4 id="code-1">code</h4>
+<p><a href="https://atcoder.jp/contests/abc186/submissions/18864089">Atcoder solution Link</a></p>
+<h3 id="problem---c">Problem - C</h3>
+<p><a href="https://atcoder.jp/contests/abc186/tasks/abc186_c">Problem Link</a></p>
+<p>we can simply interate from 1 to N and check does it check the given condition</p>
+<h4 id="code-2">code</h4>
+<p><a href="https://atcoder.jp/contests/abc186/submissions/18867655">Atcoder solution Link</a></p>
+<h3 id="problem---d">Problem - D</h3>
+<p><a href="https://atcoder.jp/contests/abc186/tasks/abc186_d">Problem Link</a></p>
+<p>we need to find $ \sum_{i=1}^n \sum_{j=i+1}^n abs(A[i]-A[j]) $</p>
+<p>we can notice that absolute difference of every ordered pair (i,j) will be counted once.</p>
+<p>As abs(A[i]-A[j]) == abs(A[j]-A[i]) and every ordered pair need to be counted hence array can be reordered as we wish.</p>
+<p>So if we sort the array the we need to just
+$$ \sum_{i=1}^n ( i*A[i] - \sum_{j=1}^iA[j])  $$</p>
+<p>which is equals to</p>
+<p>$$ \sum_{i=1}^n i*A[i] - PF[i] $$ where PF = prefixSum array</p>
+<h4 id="code-3">code</h4>
+<p><a href="https://atcoder.jp/contests/abc186/submissions/18870361">Atcoder solution Link</a></p>
+<h3 id="problem---e">Problem - E</h3>
+<p><a href="https://atcoder.jp/contests/abc186/tasks/abc186_e">Problem Link</a></p>
+<p>We need to find (S+K*x)%N = 0</p>
+<pre><code>=&gt; (K*x)%N = (-S)%N = A;
+
+=&gt; K*x = A mod N - eq1
+</code></pre>
+<p>As this can also be written as
+K<em>x = N</em>I1 + A - eq2</p>
+<p>let g  = gcd(A,K,N)</p>
+<p>we can divide eq2 by g</p>
+<pre><code>let K' = K/g , N' = N/g , A' = A/g
+
+eq1 becomes K'*x = A' mod N'
+</code></pre>
+<p>$K^{-1}$ be the multiplicative modulus of K' under N',</p>
+<pre><code>multiply both side $K^{-1}$ it becomes
+
+x = ($K^{-1}$*A')%N
+</code></pre>
+<p>Now only thing left is to check if multiplicative modulus of K' exist or not.</p>
+<p>$K^{-1}$ under N' exist if K' and N' are co-prime ( gcd(K],N')==1 )</p>
+<p>if $K^{-1}$ exist then modified equation for sure has exactly one solution but original equations will have exactly g solutions , <a href="https://cp-algorithms.com/algebra/linear_congruence_equation.html">see this</a> ,</p>
+<p>$$ x = (x' + i*N')%N for i = 0 to g-1 $$</p>
+<p>if $K^{-1}$ does not exist then it can be proven that solution does not exist</p>
+<h4 id="code-4">code</h4>
+<p><a href="https://atcoder.jp/contests/abc186/submissions/18877872">Atcoder solution Link</a></p>
+<h3 id="problem---f">Problem - F</h3>
+<p><a href="https://atcoder.jp/contests/abc186/tasks/abc186_f">Problem Link</a></p>
+<p>000000X0X0</p>
+<p>00X0000X0X</p>
+<p>000XX0X000</p>
+<p>0000000000</p>
+<p>00000X0000</p>
+<p>For each row find the first X and are the cell before it are visible. Same thing can be done for each column but there will be some double counting that can be handled using fenwick tree.</p>
+<h4 id="code-5">code</h4>
+<p><a href="https://atcoder.jp/contests/abc186/submissions/18905167">Atcoder solution Link</a></p>
+]]></content>
+        </item>
         
         <item>
             <title>Education Round 100</title>

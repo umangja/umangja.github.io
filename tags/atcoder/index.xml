@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Atcoder on UMANG JAIN</title>
+    <link>https://umangja.github.io/tags/atcoder/</link>
+    <description>Recent content in Atcoder on UMANG JAIN</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 20 Dec 2020 11:49:13 +0530</lastBuildDate><atom:link href="https://umangja.github.io/tags/atcoder/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Atcoder ABC 186</title>
+      <link>https://umangja.github.io/posts/2020/12/atcoder-abc-186/</link>
+      <pubDate>Sun, 20 Dec 2020 11:49:13 +0530</pubDate>
+      
+      <guid>https://umangja.github.io/posts/2020/12/atcoder-abc-186/</guid>
+      <description>Introduction Yesterday, I participitated in 186th Atcoder beginners contest. I performed good on first 5 problems but then I on last problem I did something foolish and couldn&amp;rsquo;t complete it.
+Now lets jump directly to Explations/Solutions
+Solutions Problem - A Problem Link
+if we put X boxes than W*X &amp;lt;= N
+=&amp;gt; X &amp;lt;= (N/W);
+=&amp;gt; Xmax = floor(N/W);
+code Atcoder solution Link
+Problem - B Problem Link
+we need to decrease each cell to the minimum of whole matrix</description>
+    </item>
+    
+  </channel>
+</rss>
