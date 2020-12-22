@@ -6,8 +6,100 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Sun, 20 Dec 2020 11:49:13 +0530</lastBuildDate>
+        <lastBuildDate>Tue, 22 Dec 2020 21:54:20 +0530</lastBuildDate>
         <atom:link href="https://umangja.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Codeforces Div2 Round 692 </title>
+            <link>https://umangja.github.io/posts/2020/12/codeforces-div2-round-692/</link>
+            <pubDate>Tue, 22 Dec 2020 21:54:20 +0530</pubDate>
+            
+            <guid>https://umangja.github.io/posts/2020/12/codeforces-div2-round-692/</guid>
+            <description>Introducction Solutions Problem A - In-Game Chat Problem Link
+This is a simple problem. Just count &amp;lsquo;)&amp;rsquo; from right side and check the given condition.
+Code Codeforces Solution
+Problem B - Fair Numbers Problem Link
+So Number should be divided by all digits in it.
+whenevery anything need to be divided by each of number of a set, that thing must be divided by the LCM of the whole set.</description>
+            <content type="html"><![CDATA[<h2 id="introducction">Introducction</h2>
+<h2 id="solutions">Solutions</h2>
+<h3 id="problem-a---in-game-chat">Problem A - In-Game Chat</h3>
+<p><a href="https://codeforces.com/contest/1465/problem/A">Problem Link</a></p>
+<p>This is a simple problem. Just count &lsquo;)&rsquo; from right side and check the given condition.</p>
+<h4 id="code">Code</h4>
+<p><a href="https://codeforces.com/contest/1465/submission/101860087">Codeforces Solution</a></p>
+<h3 id="problem-b---fair-numbers">Problem B - Fair Numbers</h3>
+<p><a href="https://codeforces.com/contest/1465/problem/B">Problem Link</a></p>
+<p>So Number should be divided by all digits in it.</p>
+<p>whenevery anything need to be divided by each of number of a set, that thing must be divided by the LCM  of the whole set.</p>
+<p>so there can be at max 1-9 digit.</p>
+<pre><code>LCM[1,2,...,9] &lt; 2580
+</code></pre>
+<p>Hence, All multiples of 2580 will for sure satisfy the condition hence will be need at max 2579 iterations.</p>
+<p>Hence we can do brute Force</p>
+<h4 id="code-1">Code</h4>
+<p><a href="https://codeforces.com/contest/1465/submission/101872664">Codeforces Solution</a></p>
+<h3 id="problem-c---peaceful-rooks">Problem C - Peaceful Rooks</h3>
+<p><a href="https://codeforces.com/contest/1465/problem/C">Problem Link</a></p>
+<p>So after going through a few examples, we can see that if we make edges between x &ndash;&gt; y for rook placed at (x,y) then</p>
+<pre><code>1. for every rook (x,x) ans does not increment
+2. for every rook (x,y) ,x!=y ans increment by 1
+3. for every cycle in graph ans increasess by 1
+</code></pre>
+<h4 id="code-2">Code</h4>
+<p><a href="https://codeforces.com/contest/1465/submission/101880955">Codeforces Solution</a></p>
+<h3 id="problem-d---grime-zoo">Problem D - Grime Zoo</h3>
+<p><a href="https://codeforces.com/contest/1465/problem/D">Problem Link</a></p>
+<p>if(x&gt;y) then it&rsquo;s always better to change 01 to 10</p>
+<p>if(y&gt;x) then it&rsquo;s always better to change 10 to 01</p>
+<p>Answer will be of the form</p>
+<pre><code>if x&gt;y  111111s0000000s
+if y&gt;x  000000s1111111s
+</code></pre>
+<p>Now, we can form a linear solution</p>
+<h4 id="code-3">Code</h4>
+<p>I have not coded this problem yet</p>
+<h3 id="problem-e---poman-numbers">Problem E - Poman Numbers</h3>
+<p><a href="https://codeforces.com/contest/1465/problem/E">Problem Link</a></p>
+<pre><code>A -&gt; +A
+
+AB -&gt; B-A
+
+ABC -&gt; C-B+A, 
+       C-B-A
+
+ABCD -&gt; D-C+B-A,
+        D-C+B+A,
+        D-C-B+A,
+        D-C-B-A
+
+ABCDE -&gt; E-D+C-B+A,
+         E-D+C-B-A,
+         E-D+C+B+A,
+         E-D+C+B-A,
+
+         E-D-C-B+A,
+         E-D-C-B-A,
+         E-D-C+B+A,
+         E-D-C+B-A,
+</code></pre>
+<p>We can observe that expect last 2 every one can be any sign + or -</p>
+<p>Now, Left is we have list of numbers then  $ (\sum (+=2^{b[i]})) = Target $</p>
+<p>If we are provided with many powers of 2, and we can select any set out of all power2 of 2 to form a target value. We can easily sove this problem by going from 0 to MSB and</p>
+<pre><code>if cur bit(b) of tar is 1 then cnt[b]--
+cnt[b+1]+=cnt[b]/2
+</code></pre>
+<p>But problem is, In this problem , either we choose with positive sign or with negative sign but we can not ignore.</p>
+<p>So,</p>
+<pre><code>+-2^{b[i]} = 2^{b[i]} - (0,2^{b[i]+1})
+</code></pre>
+<p>Using above transormation, we can change this problem to above problem.</p>
+<h4 id="code-4">Code</h4>
+<p><a href="https://codeforces.com/contest/1465/submission/102056108">Codeforces Solution</a></p>
+<h2 id="discussion">Discussion</h2>
+<p>In contest, I did only ABC. I was able to do ABC quicky so I got okish rank which increased by rating to 1948.</p>
+]]></content>
+        </item>
         
         <item>
             <title>Atcoder ABC 186</title>

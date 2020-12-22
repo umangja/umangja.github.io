@@ -3,23 +3,8 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://umangja.github.io/tags/abc/</loc>
-    <lastmod>2020-12-20T11:49:13+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://umangja.github.io/tags/atcoder/</loc>
-    <lastmod>2020-12-20T11:49:13+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://umangja.github.io/posts/2020/12/atcoder-abc-186/</loc>
-    <lastmod>2020-12-20T11:49:13+05:30</lastmod>
-  </url>
-  
-  <url>
     <loc>https://umangja.github.io/categories/</loc>
-    <lastmod>2020-12-20T11:49:13+05:30</lastmod>
+    <lastmod>2020-12-22T21:54:20+05:30</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -33,18 +18,28 @@
   </url>
   
   <url>
+    <loc>https://umangja.github.io/posts/2020/12/codeforces-div2-round-692/</loc>
+    <lastmod>2020-12-22T21:54:20+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://umangja.github.io/categories/competitive-programming/</loc>
-    <lastmod>2020-12-20T11:49:13+05:30</lastmod>
+    <lastmod>2020-12-22T21:54:20+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/tags/div-2/</loc>
+    <lastmod>2020-12-22T21:54:20+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://umangja.github.io/posts/</loc>
-    <lastmod>2020-12-20T11:49:13+05:30</lastmod>
+    <lastmod>2020-12-22T21:54:20+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://umangja.github.io/tags/</loc>
-    <lastmod>2020-12-20T11:49:13+05:30</lastmod>
+    <lastmod>2020-12-22T21:54:20+05:30</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -59,7 +54,7 @@
   
   <url>
     <loc>https://umangja.github.io/</loc>
-    <lastmod>2020-12-20T11:49:13+05:30</lastmod>
+    <lastmod>2020-12-22T21:54:20+05:30</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -70,6 +65,21 @@
                 hreflang="en"
                 href="https://umangja.github.io/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/tags/abc/</loc>
+    <lastmod>2020-12-20T11:49:13+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/tags/atcoder/</loc>
+    <lastmod>2020-12-20T11:49:13+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/posts/2020/12/atcoder-abc-186/</loc>
+    <lastmod>2020-12-20T11:49:13+05:30</lastmod>
   </url>
   
   <url>
