@@ -7,7 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Tue, 22 Dec 2020 21:54:20 +0530</lastBuildDate><atom:link href="https://umangja.github.io/categories/competitive-programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 25 Dec 2020 19:57:13 +0530</lastBuildDate><atom:link href="https://umangja.github.io/categories/competitive-programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CodeChef UWCOI 2021</title>
+      <link>https://umangja.github.io/posts/2020/12/codechef-uwcoi-2021/</link>
+      <pubDate>Fri, 25 Dec 2020 19:57:13 +0530</pubDate>
+      
+      <guid>https://umangja.github.io/posts/2020/12/codechef-uwcoi-2021/</guid>
+      <description>Introduction Few days back, I participitated in UWCOI 2021 contest on CodeChef. I am able to do only first 3 problems during the contest and upsolved 2 problems later on .
+Now lets jump directly to Explations/Solutions
+Solutions Problem - Hidden Numbers Problem Link
+We can just output A 1
+code cin&amp;gt;&amp;gt;A; cout&amp;lt;&amp;lt;A&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;1&amp;lt;&amp;lt;&amp;quot;\n&amp;quot;;
+Problem - Array Swaps Problem Link
+In optimal case :-
+&#39;A&#39; array will be sorted in ascending,  and</description>
+    </item>
+    
     <item>
       <title>Codeforces Div2 Round 692 </title>
       <link>https://umangja.github.io/posts/2020/12/codeforces-div2-round-692/</link>

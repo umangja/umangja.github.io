@@ -6,8 +6,114 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Tue, 22 Dec 2020 21:54:20 +0530</lastBuildDate>
+        <lastBuildDate>Fri, 25 Dec 2020 19:57:13 +0530</lastBuildDate>
         <atom:link href="https://umangja.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>CodeChef UWCOI 2021</title>
+            <link>https://umangja.github.io/posts/2020/12/codechef-uwcoi-2021/</link>
+            <pubDate>Fri, 25 Dec 2020 19:57:13 +0530</pubDate>
+            
+            <guid>https://umangja.github.io/posts/2020/12/codechef-uwcoi-2021/</guid>
+            <description>Introduction Few days back, I participitated in UWCOI 2021 contest on CodeChef. I am able to do only first 3 problems during the contest and upsolved 2 problems later on .
+Now lets jump directly to Explations/Solutions
+Solutions Problem - Hidden Numbers Problem Link
+We can just output A 1
+code cin&amp;gt;&amp;gt;A; cout&amp;lt;&amp;lt;A&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;1&amp;lt;&amp;lt;&amp;quot;\n&amp;quot;;
+Problem - Array Swaps Problem Link
+In optimal case :-
+&#39;A&#39; array will be sorted in ascending,  and</description>
+            <content type="html"><![CDATA[<h2 id="introduction">Introduction</h2>
+<p>Few days back, I participitated in UWCOI 2021 contest on CodeChef. I am able to do only first 3 problems during the contest and upsolved 2 problems later on .</p>
+<p>Now lets jump directly to Explations/Solutions</p>
+<h2 id="solutions">Solutions</h2>
+<h3 id="problem---hidden-numbers">Problem - Hidden Numbers</h3>
+<p><a href="https://www.codechef.com/UWCOI21/problems/UWCOI21A">Problem Link</a></p>
+<p>We can just output A 1</p>
+<h4 id="code">code</h4>
+<p><code>cin&gt;&gt;A; cout&lt;&lt;A&lt;&lt;&quot; &quot;&lt;&lt;1&lt;&lt;&quot;\n&quot;;</code></p>
+<h3 id="problem---array-swaps">Problem - Array Swaps</h3>
+<p><a href="https://www.codechef.com/UWCOI21/problems/UWCOI21B">Problem Link</a></p>
+<p>In optimal case :-</p>
+<pre><code>'A' array will be sorted in ascending, 
+</code></pre>
+<p>and</p>
+<pre><code>B will be broken into 2 pieces, 
+- piece 1 will contain all element smaller than A[0] in increasing  order  and
+- piece 2 willl contain all element greater than or equal to A[0] in increasing order
+</code></pre>
+<p>So answer will be sizeof(piece1)*N</p>
+<h4 id="code-1">code</h4>
+<p><a href="https://www.codechef.com/viewsolution/40535195">CodeChef Solution Link</a></p>
+<h3 id="problem---organisation">Problem - Organisation</h3>
+<p><a href="https://www.codechef.com/UWCOI21/problems/UWCOI21C">Problem Link</a></p>
+<p>Firstly, I thoght if ducks of any color, let N1 , is &gt;=k then its always better to fill $ N1/K $ boxes full of K ducks of one color. This claim is false as</p>
+<p>For ex:</p>
+<pre><code>N = 2, K = 5
+ducks :- 7 1 2
+</code></pre>
+<p>According to the above approach, Box will be contain 5 ducks of color 0 and we are left with 2 1 2 ducks of respective colors and 1 box.</p>
+<p>But one possible ans is
+Box 1 : 0 4 1 1<br>
+Box 2 : 0 3 2 2</p>
+<p>Now, Its clicked my mind it&rsquo;s better to choose to color that has smallest number of ducks and combine that with the color with most number of ducks, This ways we will eleminate one color.</p>
+<p>So we can first choose color with minimum number of ducks , Let it be N1 , and</p>
+<pre><code>untill N1 &gt;= K but K ducks in one boxes
+</code></pre>
+<p>Now, We have N1 &lt; K</p>
+<pre><code>Put all the ducks in a box along with ducks of color which has maximum number of ducks.
+</code></pre>
+<p>After 2nd step, maximum number of ducks may change so we need to maintain set to get color with maximum and minimum number of ducks</p>
+<h4 id="code-2">code</h4>
+<p><a href="https://www.codechef.com/viewsolution/40539864">CodeChef Solution Link</a></p>
+<h3 id="problem---efficient-delivery">Problem - Efficient Delivery</h3>
+<p><a href="https://www.codechef.com/UWCOI21/problems/UWCOI21D">Problem Link</a></p>
+<p>Here, We need to make one road highway to minimize time over whole journey.</p>
+<p>For each road, We can maintain that if we make this road highway how much we will save and then we can choose the road with most saved time</p>
+<p>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;    Saved Time</p>
+<p>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;     D(x) - 8</p>
+<p>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;     D(x) - 4</p>
+<p>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;     D(x) - 0 &ndash; y1</p>
+<p>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;     D(x) - 0</p>
+<p>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;     D(x) - 0</p>
+<p>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;     D(x) - 0 &ndash; y2</p>
+<p>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;     D(x) - 4</p>
+<p>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;     D(x) - 8</p>
+<p>where dx is abs(x1-x2)</p>
+<p>Now, Its a better of implementation using segment or fenwick tree which I unfortunately couln&rsquo;t do.</p>
+<h4 id="code-3">code</h4>
+<p><a href="https://www.codechef.com/viewsolution/40550708">CodeChef Solution Link</a></p>
+<h3 id="problem---binary-puzzle">Problem - Binary Puzzle</h3>
+<p><a href="https://www.codechef.com/UWCOI21/problems/UWCOI21F">Problem Link</a></p>
+<p>It&rsquo;s clear we need to form cycles with number of set bits of every second number differing from each other.</p>
+<pre><code>  x1 ---&gt; x2 ---&gt; x3 ----&gt; x4 ----
+   ^                              '         
+   '----------------------------- '      
+
+   bitCount(x1)!=bitCount(x3)
+   bitCount(x2)!=bitCount(x4)
+   and so on
+</code></pre><p>So I made a single cycle of the form</p>
+<pre><code>  b1 ---&gt; b1 ---&gt; b2 ----&gt; b2  ----&gt; b1 ----&gt; b1 ----&gt; b3 ----&gt; b3
+   ^                                                             '
+   '-------------------------------------------------------------'      
+
+   bi is any number with 'i' set bits 
+</code></pre><p>We need to take care of a case when last element has 1 bits.</p>
+<p>Though, Editorial has a much better solution where after forming solution for K = 4 to 8 other solution can be exploited from there.</p>
+<h4 id="code-4">code</h4>
+<p><a href="https://www.codechef.com/viewsolution/40731027">CodeChef Solution Link</a></p>
+<h2 id="discussion">Discussion</h2>
+<p>Problem A,B are quite simple</p>
+<p>In problems like C, I guess it&rsquo;s better to thing something like how could I get rid of one color.
+So, colors with less number of ducks create problems. we can club such a color with any other color. something like that</p>
+<p>In problem like D, Its more of a inplementation problem. We can create ranges we in range</p>
+<pre><code>[L,R]    we need to add 4, 8, 12, ..., 4*(R-L+1)
+we can add 1 at each index from L to R and -4*(R-L+1) at R+1 now PF[i] is the required value
+</code></pre>
+<p>In problem F, Always try to solve problem for smaller values and then use results to form solution for bigger constrainsts. In questions dealing with bits, its may be possible that smaller results get multiplied by something.</p>
+]]></content>
+        </item>
         
         <item>
             <title>Codeforces Div2 Round 692 </title>
