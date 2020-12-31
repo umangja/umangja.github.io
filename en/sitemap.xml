@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://umangja.github.io/categories/</loc>
-    <lastmod>2020-12-25T19:57:13+05:30</lastmod>
+    <lastmod>2020-12-31T14:11:16+05:30</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -18,28 +18,28 @@
   </url>
   
   <url>
-    <loc>https://umangja.github.io/tags/codechef/</loc>
-    <lastmod>2020-12-25T19:57:13+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://umangja.github.io/posts/2020/12/codechef-uwcoi-2021/</loc>
-    <lastmod>2020-12-25T19:57:13+05:30</lastmod>
+    <loc>https://umangja.github.io/tags/codeforces/</loc>
+    <lastmod>2020-12-31T14:11:16+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://umangja.github.io/categories/competitive-programming/</loc>
-    <lastmod>2020-12-25T19:57:13+05:30</lastmod>
+    <lastmod>2020-12-31T14:11:16+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/posts/2020/12/good-bye-2020/</loc>
+    <lastmod>2020-12-31T14:11:16+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://umangja.github.io/posts/</loc>
-    <lastmod>2020-12-25T19:57:13+05:30</lastmod>
+    <lastmod>2020-12-31T14:11:16+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://umangja.github.io/tags/</loc>
-    <lastmod>2020-12-25T19:57:13+05:30</lastmod>
+    <lastmod>2020-12-31T14:11:16+05:30</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -54,7 +54,7 @@
   
   <url>
     <loc>https://umangja.github.io/</loc>
-    <lastmod>2020-12-25T19:57:13+05:30</lastmod>
+    <lastmod>2020-12-31T14:11:16+05:30</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -65,6 +65,31 @@
                 hreflang="en"
                 href="https://umangja.github.io/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/tags/codechef/</loc>
+    <lastmod>2020-12-25T23:13:54+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/posts/2020/12/codechef-december-cookoff/</loc>
+    <lastmod>2020-12-25T23:13:54+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/tags/cookoff/</loc>
+    <lastmod>2020-12-25T23:13:54+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/tags/december/</loc>
+    <lastmod>2020-12-25T23:13:54+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/posts/2020/12/codechef-uwcoi-2021/</loc>
+    <lastmod>2020-12-25T19:57:13+05:30</lastmod>
   </url>
   
   <url>

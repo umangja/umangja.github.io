@@ -7,7 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 25 Dec 2020 19:57:13 +0530</lastBuildDate><atom:link href="https://umangja.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 31 Dec 2020 14:11:16 +0530</lastBuildDate><atom:link href="https://umangja.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Good Bye 2020</title>
+      <link>https://umangja.github.io/posts/2020/12/good-bye-2020/</link>
+      <pubDate>Thu, 31 Dec 2020 14:11:16 +0530</pubDate>
+      
+      <guid>https://umangja.github.io/posts/2020/12/good-bye-2020/</guid>
+      <description>Problem A - Bovine Dilemma Problem Link
+Area of triangle is $ (1/2)* Base * Height $
+Height is a constant 1
+Only variable is Base Length which is X[j] - X[i].
+So we can simply do a O(n^2) brute force.
+Code Solution Link
+Problem B - Last minute enhancements Problem Link
+we can simply notice that
+if
+1) A[i] &amp;gt; A[i-1] ----&amp;gt; Then its never better to increase A[i] as neighter it does any good for ith index nor it will be any good for futher indexex 2) A[i] &amp;lt;= A[i-1] ----&amp;gt; Then its always good to increase A[i] to A[i]+1.</description>
+    </item>
+    
+    <item>
+      <title>CodeChef December Cookoff</title>
+      <link>https://umangja.github.io/posts/2020/12/codechef-december-cookoff/</link>
+      <pubDate>Fri, 25 Dec 2020 23:13:54 +0530</pubDate>
+      
+      <guid>https://umangja.github.io/posts/2020/12/codechef-december-cookoff/</guid>
+      <description>Solutions Problem - Self-Destructing Strings Problem Link
+As every deletion operation, deletes EXACTLY 2 character means parity of length of string does not change. Our objective is to make reduce string to empty string means to string of length of 0 which is even hence length of original string must also be even
+Also, After going through few examples we can see, we need abs(cnt[0]-cnt[1])/2 operations.
+But, There is one edge case :- when string contain only all same character then it is impossible to reduce it to empty string</description>
+    </item>
+    
     <item>
       <title>CodeChef UWCOI 2021</title>
       <link>https://umangja.github.io/posts/2020/12/codechef-uwcoi-2021/</link>

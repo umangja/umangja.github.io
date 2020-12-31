@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Codeforces on UMANG JAIN</title>
+    <link>https://umangja.github.io/tags/codeforces/</link>
+    <description>Recent content in Codeforces on UMANG JAIN</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Thu, 31 Dec 2020 14:11:16 +0530</lastBuildDate><atom:link href="https://umangja.github.io/tags/codeforces/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Good Bye 2020</title>
+      <link>https://umangja.github.io/posts/2020/12/good-bye-2020/</link>
+      <pubDate>Thu, 31 Dec 2020 14:11:16 +0530</pubDate>
+      
+      <guid>https://umangja.github.io/posts/2020/12/good-bye-2020/</guid>
+      <description>Problem A - Bovine Dilemma Problem Link
+Area of triangle is $ (1/2)* Base * Height $
+Height is a constant 1
+Only variable is Base Length which is X[j] - X[i].
+So we can simply do a O(n^2) brute force.
+Code Solution Link
+Problem B - Last minute enhancements Problem Link
+we can simply notice that
+if
+1) A[i] &amp;gt; A[i-1] ----&amp;gt; Then its never better to increase A[i] as neighter it does any good for ith index nor it will be any good for futher indexex 2) A[i] &amp;lt;= A[i-1] ----&amp;gt; Then its always good to increase A[i] to A[i]+1.</description>
+    </item>
+    
+    <item>
+      <title>Codeforces Div2 Round 692 </title>
+      <link>https://umangja.github.io/posts/2020/12/codeforces-div2-round-692/</link>
+      <pubDate>Tue, 22 Dec 2020 21:54:20 +0530</pubDate>
+      
+      <guid>https://umangja.github.io/posts/2020/12/codeforces-div2-round-692/</guid>
+      <description>Introducction Solutions Problem A - In-Game Chat Problem Link
+This is a simple problem. Just count &amp;lsquo;)&amp;rsquo; from right side and check the given condition.
+Code Codeforces Solution
+Problem B - Fair Numbers Problem Link
+So Number should be divided by all digits in it.
+whenevery anything need to be divided by each of number of a set, that thing must be divided by the LCM of the whole set.</description>
+    </item>
+    
+  </channel>
+</rss>

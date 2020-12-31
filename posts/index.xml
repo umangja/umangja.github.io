@@ -6,8 +6,162 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Fri, 25 Dec 2020 19:57:13 +0530</lastBuildDate>
+        <lastBuildDate>Thu, 31 Dec 2020 14:11:16 +0530</lastBuildDate>
         <atom:link href="https://umangja.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Good Bye 2020</title>
+            <link>https://umangja.github.io/posts/2020/12/good-bye-2020/</link>
+            <pubDate>Thu, 31 Dec 2020 14:11:16 +0530</pubDate>
+            
+            <guid>https://umangja.github.io/posts/2020/12/good-bye-2020/</guid>
+            <description>Problem A - Bovine Dilemma Problem Link
+Area of triangle is $ (1/2)* Base * Height $
+Height is a constant 1
+Only variable is Base Length which is X[j] - X[i].
+So we can simply do a O(n^2) brute force.
+Code Solution Link
+Problem B - Last minute enhancements Problem Link
+we can simply notice that
+if
+1) A[i] &amp;gt; A[i-1] ----&amp;gt; Then its never better to increase A[i] as neighter it does any good for ith index nor it will be any good for futher indexex 2) A[i] &amp;lt;= A[i-1] ----&amp;gt; Then its always good to increase A[i] to A[i]+1.</description>
+            <content type="html"><![CDATA[<h2 id="problem-a---bovine-dilemma">Problem A - Bovine Dilemma</h2>
+<p><a href="https://codeforces.com/contest/1466/problem/A">Problem Link</a></p>
+<p>Area of triangle is $ (1/2)* Base * Height  $</p>
+<p>Height is a constant 1</p>
+<p>Only variable is Base Length which is X[j] - X[i].</p>
+<p>So we can simply do a O(n^2) brute force.</p>
+<h3 id="code">Code</h3>
+<p><a href="https://codeforces.com/contest/1466/submission/102774624">Solution Link</a></p>
+<h2 id="problem-b---last-minute-enhancements">Problem B - Last minute enhancements</h2>
+<p><a href="https://codeforces.com/contest/1466/problem/B">Problem Link</a></p>
+<p>we can simply notice that</p>
+<p>if</p>
+<pre><code>1) A[i] &gt; A[i-1] ----&gt; Then its never better to increase A[i] as neighter it does any good for ith index nor it will be any good for futher indexex
+
+2) A[i] &lt;= A[i-1] ----&gt; Then its always good to increase A[i] to A[i]+1. 
+</code></pre>
+<h3 id="code-1">Code</h3>
+<p><a href="https://codeforces.com/contest/1466/submission/102779135">Solution Link</a></p>
+<h2 id="problem-c---canine-poetry">Problem C - Canine poetry</h2>
+<p><a href="https://codeforces.com/contest/1466/problem/C">Problem Link</a></p>
+<p>So any palindrome of</p>
+<p>-&gt; even length is of form</p>
+<pre><code>S1 S2 S3 S3 S2 S1 
+
+=&gt; It will always have a palindrome of length 2  
+</code></pre>
+<p>-&gt; odd length is of form</p>
+<pre><code>S1 S2 S3 C S3 S2 S1
+
+=&gt; It will always have a palindrom of length 3
+</code></pre>
+<p>=&gt; We just need to make sure that we don&rsquo;t have</p>
+<pre><code> 1) palindrom of length 2 i.e. S[i]!=S[i-1]
+ 2) palindrom of length 3 i.e. S[i]!=S[i-2]
+</code></pre>
+<h3 id="code-2">Code</h3>
+<p><a href="https://codeforces.com/contest/1466/submission/102792490">Solution Link</a></p>
+<h2 id="problem-d---13th-labour-of-heracles">Problem D - 13th Labour of Heracles</h2>
+<p><a href="https://codeforces.com/contest/1466/problem/D">Problem Link</a></p>
+<p>Lets increase K from 1 to N-1</p>
+<p>for K :-</p>
+<pre><code>k = 1 :- All edges will be coloured with one colour and ans will be sum of weights of all nodes let it be S
+
+k = 2 :- Lets say we choose one edge 
+
+          E1 connnecting N1 ----- N2
+
+          and color all edge in subtree rooted at N1 with one color1 and color all edge in subtree rooted at N2 with other color2 and color edge E1 with color2
+
+          And ans will be S + W[N1]
+
+          S+W[N1] will be maximum when W[N1] is maximum 
+
+k = 3 :- we can perform the same process we did for K=2
+</code></pre>
+<h3 id="code-3">Code</h3>
+<p><a href="https://codeforces.com/contest/1466/submission/102803670">Solution Link</a></p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>CodeChef December Cookoff</title>
+            <link>https://umangja.github.io/posts/2020/12/codechef-december-cookoff/</link>
+            <pubDate>Fri, 25 Dec 2020 23:13:54 +0530</pubDate>
+            
+            <guid>https://umangja.github.io/posts/2020/12/codechef-december-cookoff/</guid>
+            <description>Solutions Problem - Self-Destructing Strings Problem Link
+As every deletion operation, deletes EXACTLY 2 character means parity of length of string does not change. Our objective is to make reduce string to empty string means to string of length of 0 which is even hence length of original string must also be even
+Also, After going through few examples we can see, we need abs(cnt[0]-cnt[1])/2 operations.
+But, There is one edge case :- when string contain only all same character then it is impossible to reduce it to empty string</description>
+            <content type="html"><![CDATA[<h2 id="solutions">Solutions</h2>
+<h3 id="problem---self-destructing-strings">Problem - Self-Destructing Strings</h3>
+<p><a href="https://www.codechef.com/COOK125A/problems/SDSTRING">Problem Link</a></p>
+<p>As every deletion operation, deletes EXACTLY 2 character means parity of length of string does not change.  Our objective is to make reduce string to empty string means to string of length of 0 which is even hence length of original string must also be even</p>
+<p>Also, After going through few examples we can see, we need abs(cnt[0]-cnt[1])/2 operations.</p>
+<p>But, There is one edge case :- when string contain only all same character then it is impossible to reduce it to empty string</p>
+<p>Whenever something releated to afternative 01 or 10 is given, Keep this edge (when every thing is equal) in mind.</p>
+<h4 id="code">Code</h4>
+<p><a href="https://www.codechef.com/viewsolution/40602362">CodeChef Solution Link</a></p>
+<h3 id="problem---circle-of-chaos">Problem - Circle of Chaos</h3>
+<p><a href="https://www.codechef.com/COOK125A/problems/CIRCHAOS">Problem Link</a></p>
+<p>Let&rsquo;s see when will be not able to delete any of the sorcerer?</p>
+<p>When N is such that, all the M spells are multiples of N.</p>
+<p>As in this case</p>
+<p>$$ M[i] \bmod N = 0 $$</p>
+<p>=&gt; Every spell will kill yourself.</p>
+<pre><code>Let g = GCD(All M spells)
+</code></pre>
+<p>so, When N is any divisor of g we wouldn&rsquo;t be able to kill any sorcerer.
+So, We just need to find the greatest divisor of N which is not greater that N.</p>
+<h4 id="code-1">Code</h4>
+<p><a href="https://www.codechef.com/viewsolution/40627432">CodeChef Solution Link</a></p>
+<h3 id="problem---sed-passwords">Problem - Sed Passwords</h3>
+<p><a href="https://www.codechef.com/COOK125A/problems/SEDPASS">Problem Link</a></p>
+<p>Its a simply bitmasking problem, Where first 26(0-25) bits will represent parity of frequency of current character. And we can use 26th bit can represent parity of frequency of &lsquo;?&rsquo;.</p>
+<pre><code>Let B[i] be current mask for string S[0]....S[i]
+Let T be final mask of original string
+we want
+</code></pre>
+<p>$$  B[i] \oplus B[j] = T  $$</p>
+<p>and</p>
+<p>for K in [0-25]:</p>
+<p>$$ B[i] \oplus B[j] \oplus (1 &laquo; k) \oplus ( 1 &laquo; 26) = T $$</p>
+<p>For empty string, mask is 0</p>
+<p>So remember to intialize cnt[0] = 1</p>
+<h4 id="code-2">Code</h4>
+<p><a href="https://www.codechef.com/viewsolution/40738287">CodeChef Solution Link</a></p>
+<h3 id="problem---carry-all-fruits">Problem - Carry All Fruits</h3>
+<p><a href="https://www.codechef.com/problems/BASKETS">Problem Link</a></p>
+<p>This is a contruction problem.</p>
+<p>My idea is basically on each day I will put fruits in only two plates.</p>
+<pre><code>WLOG, Lets say we are on day i which is a perfect power of 2  
+</code></pre>
+<p>and</p>
+<pre><code>we have a plate with capacity 2*i full of (i-1) fruits corresponding to previous i-1 days. 
+
+Let it be P1. 
+
+And we also have a empty plate P2 of 4*i capacity.
+</code></pre>
+<p>Now for each day, j , from day [ i - 2*i ),</p>
+<pre><code>- we will put 1 fruit of type 'j' in P1
+
+- we will put 3 fruit, one of each type, which are not already present in P2.
+
+- we will present P1 on each day
+</code></pre>
+<p>As we will have i days in between 2<em>i and i and each day we have capacity to put 3 fruits in P2, So for sure, by the end of 2</em>i th day, we would have added all 2*i fruits in P2.</p>
+<p>Now For iteration from 2<em>i to 4</em>i,</p>
+<pre><code>P2 &lt;--- P1 
+we will have new empty plate with capacity 8*i as P2
+</code></pre>
+<p>Looks at implementation for better understanding.</p>
+<h4 id="code-3">Code</h4>
+<p><a href="https://www.codechef.com/submit/complete/40739682">CodeChef Solution Link</a></p>
+]]></content>
+        </item>
         
         <item>
             <title>CodeChef UWCOI 2021</title>

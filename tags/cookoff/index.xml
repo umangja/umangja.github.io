@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>CodeChef on UMANG JAIN</title>
-    <link>https://umangja.github.io/tags/codechef/</link>
-    <description>Recent content in CodeChef on UMANG JAIN</description>
+    <title>Cookoff on UMANG JAIN</title>
+    <link>https://umangja.github.io/tags/cookoff/</link>
+    <description>Recent content in Cookoff on UMANG JAIN</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 25 Dec 2020 23:13:54 +0530</lastBuildDate><atom:link href="https://umangja.github.io/tags/codechef/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 25 Dec 2020 23:13:54 +0530</lastBuildDate><atom:link href="https://umangja.github.io/tags/cookoff/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CodeChef December Cookoff</title>
       <link>https://umangja.github.io/posts/2020/12/codechef-december-cookoff/</link>
@@ -18,22 +18,6 @@
 As every deletion operation, deletes EXACTLY 2 character means parity of length of string does not change. Our objective is to make reduce string to empty string means to string of length of 0 which is even hence length of original string must also be even
 Also, After going through few examples we can see, we need abs(cnt[0]-cnt[1])/2 operations.
 But, There is one edge case :- when string contain only all same character then it is impossible to reduce it to empty string</description>
-    </item>
-    
-    <item>
-      <title>CodeChef UWCOI 2021</title>
-      <link>https://umangja.github.io/posts/2020/12/codechef-uwcoi-2021/</link>
-      <pubDate>Fri, 25 Dec 2020 19:57:13 +0530</pubDate>
-      
-      <guid>https://umangja.github.io/posts/2020/12/codechef-uwcoi-2021/</guid>
-      <description>Introduction Few days back, I participitated in UWCOI 2021 contest on CodeChef. I am able to do only first 3 problems during the contest and upsolved 2 problems later on .
-Now lets jump directly to Explations/Solutions
-Solutions Problem - Hidden Numbers Problem Link
-We can just output A 1
-code cin&amp;gt;&amp;gt;A; cout&amp;lt;&amp;lt;A&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;1&amp;lt;&amp;lt;&amp;quot;\n&amp;quot;;
-Problem - Array Swaps Problem Link
-In optimal case :-
-&#39;A&#39; array will be sorted in ascending,  and</description>
     </item>
     
   </channel>
