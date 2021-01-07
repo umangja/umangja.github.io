@@ -539,21 +539,5 @@ I guess whenever sum/2 term comes we can think it in terms of Seven and Sodd or 
 ]]></content>
         </item>
         
-        <item>
-            <title>My First Blog</title>
-            <link>https://umangja.github.io/posts/2020/10/my-first-blog/</link>
-            <pubDate>Thu, 22 Oct 2020 22:27:14 +0530</pubDate>
-            
-            <guid>https://umangja.github.io/posts/2020/10/my-first-blog/</guid>
-            <description>Introduction Hey, Yesterday I have decided to makemyown blog, so after going through various options ranging from CMS such as wordpress, wix to stuff like gatsby I have decided to use hugo.</description>
-            <content type="html"><![CDATA[<h2 id="introduction">Introduction</h2>
-<p>Hey, Yesterday I have decided to makemyown blog, so after going through various options ranging from CMS such as wordpress, wix to stuff like gatsby I have decided to use hugo.</p>
-
-    <img src="/img/posts/My-first-blog/hello.png"  alt="Hello Friend"  class="center"  style="border-radius: 8px;"  />
-
-
-]]></content>
-        </item>
-        
     </channel>
 </rss>

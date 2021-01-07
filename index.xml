@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 31 Dec 2020 14:11:16 +0530</lastBuildDate><atom:link href="https://umangja.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 07 Jan 2021 20:51:24 +0530</lastBuildDate><atom:link href="https://umangja.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>07 Jan 2021 My First Blog</title>
+      <link>https://umangja.github.io/blogs/07-jan-2021-my-first-blog/</link>
+      <pubDate>Thu, 07 Jan 2021 20:51:24 +0530</pubDate>
+      
+      <guid>https://umangja.github.io/blogs/07-jan-2021-my-first-blog/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Good Bye 2020</title>
       <link>https://umangja.github.io/posts/2020/12/good-bye-2020/</link>
@@ -96,15 +105,6 @@ Now lets jump directly to Explations/Solutions
 Solutions Problem A :- Dungeon Problem Link
 I tought like if we xth enchanced shot as the last one than total reduction will be
 TotalShotsFired = 7x // as every 7th shot will be enchanced</description>
-    </item>
-    
-    <item>
-      <title>My First Blog</title>
-      <link>https://umangja.github.io/posts/2020/10/my-first-blog/</link>
-      <pubDate>Thu, 22 Oct 2020 22:27:14 +0530</pubDate>
-      
-      <guid>https://umangja.github.io/posts/2020/10/my-first-blog/</guid>
-      <description>Introduction Hey, Yesterday I have decided to makemyown blog, so after going through various options ranging from CMS such as wordpress, wix to stuff like gatsby I have decided to use hugo.</description>
     </item>
     
     <item>
