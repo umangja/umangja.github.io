@@ -5,25 +5,23 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="Umang Jain ">
-<meta name="description" content="Problem A - Bovine Dilemma Problem Link
-Area of triangle is $ (1/2)* Base * Height $
-Height is a constant 1
-Only variable is Base Length which is X[j] - X[i].
-So we can simply do a O(n^2) brute force.
-Code Solution Link
-Problem B - Last minute enhancements Problem Link
-we can simply notice that
-if
-1) A[i] &amp;gt; A[i-1] ----&amp;gt; Then its never better to increase A[i] as neighter it does any good for ith index nor it will be any good for futher indexex 2) A[i] &amp;lt;= A[i-1] ----&amp;gt; Then its always good to increase A[i] to A[i]&#43;1." />
-<meta name="keywords" content=", Codeforces" />
+<meta name="description" content="Problem - A Problem Link
+Simply check if S[0]==S[1]==S[2]
+Problem - B Problem Link
+Simply keep calculating alcohol volume in your body and see when does it becomes strickly greater than x.
+To avoid precision error use
+X &amp;gt; (Y/100) &amp;lt;==&amp;gt; X*100 &amp;gt; Y  code Atcoder solution Link
+Problem - C Problem Link
+In every subsegment it&amp;rsquo;s optimal to choose maximum value of x as x has to be less than equal to every value in segment." />
+<meta name="keywords" content=", Atcoder, ABC" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="#252627" />
-<link rel="canonical" href="https://umangja.github.io/posts/2020/12/good-bye-2020/" />
+<link rel="canonical" href="https://umangja.github.io/posts/2021/01/atcoder-abc-189/" />
 
 
     <title>
         
-            Good Bye 2020 :: UMANG JAIN  — Blogs
+            Atcoder ABC 189 :: UMANG JAIN  — Blogs
         
     </title>
 
@@ -50,59 +48,53 @@ if
 
 
 
-<meta itemprop="name" content="Good Bye 2020">
-<meta itemprop="description" content="Problem A - Bovine Dilemma Problem Link
-Area of triangle is $ (1/2)* Base * Height $
-Height is a constant 1
-Only variable is Base Length which is X[j] - X[i].
-So we can simply do a O(n^2) brute force.
-Code Solution Link
-Problem B - Last minute enhancements Problem Link
-we can simply notice that
-if
-1) A[i] &gt; A[i-1] ----&gt; Then its never better to increase A[i] as neighter it does any good for ith index nor it will be any good for futher indexex 2) A[i] &lt;= A[i-1] ----&gt; Then its always good to increase A[i] to A[i]&#43;1.">
-<meta itemprop="datePublished" content="2020-12-31T14:11:16+05:30" />
-<meta itemprop="dateModified" content="2020-12-31T14:11:16+05:30" />
-<meta itemprop="wordCount" content="311">
+<meta itemprop="name" content="Atcoder ABC 189">
+<meta itemprop="description" content="Problem - A Problem Link
+Simply check if S[0]==S[1]==S[2]
+Problem - B Problem Link
+Simply keep calculating alcohol volume in your body and see when does it becomes strickly greater than x.
+To avoid precision error use
+X &gt; (Y/100) &lt;==&gt; X*100 &gt; Y  code Atcoder solution Link
+Problem - C Problem Link
+In every subsegment it&rsquo;s optimal to choose maximum value of x as x has to be less than equal to every value in segment.">
+<meta itemprop="datePublished" content="2021-01-23T21:30:49+05:30" />
+<meta itemprop="dateModified" content="2021-01-23T21:30:49+05:30" />
+<meta itemprop="wordCount" content="592">
 <meta itemprop="image" content="https://umangja.github.io"/>
 
 
 
-<meta itemprop="keywords" content="Codeforces," />
+<meta itemprop="keywords" content="Atcoder,ABC," />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://umangja.github.io"/>
 
-<meta name="twitter:title" content="Good Bye 2020"/>
-<meta name="twitter:description" content="Problem A - Bovine Dilemma Problem Link
-Area of triangle is $ (1/2)* Base * Height $
-Height is a constant 1
-Only variable is Base Length which is X[j] - X[i].
-So we can simply do a O(n^2) brute force.
-Code Solution Link
-Problem B - Last minute enhancements Problem Link
-we can simply notice that
-if
-1) A[i] &gt; A[i-1] ----&gt; Then its never better to increase A[i] as neighter it does any good for ith index nor it will be any good for futher indexex 2) A[i] &lt;= A[i-1] ----&gt; Then its always good to increase A[i] to A[i]&#43;1."/>
+<meta name="twitter:title" content="Atcoder ABC 189"/>
+<meta name="twitter:description" content="Problem - A Problem Link
+Simply check if S[0]==S[1]==S[2]
+Problem - B Problem Link
+Simply keep calculating alcohol volume in your body and see when does it becomes strickly greater than x.
+To avoid precision error use
+X &gt; (Y/100) &lt;==&gt; X*100 &gt; Y  code Atcoder solution Link
+Problem - C Problem Link
+In every subsegment it&rsquo;s optimal to choose maximum value of x as x has to be less than equal to every value in segment."/>
 
 
 
-    <meta property="og:title" content="Good Bye 2020" />
-<meta property="og:description" content="Problem A - Bovine Dilemma Problem Link
-Area of triangle is $ (1/2)* Base * Height $
-Height is a constant 1
-Only variable is Base Length which is X[j] - X[i].
-So we can simply do a O(n^2) brute force.
-Code Solution Link
-Problem B - Last minute enhancements Problem Link
-we can simply notice that
-if
-1) A[i] &gt; A[i-1] ----&gt; Then its never better to increase A[i] as neighter it does any good for ith index nor it will be any good for futher indexex 2) A[i] &lt;= A[i-1] ----&gt; Then its always good to increase A[i] to A[i]&#43;1." />
+    <meta property="og:title" content="Atcoder ABC 189" />
+<meta property="og:description" content="Problem - A Problem Link
+Simply check if S[0]==S[1]==S[2]
+Problem - B Problem Link
+Simply keep calculating alcohol volume in your body and see when does it becomes strickly greater than x.
+To avoid precision error use
+X &gt; (Y/100) &lt;==&gt; X*100 &gt; Y  code Atcoder solution Link
+Problem - C Problem Link
+In every subsegment it&rsquo;s optimal to choose maximum value of x as x has to be less than equal to every value in segment." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://umangja.github.io/posts/2020/12/good-bye-2020/" />
+<meta property="og:url" content="https://umangja.github.io/posts/2021/01/atcoder-abc-189/" />
 <meta property="og:image" content="https://umangja.github.io"/>
-<meta property="article:published_time" content="2020-12-31T14:11:16+05:30" />
-<meta property="article:modified_time" content="2020-12-31T14:11:16+05:30" />
+<meta property="article:published_time" content="2021-01-23T21:30:49+05:30" />
+<meta property="article:modified_time" content="2021-01-23T21:30:49+05:30" />
 
 
 
@@ -111,7 +103,7 @@ if
 
 
 
-    <meta property="article:published_time" content="2020-12-31 14:11:16 &#43;0530 IST" />
+    <meta property="article:published_time" content="2021-01-23 21:30:49 &#43;0530 IST" />
 
 
 
@@ -199,7 +191,7 @@ if
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        2 minutes
+        3 minutes
 
         
       </p>
@@ -207,98 +199,87 @@ if
 
     <article>
       <h1 class="post-title">
-        <a href="https://umangja.github.io/posts/2020/12/good-bye-2020/">Good Bye 2020</a>
+        <a href="https://umangja.github.io/posts/2021/01/atcoder-abc-189/">Atcoder ABC 189</a>
       </h1>
-        <hr />
-        <aside id="toc">
-          <div class="toc-title">Table of Contents</div>
-          <nav id="TableOfContents">
-  <ul>
-    <li><a href="#problem-a---bovine-dilemma">Problem A - Bovine Dilemma</a>
-      <ul>
-        <li><a href="#code">Code</a></li>
-      </ul>
-    </li>
-    <li><a href="#problem-b---last-minute-enhancements">Problem B - Last minute enhancements</a>
-      <ul>
-        <li><a href="#code-1">Code</a></li>
-      </ul>
-    </li>
-    <li><a href="#problem-c---canine-poetry">Problem C - Canine poetry</a>
-      <ul>
-        <li><a href="#code-2">Code</a></li>
-      </ul>
-    </li>
-    <li><a href="#problem-d---13th-labour-of-heracles">Problem D - 13th Labour of Heracles</a>
-      <ul>
-        <li><a href="#code-3">Code</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-        </aside>
-        <hr />
 
       
 
       <div class="post-content">
-        <h2 id="problem-a---bovine-dilemma">Problem A - Bovine Dilemma</h2>
-<p><a href="https://codeforces.com/contest/1466/problem/A">Problem Link</a></p>
-<p>Area of triangle is $ (1/2)* Base * Height  $</p>
-<p>Height is a constant 1</p>
-<p>Only variable is Base Length which is X[j] - X[i].</p>
-<p>So we can simply do a O(n^2) brute force.</p>
-<h3 id="code">Code</h3>
-<p><a href="https://codeforces.com/contest/1466/submission/102774624">Solution Link</a></p>
-<h2 id="problem-b---last-minute-enhancements">Problem B - Last minute enhancements</h2>
-<p><a href="https://codeforces.com/contest/1466/problem/B">Problem Link</a></p>
-<p>we can simply notice that</p>
-<p>if</p>
-<pre><code>1) A[i] &gt; A[i-1] ----&gt; Then its never better to increase A[i] as neighter it does any good for ith index nor it will be any good for futher indexex
-
-2) A[i] &lt;= A[i-1] ----&gt; Then its always good to increase A[i] to A[i]+1. 
+        <h3 id="problem---a">Problem - A</h3>
+<p><a href="https://atcoder.jp/contests/abc189/tasks/abc189_a">Problem Link</a></p>
+<p>Simply check if S[0]==S[1]==S[2]</p>
+<h3 id="problem---b">Problem - B</h3>
+<p><a href="https://atcoder.jp/contests/abc189/tasks/abc189_b">Problem Link</a></p>
+<p>Simply keep calculating alcohol volume in your body and see when does it becomes strickly greater than x.</p>
+<p>To avoid precision error use</p>
+<pre><code>X &gt; (Y/100)  &lt;==&gt; X*100 &gt; Y
 </code></pre>
-<h3 id="code-1">Code</h3>
-<p><a href="https://codeforces.com/contest/1466/submission/102779135">Solution Link</a></p>
-<h2 id="problem-c---canine-poetry">Problem C - Canine poetry</h2>
-<p><a href="https://codeforces.com/contest/1466/problem/C">Problem Link</a></p>
-<p>So any palindrome of</p>
-<p>-&gt; even length is of form</p>
-<pre><code>S1 S2 S3 S3 S2 S1 
+<h4 id="code">code</h4>
+<p><a href="https://atcoder.jp/contests/abc189/submissions/19591127">Atcoder solution Link</a></p>
+<h3 id="problem---c">Problem - C</h3>
+<p><a href="https://atcoder.jp/contests/abc189/tasks/abc189_c">Problem Link</a></p>
+<p>In every subsegment it&rsquo;s optimal to choose maximum value of x as x has to be less than equal to every value in segment. Hence maximum value of x in a particular segment in the minimum value in that segment.</p>
+<p>Now, we can simply fix L and keep increasing R and update minimum on the go.</p>
+<h4 id="code1">code1</h4>
+<p><a href="https://atcoder.jp/contests/abc189/submissions/19595957">Atcoder solution Link</a></p>
+<p>We can also use sparse table and solve this problem in n*log(n)</p>
+<h4 id="code2">code2</h4>
+<p><a href="https://atcoder.jp/contests/abc189/submissions/19658674">Atcoder solution Link</a></p>
+<p>We can also use O(n) stack method by visualizing this problem as finding the maximum area in a histogram.</p>
+<p><a href="https://www.geeksforgeeks.org/largest-rectangle-under-histogram/">Link</a></p>
+<h3 id="problem---d">Problem - D</h3>
+<p><a href="https://atcoder.jp/contests/abc189/tasks/abc189_d">Problem Link</a></p>
+<p>It&rsquo;s a simple dp</p>
+<p>dp[i][0] = be the number of ways to get false after ith steps</p>
+<p>dp[i][1] = be the number of ways to get false after ith steps</p>
+<h4 id="code-1">code</h4>
+<p><a href="https://atcoder.jp/contests/abc189/submissions/19606017">Atcoder solution Link</a></p>
+<p>We can also do</p>
+<p>if current operation is AND then to get true here we need to have true before, ans[i] = ans[i-1]</p>
+<p>current operation is OR then if we put 1 here than we can have anything before and if we put 0 here then we need to have 1 before, ans[i] = ans[i] + 2^n</p>
+<h3 id="problem---e">Problem - E</h3>
+<p><a href="https://atcoder.jp/contests/abc189/tasks/abc189_e">Problem Link</a></p>
+<p>The way I did it that I created kind of linear equation:-</p>
+<p>$ X_t^k $ be value of x-coordinate of kth point after t operations</p>
+<p>$ X_t^k = Mx_t * x^k + Ax_t $</p>
+<p>and similar for y coordinate.</p>
+<p>$ Y_t^k = My_t * y^k + Ay_t $</p>
+<p>Now, we could find Mx_t, Ax_t , etc after each operation then we are done.</p>
+<p>We also need to maintain a variable S for each time stamp that tells do we need to swap x and y coordinates.</p>
+<p>for Operation of type 1 :-  (Mx * x + Ax,My * y + Ay) &mdash;&gt; (My * y + Ay,-Mx * x - Ax)</p>
+<pre><code>        we need to swap (x,y)
+        Mx[i] = My[i-1];
+        Ax[i] = Ay[i-1];
 
-=&gt; It will always have a palindrome of length 2  
+        My[i] = -1*Mx[i-1];
+        Ay[i] = -1*Ax[i-1];
 </code></pre>
-<p>-&gt; odd length is of form</p>
-<pre><code>S1 S2 S3 C S3 S2 S1
-
-=&gt; It will always have a palindrom of length 3
-</code></pre>
-<p>=&gt; We just need to make sure that we don&rsquo;t have</p>
-<pre><code> 1) palindrom of length 2 i.e. S[i]!=S[i-1]
- 2) palindrom of length 3 i.e. S[i]!=S[i-2]
-</code></pre>
-<h3 id="code-2">Code</h3>
-<p><a href="https://codeforces.com/contest/1466/submission/102792490">Solution Link</a></p>
-<h2 id="problem-d---13th-labour-of-heracles">Problem D - 13th Labour of Heracles</h2>
-<p><a href="https://codeforces.com/contest/1466/problem/D">Problem Link</a></p>
-<p>Lets increase K from 1 to N-1</p>
-<p>for K :-</p>
-<pre><code>k = 1 :- All edges will be coloured with one colour and ans will be sum of weights of all nodes let it be S
-
-k = 2 :- Lets say we choose one edge 
-
-          E1 connnecting N1 ----- N2
-
-          and color all edge in subtree rooted at N1 with one color1 and color all edge in subtree rooted at N2 with other color2 and color edge E1 with color2
-
-          And ans will be S + W[N1]
-
-          S+W[N1] will be maximum when W[N1] is maximum 
-
-k = 3 :- we can perform the same process we did for K=2
-</code></pre>
-<h3 id="code-3">Code</h3>
-<p><a href="https://codeforces.com/contest/1466/submission/102803670">Solution Link</a></p>
+<p>we can form similar transition for all 4 operations.</p>
+<h4 id="code-2">code</h4>
+<p><a href="https://atcoder.jp/contests/abc189/submissions/19639188">Atcoder solution Link</a></p>
+<p>A better solution is to use transformation matrix.</p>
+<p>For rotation:</p>
+<p>[X'] = [0  1 0 ] [X] </br>
+[Y'] = [-1 0 1 ] [Y] </br>
+[1]  = [0  0 1 ] [1] </br></p>
+<p>we can form transformation matrix for other opeartions too and then simply multipy these matrix.</p>
+<h3 id="problem---f">Problem - F</h3>
+<p><a href="https://atcoder.jp/contests/abc189/tasks/abc189_f">Problem Link</a></p>
+<p>Let&rsquo;s first see if are in state s and future expectation number of moves are independent of how we got here.</p>
+<p>So it&rsquo;s better to process in backward order</p>
+<p>dp[i] = Expected number of moves require to reach n.</p>
+<p>dp[n] = 0</p>
+<p>dp[0] = ans</p>
+<p>Now, Lets first solve a easier verison where m = 0 or there are not any special cells.</p>
+<p>dp[i] = 1 + (dp[i+1] + dp[i+2] + &hellip; + dp[i+m])/m</p>
+<p>Now, in orginal problem all special cell leads us to first cell.</p>
+<p>means dp[A] = dp[0] where A is any special cell.</p>
+<p>so dp[i] = 1 + (sum of dp values of normal cell + number of special cells * X)/m</p>
+<p>where X = dp[0]</p>
+<p>at last we can solve linear equation</p>
+<p>dp[0] = X = 1 + (sum of dp values of normal cell + number of special cells * X)/m</p>
+<h4 id="code-3">code</h4>
+<p><a href="https://atcoder.jp/contests/abc189/submissions/19656418">Atcoder solution Link</a></p>
 
       </div>
     </article>
@@ -310,7 +291,8 @@ k = 3 :- we can perform the same process we did for K=2
     <p>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
 
-        <span class="tag"><a href="https://umangja.github.io/tags/codeforces/">Codeforces</a></span>
+        <span class="tag"><a href="https://umangja.github.io/tags/atcoder/">Atcoder</a></span>
+        <span class="tag"><a href="https://umangja.github.io/tags/abc/">ABC</a></span>
         
     </p>
 
@@ -331,7 +313,7 @@ k = 3 :- we can perform the same process we did for K=2
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        311 Words
+        592 Words
       </p>
 
       <p>
@@ -342,7 +324,7 @@ k = 3 :- we can perform the same process we did for K=2
           <line x1="3" y1="10" x2="21" y2="10"></line>
         </svg>
         
-          2020-12-31 14:11
+          2021-01-23 21:30
         
 
          
@@ -353,7 +335,7 @@ k = 3 :- we can perform the same process we did for K=2
       <hr />
       <div class="sharing-buttons">
         
-<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fumangja.github.io%2fposts%2f2020%2f12%2fgood-bye-2020%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f01%2fatcoder-abc-189%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
   <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
     </div>
@@ -365,7 +347,7 @@ k = 3 :- we can perform the same process we did for K=2
 
 
 
-<a class="resp-sharing-button__link" href="mailto:?subject=Good%20Bye%202020&amp;body=https%3a%2f%2fumangja.github.io%2fposts%2f2020%2f12%2fgood-bye-2020%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
+<a class="resp-sharing-button__link" href="mailto:?subject=Atcoder%20ABC%20189&amp;body=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f01%2fatcoder-abc-189%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
   <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
     </div>
@@ -375,7 +357,7 @@ k = 3 :- we can perform the same process we did for K=2
 
 
 
-<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fumangja.github.io%2fposts%2f2020%2f12%2fgood-bye-2020%2f&amp;title=Good%20Bye%202020&amp;summary=Good%20Bye%202020&amp;source=https%3a%2f%2fumangja.github.io%2fposts%2f2020%2f12%2fgood-bye-2020%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f01%2fatcoder-abc-189%2f&amp;title=Atcoder%20ABC%20189&amp;summary=Atcoder%20ABC%20189&amp;source=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f01%2fatcoder-abc-189%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
   <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
     </div>
@@ -402,18 +384,11 @@ k = 3 :- we can perform the same process we did for K=2
 
         <div class="pagination__buttons">
           
-            <span class="button previous">
-              <a href="https://umangja.github.io/posts/2021/01/atcoder-abc-189/">
-                <span class="button__icon">←</span>
-                <span class="button__text">Atcoder ABC 189</span>
-              </a>
-            </span>
-          
 
           
             <span class="button next">
-              <a href="https://umangja.github.io/posts/2020/12/codechef-december-cookoff/">
-                <span class="button__text">CodeChef December Cookoff</span>
+              <a href="https://umangja.github.io/posts/2020/12/good-bye-2020/">
+                <span class="button__text">Good Bye 2020</span>
                 <span class="button__icon">→</span>
               </a>
             </span>

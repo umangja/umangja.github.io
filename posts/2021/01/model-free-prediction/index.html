@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Umang Jain ">
+<meta name="description" content="Slides
+Lecture
+Introduction In previous Lectures we dealt with MDPs means environment is fully observable means we know the model.
+Means we know about transition probabilities and rewards.
+But now we don&amp;rsquo;t know the model and we don&amp;rsquo;t know about transition probabilities and rewards.
+In this lecture we are doing prediction means given a polcy we need to find value function for that policy.
+Monte Carlo Learning (MC) Idea is to find learn from complete episodes and find mean g_t for any state will be equal to it&amp;rsquo;s value function." />
+<meta name="keywords" content=", RL" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://umangja.github.io/posts/2021/01/model-free-prediction/" />
+
+
+    <title>
+        
+            Model Free Prediction :: UMANG JAIN  — Blogs
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://umangja.github.io/main.a53c5881c12495ab068658c69596fa775d6a0a4162ff4198ccc7ddabd912fb8f.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://umangja.github.io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://umangja.github.io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://umangja.github.io/favicon-16x16.png">
+    <link rel="manifest" href="https://umangja.github.io/site.webmanifest">
+    <link rel="mask-icon" href="https://umangja.github.io/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="https://umangja.github.io/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="Model Free Prediction">
+<meta itemprop="description" content="Slides
+Lecture
+Introduction In previous Lectures we dealt with MDPs means environment is fully observable means we know the model.
+Means we know about transition probabilities and rewards.
+But now we don&rsquo;t know the model and we don&rsquo;t know about transition probabilities and rewards.
+In this lecture we are doing prediction means given a polcy we need to find value function for that policy.
+Monte Carlo Learning (MC) Idea is to find learn from complete episodes and find mean g_t for any state will be equal to it&rsquo;s value function.">
+<meta itemprop="datePublished" content="2021-01-22T22:31:33+05:30" />
+<meta itemprop="dateModified" content="2021-01-22T22:31:33+05:30" />
+<meta itemprop="wordCount" content="938">
+<meta itemprop="image" content="https://umangja.github.io"/>
+
+
+
+<meta itemprop="keywords" content="RL," />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://umangja.github.io"/>
+
+<meta name="twitter:title" content="Model Free Prediction"/>
+<meta name="twitter:description" content="Slides
+Lecture
+Introduction In previous Lectures we dealt with MDPs means environment is fully observable means we know the model.
+Means we know about transition probabilities and rewards.
+But now we don&rsquo;t know the model and we don&rsquo;t know about transition probabilities and rewards.
+In this lecture we are doing prediction means given a polcy we need to find value function for that policy.
+Monte Carlo Learning (MC) Idea is to find learn from complete episodes and find mean g_t for any state will be equal to it&rsquo;s value function."/>
+
+
+
+    <meta property="og:title" content="Model Free Prediction" />
+<meta property="og:description" content="Slides
+Lecture
+Introduction In previous Lectures we dealt with MDPs means environment is fully observable means we know the model.
+Means we know about transition probabilities and rewards.
+But now we don&rsquo;t know the model and we don&rsquo;t know about transition probabilities and rewards.
+In this lecture we are doing prediction means given a polcy we need to find value function for that policy.
+Monte Carlo Learning (MC) Idea is to find learn from complete episodes and find mean g_t for any state will be equal to it&rsquo;s value function." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://umangja.github.io/posts/2021/01/model-free-prediction/" />
+<meta property="og:image" content="https://umangja.github.io"/>
+<meta property="article:published_time" content="2021-01-22T22:31:33+05:30" />
+<meta property="article:modified_time" content="2021-01-22T22:31:33+05:30" />
+
+
+
+
+    <meta property="article:section" content="Tutorial" />
+
+
+
+    <meta property="article:published_time" content="2021-01-22 22:31:33 &#43;0530 IST" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://umangja.github.io/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">$ cd /home/</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+        <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://umangja.github.io/about/">About</a></li><li><a href="https://umangja.github.io/blogs">Blogs</a></li><li><a href="https://www.linkedin.com/in/umangjain5000/">Contact</a></li><li><a href="https://umangja.github.io/posts/">Posts</a></li><li><a href="https://umangja.github.io/files/resume.pdf">Resume</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        5 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="https://umangja.github.io/posts/2021/01/model-free-prediction/">Model Free Prediction</a>
+      </h1>
+
+      
+
+      <div class="post-content">
+        <p><a href="https://www.davidsilver.uk/wp-content/uploads/2020/03/MC-TD.pdf">Slides</a></p>
+<p><a href="https://www.youtube.com/watch?v=Nd1-UUMVfz4&amp;list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ&amp;index=4">Lecture</a></p>
+<h2 id="introduction">Introduction</h2>
+<p>In previous Lectures we dealt with MDPs means environment is fully observable means we know the model.</p>
+<p>Means we know about transition probabilities and rewards.</p>
+<p>But now we don&rsquo;t know the model and we don&rsquo;t know about  transition probabilities and rewards.</p>
+<p>In this lecture we are doing prediction means given a polcy we need to find value function for that policy.</p>
+<h2 id="monte-carlo-learning-mc">Monte Carlo Learning (MC)</h2>
+<p>Idea is to find learn from complete episodes and find mean g_t for any state will be equal to it&rsquo;s value function.</p>
+<p>MC requires to go through episodes and thus MDP should be terminating.</p>
+<p>Remember</p>
+<p>$ V_{\pi}[s] = E[ G_t | S_t=s] $</p>
+<h3 id="first-visit-mc">First Visit MC</h3>
+<p>For evaluating state s</p>
+<p>Let t be  the first time we visit state s in any episode.</p>
+<p>we will find $ g_t $ and find it&rsquo;s mean over all episodes.</p>
+<p>According to Law of large numbers means ~ Expectation value if we have seen very large number of examples.</p>
+<h3 id="every-visit-mc">Every-Visit MC</h3>
+<p>For evaluating state s</p>
+<p>In any episode, every time we visit state s we find corresponding $ g_t $ and take mean over all these $ g_t $</p>
+<h2 id="increamental-mc">Increamental MC</h2>
+<p>As we can find mean in an incremental fastion. So we can use this fact in above MCs</p>
+<p>$ \mu_{k} = \mu_{k-1} + (1/N) * (x_k - \mu_{k-1}) $</p>
+<p>But instead of using increamenting N in above equation we can use a constant, $ \alpha $ .</p>
+<p>Intuition is that we don&rsquo;t need to know what happened way back in the past so its better to forget about that. Using a constant makes us do so.</p>
+<p><strong>In MC, we are updating out value only after completing the whole episode. Ans this won&rsquo;t work in non terminating MDPs.</strong></p>
+<h2 id="temporal-difference-td">Temporal Difference (TD)</h2>
+<p>In TD, we don&rsquo;t wait for the episode to end. we Bootstrap and keeping improving our guess.</p>
+<p>First we make a guess for current state (s) and we move a timestamp and move to succession state (s') and get a reward in the process. Now we want to update our guess for s using our current guess for s' and peice of actual reality that we experienced , reward,.</p>
+<p>$ V[s] &lt;&ndash; V[s] + \alpha * ( R_t + \gamma * V[s'] - V[s] ) $</p>
+<p>$ \delta (t) = R_t + \gamma * V[S_{t+1}] - V[S_t]  $</p>
+<p><strong>$ \alpha $  is kind of learning rate if we may</strong></p>
+<h2 id="bias-vs-variance">Bias Vs Variance</h2>
+<p>In the case of RL, variance now refers to a noisy, but on average accurate value estimate, whereas bias refers to a stable, but inaccurate value estimate. To make this more concrete, imagine a game of darts. A high-bias player is one who always hits close to the target, but is always consistently off in some direction. A high-variance player, on the other hand, is one who sometimes hits the target, and is sometimes off, but on average near the target.</p>
+<h2 id="mc-vs-td">MC vs TD</h2>
+<ol>
+<li>
+<p>MC is offline, means we need to wait for the end of the episode to update. Which is not a great idea as we may encounter something in between that could have lead to negative reward but in this case it did not. Now in MC we don&rsquo;t account for the danger in between.</p>
+</li>
+<li>
+<p>TD is online means</p>
+</li>
+</ol>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; a) TD can learn from incomplete episodes, not MC. </p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; b) TD can learn from non terminating episodes, not MC. </p>
+<ol start="3">
+<li>
+<p>MC has lot of noise hence has high variance but low bias.
+But TD has low variance but high bias</p>
+</li>
+<li>
+<p>MC always converges to optimal value even with function approximation.</p>
+</li>
+<li>
+<p>TD also converges to optimal value but may not with function approximation.</p>
+</li>
+<li>
+<p>MC is less dependent on initial values than TD</p>
+</li>
+<li>
+<p><strong>MC converges to solution with minimum RMS means with best fit to observed rewards. Also means that it does not exploit/take use of markov property</strong></p>
+</li>
+<li>
+<p><strong>TD converges to solution with most possible markov model based on observations in episodes. Also means that it does exploit/take use of markov property</strong></p>
+</li>
+</ol>
+<h2 id="td--lambda--">TD( $ \lambda $ )</h2>
+<p>Lets first look at n step TD.
+In this instead of improving our guess after taking one step we improve after taking n steps</p>
+<p>$$ g_t^n = R_{t} + \gamma * R_{t+1} + \gamma^2 * R_{t+1} + \gamma^{n-1} * R_{t+n-1} + \gamma^{n} * V[s_{t+n}]  $$</p>
+<p>$$ V[s] = V[s] + \alpha * (g_t^n - V[s]) $$</p>
+<p>Now, different n leads to to different setting of $ \alpha $ and error and stuff.</p>
+<p>We need a way to take best of all n or consider all n at once.</p>
+<p>Hence, we can average $ g_t^n $ over all n</p>
+<h2 id="forward-view-of--td--lambda--">Forward view of  TD( $ \lambda $ )</h2>
+<p>Here, we take a GP average of all $ g_t^n $</p>
+<p>$$ g_t^{\lambda} = (1-\lambda) * \sum_{n=1}^{n=\inf} \lambda ^{n-1} * g_t^n $$</p>
+<p>$$ V[s] = V[s] + \alpha * (g_t^{\lambda} - V[s]) $$</p>
+<p>Now it is also forward looking that means we need to wait till the end of episode to update V[s].</p>
+<h2 id="backward-view-of--td--lambda--">Backward view of  TD( $ \lambda $ )</h2>
+<p>Eligibility Criteria, $ E_t[s] $ includes :-</p>
+<ol>
+<li>
+<p><strong>Frequency Heuristic</strong></p>
+</li>
+<li>
+<p><strong>Recency Heuristic</strong></p>
+</li>
+</ol>
+<p>$$ E^t[s] = \lambda * \gamma * E^{t-1}[s] + 1(S[t] == s) $$</p>
+<p>$$ \delta_t = R_t + \gamma * V[S_{t+1} - V[S_t] $$</p>
+<p>$$ V[s] = V[s] + \alpha * \delta_t * E_t[s] $$</p>
+<p>** V[s] is to be updateed FOR EVERY STATE NOT JUST FOR S[t] **</p>
+<p><strong>$ \lambda $ is decay rate i.e. how far do we want our information to flow</strong></p>
+<p><strong>It can be proven that backward view and farward view are actually completely same</strong></p>
+
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://umangja.github.io/tags/rl/">RL</a></span>
+        
+    </p>
+
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://umangja.github.io/categories/tutorial/">Tutorial</a></span>
+        
+    </p>
+
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        938 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2021-01-22 22:31
+        
+
+         
+          
+        
+      </p>
+    </div>
+      <hr />
+      <div class="sharing-buttons">
+        
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f01%2fmodel-free-prediction%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
+  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+
+
+
+
+<a class="resp-sharing-button__link" href="mailto:?subject=Model%20Free%20Prediction&amp;body=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f01%2fmodel-free-prediction%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
+  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+    </div>
+  </div>
+</a>
+
+
+
+
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f01%2fmodel-free-prediction%2f&amp;title=Model%20Free%20Prediction&amp;summary=Model%20Free%20Prediction&amp;source=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f01%2fmodel-free-prediction%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
+  <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+    </div>
+  </div>
+</a>
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h"></span>
+          <hr />
+        </div>
+
+        <div class="pagination__buttons">
+          
+            <span class="button previous">
+              <a href="https://umangja.github.io/posts/2021/01/model-free-control/">
+                <span class="button__icon">←</span>
+                <span class="button__text">Model Free Control</span>
+              </a>
+            </span>
+          
+
+          
+            <span class="button next">
+              <a href="https://umangja.github.io/posts/2021/01/introdution-to-dynamic-programming/">
+                <span class="button__text">Introdution to Dynamic Programming</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2021</span>
+            
+                <span><a href="https://umangja.github.io">Umang Jain</a></span>
+            
+            
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            
+            
+          </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span> <a href="http://github.com/umangja">Developer</a> </span>
+            <span> <a href="https://codeforces.com/profile/TooStupidToWin">Geek</a> </span>
+            
+          </div>
+    </div>
+</footer>
+
+
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://umangja.github.io/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+
+
+
+    </body>
+</html>

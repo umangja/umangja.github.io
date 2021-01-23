@@ -3,19 +3,9 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://umangja.github.io/blogs/</loc>
-    <lastmod>2021-01-07T20:51:24+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://umangja.github.io/blogs/07-jan-2021-my-first-blog/</loc>
-    <lastmod>2021-01-07T20:51:24+05:30</lastmod>
-  </url>
-  
-  <url>
     <loc>https://umangja.github.io/</loc>
-    <lastmod>2021-01-07T20:51:24+05:30</lastmod>
+    <lastmod>2021-01-23T21:30:49+05:30</lastmod>
+    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -29,8 +19,29 @@
   </url>
   
   <url>
+    <loc>https://umangja.github.io/posts/</loc>
+    <lastmod>2021-01-23T21:30:49+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/tags/abc/</loc>
+    <lastmod>2021-01-23T21:30:49+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/tags/atcoder/</loc>
+    <lastmod>2021-01-23T21:30:49+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/posts/2021/01/atcoder-abc-189/</loc>
+    <lastmod>2021-01-23T21:30:49+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://umangja.github.io/categories/</loc>
-    <lastmod>2020-12-31T14:11:16+05:30</lastmod>
+    <lastmod>2021-01-23T21:30:49+05:30</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -44,28 +55,13 @@
   </url>
   
   <url>
-    <loc>https://umangja.github.io/tags/codeforces/</loc>
-    <lastmod>2020-12-31T14:11:16+05:30</lastmod>
-  </url>
-  
-  <url>
     <loc>https://umangja.github.io/categories/competitive-programming/</loc>
-    <lastmod>2020-12-31T14:11:16+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://umangja.github.io/posts/2020/12/good-bye-2020/</loc>
-    <lastmod>2020-12-31T14:11:16+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://umangja.github.io/posts/</loc>
-    <lastmod>2020-12-31T14:11:16+05:30</lastmod>
+    <lastmod>2021-01-23T21:30:49+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://umangja.github.io/tags/</loc>
-    <lastmod>2020-12-31T14:11:16+05:30</lastmod>
+    <lastmod>2021-01-23T21:30:49+05:30</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -76,6 +72,67 @@
                 hreflang="en"
                 href="https://umangja.github.io/tags/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/posts/2021/01/model-free-control/</loc>
+    <lastmod>2021-01-23T11:45:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/tags/rl/</loc>
+    <lastmod>2021-01-23T11:45:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/categories/tutorial/</loc>
+    <lastmod>2021-01-23T11:45:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/posts/2021/01/model-free-prediction/</loc>
+    <lastmod>2021-01-22T22:31:33+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/posts/2021/01/introdution-to-dynamic-programming/</loc>
+    <lastmod>2021-01-22T17:01:37+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/posts/2021/01/markov-decision-process/</loc>
+    <lastmod>2021-01-22T00:46:24+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/posts/2021/01/introduction-to-reinforcement-learning/</loc>
+    <lastmod>2021-01-21T18:52:57+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/blogs/</loc>
+    <lastmod>2021-01-07T20:51:24+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/blogs/07-jan-2021-my-first-blog/</loc>
+    <lastmod>2021-01-07T20:51:24+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/posts/reinforcementlearning/</loc>
+    <lastmod>2021-01-07T20:51:24+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/tags/codeforces/</loc>
+    <lastmod>2020-12-31T14:11:16+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/posts/2020/12/good-bye-2020/</loc>
+    <lastmod>2020-12-31T14:11:16+05:30</lastmod>
   </url>
   
   <url>
@@ -116,16 +173,6 @@
   <url>
     <loc>https://umangja.github.io/tags/div-2/</loc>
     <lastmod>2020-12-22T21:54:20+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://umangja.github.io/tags/abc/</loc>
-    <lastmod>2020-12-20T11:49:13+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://umangja.github.io/tags/atcoder/</loc>
-    <lastmod>2020-12-20T11:49:13+05:30</lastmod>
   </url>
   
   <url>

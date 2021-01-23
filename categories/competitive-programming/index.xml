@@ -7,7 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 31 Dec 2020 14:11:16 +0530</lastBuildDate><atom:link href="https://umangja.github.io/categories/competitive-programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Jan 2021 21:30:49 +0530</lastBuildDate><atom:link href="https://umangja.github.io/categories/competitive-programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Atcoder ABC 189</title>
+      <link>https://umangja.github.io/posts/2021/01/atcoder-abc-189/</link>
+      <pubDate>Sat, 23 Jan 2021 21:30:49 +0530</pubDate>
+      
+      <guid>https://umangja.github.io/posts/2021/01/atcoder-abc-189/</guid>
+      <description>Problem - A Problem Link
+Simply check if S[0]==S[1]==S[2]
+Problem - B Problem Link
+Simply keep calculating alcohol volume in your body and see when does it becomes strickly greater than x.
+To avoid precision error use
+X &amp;gt; (Y/100) &amp;lt;==&amp;gt; X*100 &amp;gt; Y  code Atcoder solution Link
+Problem - C Problem Link
+In every subsegment it&amp;rsquo;s optimal to choose maximum value of x as x has to be less than equal to every value in segment.</description>
+    </item>
+    
     <item>
       <title>Good Bye 2020</title>
       <link>https://umangja.github.io/posts/2020/12/good-bye-2020/</link>

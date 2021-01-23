@@ -7,7 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 31 Dec 2020 14:11:16 +0530</lastBuildDate><atom:link href="https://umangja.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Jan 2021 21:30:49 +0530</lastBuildDate><atom:link href="https://umangja.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ABC</title>
+      <link>https://umangja.github.io/tags/abc/</link>
+      <pubDate>Sat, 23 Jan 2021 21:30:49 +0530</pubDate>
+      
+      <guid>https://umangja.github.io/tags/abc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Atcoder</title>
+      <link>https://umangja.github.io/tags/atcoder/</link>
+      <pubDate>Sat, 23 Jan 2021 21:30:49 +0530</pubDate>
+      
+      <guid>https://umangja.github.io/tags/atcoder/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RL</title>
+      <link>https://umangja.github.io/tags/rl/</link>
+      <pubDate>Sat, 23 Jan 2021 11:45:00 +0530</pubDate>
+      
+      <guid>https://umangja.github.io/tags/rl/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Codeforces</title>
       <link>https://umangja.github.io/tags/codeforces/</link>
@@ -59,24 +86,6 @@
       <pubDate>Tue, 22 Dec 2020 21:54:20 +0530</pubDate>
       
       <guid>https://umangja.github.io/tags/div-2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ABC</title>
-      <link>https://umangja.github.io/tags/abc/</link>
-      <pubDate>Sun, 20 Dec 2020 11:49:13 +0530</pubDate>
-      
-      <guid>https://umangja.github.io/tags/abc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Atcoder</title>
-      <link>https://umangja.github.io/tags/atcoder/</link>
-      <pubDate>Sun, 20 Dec 2020 11:49:13 +0530</pubDate>
-      
-      <guid>https://umangja.github.io/tags/atcoder/</guid>
       <description></description>
     </item>
     

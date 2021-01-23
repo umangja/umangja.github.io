@@ -1,13 +1,115 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Posts on UMANG JAIN</title>
+        <title>UMANG JAIN</title>
         <link>https://umangja.github.io/posts/</link>
-        <description>Recent content in Posts on UMANG JAIN</description>
+        <description>Recent content on UMANG JAIN</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Thu, 31 Dec 2020 14:11:16 +0530</lastBuildDate>
+        <lastBuildDate>Sat, 23 Jan 2021 21:30:49 +0530</lastBuildDate>
         <atom:link href="https://umangja.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Atcoder ABC 189</title>
+            <link>https://umangja.github.io/posts/2021/01/atcoder-abc-189/</link>
+            <pubDate>Sat, 23 Jan 2021 21:30:49 +0530</pubDate>
+            
+            <guid>https://umangja.github.io/posts/2021/01/atcoder-abc-189/</guid>
+            <description>Problem - A Problem Link
+Simply check if S[0]==S[1]==S[2]
+Problem - B Problem Link
+Simply keep calculating alcohol volume in your body and see when does it becomes strickly greater than x.
+To avoid precision error use
+X &amp;gt; (Y/100) &amp;lt;==&amp;gt; X*100 &amp;gt; Y  code Atcoder solution Link
+Problem - C Problem Link
+In every subsegment it&amp;rsquo;s optimal to choose maximum value of x as x has to be less than equal to every value in segment.</description>
+            <content type="html"><![CDATA[<h3 id="problem---a">Problem - A</h3>
+<p><a href="https://atcoder.jp/contests/abc189/tasks/abc189_a">Problem Link</a></p>
+<p>Simply check if S[0]==S[1]==S[2]</p>
+<h3 id="problem---b">Problem - B</h3>
+<p><a href="https://atcoder.jp/contests/abc189/tasks/abc189_b">Problem Link</a></p>
+<p>Simply keep calculating alcohol volume in your body and see when does it becomes strickly greater than x.</p>
+<p>To avoid precision error use</p>
+<pre><code>X &gt; (Y/100)  &lt;==&gt; X*100 &gt; Y
+</code></pre>
+<h4 id="code">code</h4>
+<p><a href="https://atcoder.jp/contests/abc189/submissions/19591127">Atcoder solution Link</a></p>
+<h3 id="problem---c">Problem - C</h3>
+<p><a href="https://atcoder.jp/contests/abc189/tasks/abc189_c">Problem Link</a></p>
+<p>In every subsegment it&rsquo;s optimal to choose maximum value of x as x has to be less than equal to every value in segment. Hence maximum value of x in a particular segment in the minimum value in that segment.</p>
+<p>Now, we can simply fix L and keep increasing R and update minimum on the go.</p>
+<h4 id="code1">code1</h4>
+<p><a href="https://atcoder.jp/contests/abc189/submissions/19595957">Atcoder solution Link</a></p>
+<p>We can also use sparse table and solve this problem in n*log(n)</p>
+<h4 id="code2">code2</h4>
+<p><a href="https://atcoder.jp/contests/abc189/submissions/19658674">Atcoder solution Link</a></p>
+<p>We can also use O(n) stack method by visualizing this problem as finding the maximum area in a histogram.</p>
+<p><a href="https://www.geeksforgeeks.org/largest-rectangle-under-histogram/">Link</a></p>
+<h3 id="problem---d">Problem - D</h3>
+<p><a href="https://atcoder.jp/contests/abc189/tasks/abc189_d">Problem Link</a></p>
+<p>It&rsquo;s a simple dp</p>
+<p>dp[i][0] = be the number of ways to get false after ith steps</p>
+<p>dp[i][1] = be the number of ways to get false after ith steps</p>
+<h4 id="code-1">code</h4>
+<p><a href="https://atcoder.jp/contests/abc189/submissions/19606017">Atcoder solution Link</a></p>
+<p>We can also do</p>
+<p>if current operation is AND then to get true here we need to have true before, ans[i] = ans[i-1]</p>
+<p>current operation is OR then if we put 1 here than we can have anything before and if we put 0 here then we need to have 1 before, ans[i] = ans[i] + 2^n</p>
+<h3 id="problem---e">Problem - E</h3>
+<p><a href="https://atcoder.jp/contests/abc189/tasks/abc189_e">Problem Link</a></p>
+<p>The way I did it that I created kind of linear equation:-</p>
+<p>$ X_t^k $ be value of x-coordinate of kth point after t operations</p>
+<p>$ X_t^k = Mx_t * x^k + Ax_t $</p>
+<p>and similar for y coordinate.</p>
+<p>$ Y_t^k = My_t * y^k + Ay_t $</p>
+<p>Now, we could find Mx_t, Ax_t , etc after each operation then we are done.</p>
+<p>We also need to maintain a variable S for each time stamp that tells do we need to swap x and y coordinates.</p>
+<p>for Operation of type 1 :-  (Mx * x + Ax,My * y + Ay) &mdash;&gt; (My * y + Ay,-Mx * x - Ax)</p>
+<pre><code>        we need to swap (x,y)
+        Mx[i] = My[i-1];
+        Ax[i] = Ay[i-1];
+
+        My[i] = -1*Mx[i-1];
+        Ay[i] = -1*Ax[i-1];
+</code></pre>
+<p>we can form similar transition for all 4 operations.</p>
+<h4 id="code-2">code</h4>
+<p><a href="https://atcoder.jp/contests/abc189/submissions/19639188">Atcoder solution Link</a></p>
+<p>A better solution is to use transformation matrix.</p>
+<p>For rotation:</p>
+<p>[X'] = [0  1 0 ] [X] </br>
+[Y'] = [-1 0 1 ] [Y] </br>
+[1]  = [0  0 1 ] [1] </br></p>
+<p>we can form transformation matrix for other opeartions too and then simply multipy these matrix.</p>
+<h3 id="problem---f">Problem - F</h3>
+<p><a href="https://atcoder.jp/contests/abc189/tasks/abc189_f">Problem Link</a></p>
+<p>Let&rsquo;s first see if are in state s and future expectation number of moves are independent of how we got here.</p>
+<p>So it&rsquo;s better to process in backward order</p>
+<p>dp[i] = Expected number of moves require to reach n.</p>
+<p>dp[n] = 0</p>
+<p>dp[0] = ans</p>
+<p>Now, Lets first solve a easier verison where m = 0 or there are not any special cells.</p>
+<p>dp[i] = 1 + (dp[i+1] + dp[i+2] + &hellip; + dp[i+m])/m</p>
+<p>Now, in orginal problem all special cell leads us to first cell.</p>
+<p>means dp[A] = dp[0] where A is any special cell.</p>
+<p>so dp[i] = 1 + (sum of dp values of normal cell + number of special cells * X)/m</p>
+<p>where X = dp[0]</p>
+<p>at last we can solve linear equation</p>
+<p>dp[0] = X = 1 + (sum of dp values of normal cell + number of special cells * X)/m</p>
+<h4 id="code-3">code</h4>
+<p><a href="https://atcoder.jp/contests/abc189/submissions/19656418">Atcoder solution Link</a></p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Reinforcement Learning Lectures By David Silverman</title>
+            <link>https://umangja.github.io/posts/reinforcementlearning/</link>
+            <pubDate>Thu, 07 Jan 2021 20:51:24 +0530</pubDate>
+            
+            <guid>https://umangja.github.io/posts/reinforcementlearning/</guid>
+            <description></description>
+            <content type="html"><![CDATA[]]></content>
+        </item>
         
         <item>
             <title>Good Bye 2020</title>

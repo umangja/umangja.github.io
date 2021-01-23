@@ -1,0 +1,446 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Reinforcement Learning Lectures By David Silverman on UMANG JAIN</title>
+        <link>https://umangja.github.io/posts/reinforcementlearning/</link>
+        <description>Recent content in Reinforcement Learning Lectures By David Silverman on UMANG JAIN</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+        <lastBuildDate>Thu, 07 Jan 2021 20:51:24 +0530</lastBuildDate>
+        <atom:link href="https://umangja.github.io/posts/reinforcementlearning/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Model Free Control</title>
+            <link>https://umangja.github.io/posts/2021/01/model-free-control/</link>
+            <pubDate>Sat, 23 Jan 2021 11:45:00 +0530</pubDate>
+            
+            <guid>https://umangja.github.io/posts/2021/01/model-free-control/</guid>
+            <description>Slides
+Lecture
+Introduction In the last lecture we did model free prediction now we want to do model free control means we want to find the optimal policy.
+If we go back to Lecture 3 :- Introduction to dynamic programming. In there the path we followed is that first we learnt how to do policy evaluation and find state value function and then take a greedy step to form new policy acc.</description>
+            <content type="html"><![CDATA[<p><a href="https://www.davidsilver.uk/wp-content/uploads/2020/03/control.pdf">Slides</a></p>
+<p><a href="https://www.youtube.com/watch?v=Nd1-UUMVfz4&amp;list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ&amp;index=5">Lecture</a></p>
+<h2 id="introduction">Introduction</h2>
+<p>In the last lecture we did model free prediction now we want to do model free control means we want to find the optimal policy.</p>
+<p>If we go back to Lecture 3 :- Introduction to dynamic programming. In there the path we followed is that first we learnt how to do policy evaluation and find state value function and then take a greedy step to form new policy acc. to state value function.</p>
+<p>We can follow the same steps here too.</p>
+<h2 id="policy-iteration-using-monte-carlo">Policy Iteration using Monte-Carlo</h2>
+<h3 id="problem-1-">Problem 1:-</h3>
+<p>In Policy Improvement step :- we are using greedy policy improvement i.e.</p>
+<p>$$  \pi[s] = argmax_a( R^a_s + P^a_{ss'}*v[s'] ) $$</p>
+<p>But Problem is here we need the state probability distribution aka model.</p>
+<p>So we will use action value function</p>
+<p>$$ \pi[s] = argmax_a( Q[s,a] )  $$</p>
+<h3 id="problem-2-">Problem 2:-</h3>
+<p>If we keep on following greey policy, it is highly unlikely that we would over the whole action state space. And thats too bad as if we may explore, we may get a policy giving better value functions.</p>
+<p>So we will use e-greedy policy improvement in which with probability e we will choose randomly any action and otherwise we will go greedy.</p>
+<p><strong>It can be proven that this will converge to optimal policy.</strong></p>
+<p><strong>Policy Evaluation</strong> :- MC on Action Valur</p>
+<p><strong>Policy Iteration</strong>  :- e-greedy</p>
+<p>We can improve the above algorithm by Improving policy afer every episode.</p>
+<h2 id="glie">GLIE</h2>
+<p>Glie property say that</p>
+<ol>
+<li>
+<p>All state action pair must be explored infinitely many times.</p>
+</li>
+<li>
+<p>Eventually policy must converge to optimal policy</p>
+</li>
+</ol>
+<p><strong>we can use e = 1/K where K is the number of episode</strong></p>
+<h2 id="policy-iteration-using-td-with-action-value-or-sarsa">Policy Iteration using TD with action value (or sarsa)</h2>
+<p>$$ Q[s,a] = Q[s,a] + \alpha * ( R + \gamma * Q[S',A'] - Q[s,a]) $$</p>
+<p><strong>Every timestep in a episode update Q[s,a] and then do e-greedy plicy improvement</strong></p>
+<p><strong>There are conditions for the convergence of sarsa, But lets not care about them now</strong></p>
+<h2 id="n-step-sarsa">n-step sarsa</h2>
+<p>As we have n-step TD, in the same fastion we have n-step sarsa.</p>
+<p>$$ q_t^{\lambda} = (1-\lambda) * \sum_{n=1}^{n=inf} (\lambda)^{n-1} * q_t^n  $$</p>
+<p>$$ Q[s,a] = Q[s,a] + \alpha * ( q_t^{\lambda} - Q[s,a]) $$</p>
+<h2 id="backward-view-of-n-step-sarsa">Backward View of n-step sarsa</h2>
+<p>The idea/intuition is similar to TD, But in sarsa we gonna work with action value function instead of state value function.</p>
+<p>$$ \delta_t = R_t + \lamda * Q[S_{t+1},A_{t+1}] - Q[S_{t},A_{t}] $$</p>
+<p><strong>for every state action pair (s,a)</strong></p>
+<p>$$ E_t[s,a] = \lambda * \gamma * E[s,a] + 1(S_t==s and A_t==a) $$</p>
+<p>$$ Q[s,a] = Q[s,a] + \alpha * \delta_t * E_t[s,a] $$</p>
+<p><strong>$ \lambda $ decides how much back do we want our information to flow</strong></p>
+<p>Whatever we have seen so far in this lecture in on policy learning means we are learning and improving from the same policy</p>
+<h2 id="off-policy-learning">Off-policy Learning</h2>
+<p>In here, we have a target policy, $\pi$, that we want to improve and a behaviour policy, $ \mu $, from which we want to choose our actions.</p>
+<h3 id="method-1---important-sampling">Method 1 :- Important Sampling</h3>
+<p>But this is neither good in MC nor in TD as it has high variance.</p>
+<h3 id="method-2---q-learning">Method 2 :- Q Learning</h3>
+<ol>
+<li>
+<p>Next action is chosen using behaviour policy $ A_{t+1} ∼ \mu(·|S_t) $</p>
+</li>
+<li>
+<p>But we consider alternative successor action A' according to our policy that we want to learn, $\pi$.</p>
+</li>
+</ol>
+<p>Basically idea is to behave acc. to behaviour policy but update acc. to actual policy.</p>
+<p>$$ Q[S_t,A_t] = Q[S_t,A_t] + \alpha * ( R_{t+1} + \lambda * Q[S_{t+1},A'] - Q[S_t,A_t]) $$</p>
+<h2 id="off-policy-control-using-q-sampling">Off policy control using Q sampling</h2>
+<ol>
+<li>
+<p>Our target policy, $\pi$, is greedy wrt Q.</p>
+</li>
+<li>
+<p>Our behaviour policy, $\mu$, is e-greedy wrt Q.</p>
+</li>
+<li>
+<p>This will improve both target and behaviour policy.</p>
+</li>
+</ol>
+<p>$$ Q[S_t,A_t] = Q[S_t,A_t] + \alpha * ( R_{t+1} + \lambda * max_{A'}Q[S_{t+1},A'] - Q[S_t,A_t]) $$</p>
+<p><strong>Again it can be proven that this will converge to optimal policy</strong></p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Model Free Prediction</title>
+            <link>https://umangja.github.io/posts/2021/01/model-free-prediction/</link>
+            <pubDate>Fri, 22 Jan 2021 22:31:33 +0530</pubDate>
+            
+            <guid>https://umangja.github.io/posts/2021/01/model-free-prediction/</guid>
+            <description>Slides
+Lecture
+Introduction In previous Lectures we dealt with MDPs means environment is fully observable means we know the model.
+Means we know about transition probabilities and rewards.
+But now we don&amp;rsquo;t know the model and we don&amp;rsquo;t know about transition probabilities and rewards.
+In this lecture we are doing prediction means given a polcy we need to find value function for that policy.
+Monte Carlo Learning (MC) Idea is to find learn from complete episodes and find mean g_t for any state will be equal to it&amp;rsquo;s value function.</description>
+            <content type="html"><![CDATA[<p><a href="https://www.davidsilver.uk/wp-content/uploads/2020/03/MC-TD.pdf">Slides</a></p>
+<p><a href="https://www.youtube.com/watch?v=Nd1-UUMVfz4&amp;list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ&amp;index=4">Lecture</a></p>
+<h2 id="introduction">Introduction</h2>
+<p>In previous Lectures we dealt with MDPs means environment is fully observable means we know the model.</p>
+<p>Means we know about transition probabilities and rewards.</p>
+<p>But now we don&rsquo;t know the model and we don&rsquo;t know about  transition probabilities and rewards.</p>
+<p>In this lecture we are doing prediction means given a polcy we need to find value function for that policy.</p>
+<h2 id="monte-carlo-learning-mc">Monte Carlo Learning (MC)</h2>
+<p>Idea is to find learn from complete episodes and find mean g_t for any state will be equal to it&rsquo;s value function.</p>
+<p>MC requires to go through episodes and thus MDP should be terminating.</p>
+<p>Remember</p>
+<p>$ V_{\pi}[s] = E[ G_t | S_t=s] $</p>
+<h3 id="first-visit-mc">First Visit MC</h3>
+<p>For evaluating state s</p>
+<p>Let t be  the first time we visit state s in any episode.</p>
+<p>we will find $ g_t $ and find it&rsquo;s mean over all episodes.</p>
+<p>According to Law of large numbers means ~ Expectation value if we have seen very large number of examples.</p>
+<h3 id="every-visit-mc">Every-Visit MC</h3>
+<p>For evaluating state s</p>
+<p>In any episode, every time we visit state s we find corresponding $ g_t $ and take mean over all these $ g_t $</p>
+<h2 id="increamental-mc">Increamental MC</h2>
+<p>As we can find mean in an incremental fastion. So we can use this fact in above MCs</p>
+<p>$ \mu_{k} = \mu_{k-1} + (1/N) * (x_k - \mu_{k-1}) $</p>
+<p>But instead of using increamenting N in above equation we can use a constant, $ \alpha $ .</p>
+<p>Intuition is that we don&rsquo;t need to know what happened way back in the past so its better to forget about that. Using a constant makes us do so.</p>
+<p><strong>In MC, we are updating out value only after completing the whole episode. Ans this won&rsquo;t work in non terminating MDPs.</strong></p>
+<h2 id="temporal-difference-td">Temporal Difference (TD)</h2>
+<p>In TD, we don&rsquo;t wait for the episode to end. we Bootstrap and keeping improving our guess.</p>
+<p>First we make a guess for current state (s) and we move a timestamp and move to succession state (s') and get a reward in the process. Now we want to update our guess for s using our current guess for s' and peice of actual reality that we experienced , reward,.</p>
+<p>$ V[s] &lt;&ndash; V[s] + \alpha * ( R_t + \gamma * V[s'] - V[s] ) $</p>
+<p>$ \delta (t) = R_t + \gamma * V[S_{t+1}] - V[S_t]  $</p>
+<p><strong>$ \alpha $  is kind of learning rate if we may</strong></p>
+<h2 id="bias-vs-variance">Bias Vs Variance</h2>
+<p>In the case of RL, variance now refers to a noisy, but on average accurate value estimate, whereas bias refers to a stable, but inaccurate value estimate. To make this more concrete, imagine a game of darts. A high-bias player is one who always hits close to the target, but is always consistently off in some direction. A high-variance player, on the other hand, is one who sometimes hits the target, and is sometimes off, but on average near the target.</p>
+<h2 id="mc-vs-td">MC vs TD</h2>
+<ol>
+<li>
+<p>MC is offline, means we need to wait for the end of the episode to update. Which is not a great idea as we may encounter something in between that could have lead to negative reward but in this case it did not. Now in MC we don&rsquo;t account for the danger in between.</p>
+</li>
+<li>
+<p>TD is online means</p>
+</li>
+</ol>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; a) TD can learn from incomplete episodes, not MC. </p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; b) TD can learn from non terminating episodes, not MC. </p>
+<ol start="3">
+<li>
+<p>MC has lot of noise hence has high variance but low bias.
+But TD has low variance but high bias</p>
+</li>
+<li>
+<p>MC always converges to optimal value even with function approximation.</p>
+</li>
+<li>
+<p>TD also converges to optimal value but may not with function approximation.</p>
+</li>
+<li>
+<p>MC is less dependent on initial values than TD</p>
+</li>
+<li>
+<p><strong>MC converges to solution with minimum RMS means with best fit to observed rewards. Also means that it does not exploit/take use of markov property</strong></p>
+</li>
+<li>
+<p><strong>TD converges to solution with most possible markov model based on observations in episodes. Also means that it does exploit/take use of markov property</strong></p>
+</li>
+</ol>
+<h2 id="td--lambda--">TD( $ \lambda $ )</h2>
+<p>Lets first look at n step TD.
+In this instead of improving our guess after taking one step we improve after taking n steps</p>
+<p>$$ g_t^n = R_{t} + \gamma * R_{t+1} + \gamma^2 * R_{t+1} + \gamma^{n-1} * R_{t+n-1} + \gamma^{n} * V[s_{t+n}]  $$</p>
+<p>$$ V[s] = V[s] + \alpha * (g_t^n - V[s]) $$</p>
+<p>Now, different n leads to to different setting of $ \alpha $ and error and stuff.</p>
+<p>We need a way to take best of all n or consider all n at once.</p>
+<p>Hence, we can average $ g_t^n $ over all n</p>
+<h2 id="forward-view-of--td--lambda--">Forward view of  TD( $ \lambda $ )</h2>
+<p>Here, we take a GP average of all $ g_t^n $</p>
+<p>$$ g_t^{\lambda} = (1-\lambda) * \sum_{n=1}^{n=\inf} \lambda ^{n-1} * g_t^n $$</p>
+<p>$$ V[s] = V[s] + \alpha * (g_t^{\lambda} - V[s]) $$</p>
+<p>Now it is also forward looking that means we need to wait till the end of episode to update V[s].</p>
+<h2 id="backward-view-of--td--lambda--">Backward view of  TD( $ \lambda $ )</h2>
+<p>Eligibility Criteria, $ E_t[s] $ includes :-</p>
+<ol>
+<li>
+<p><strong>Frequency Heuristic</strong></p>
+</li>
+<li>
+<p><strong>Recency Heuristic</strong></p>
+</li>
+</ol>
+<p>$$ E^t[s] = \lambda * \gamma * E^{t-1}[s] + 1(S[t] == s) $$</p>
+<p>$$ \delta_t = R_t + \gamma * V[S_{t+1} - V[S_t] $$</p>
+<p>$$ V[s] = V[s] + \alpha * \delta_t * E_t[s] $$</p>
+<p>** V[s] is to be updateed FOR EVERY STATE NOT JUST FOR S[t] **</p>
+<p><strong>$ \lambda $ is decay rate i.e. how far do we want our information to flow</strong></p>
+<p><strong>It can be proven that backward view and farward view are actually completely same</strong></p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Introdution to Dynamic Programming</title>
+            <link>https://umangja.github.io/posts/2021/01/introdution-to-dynamic-programming/</link>
+            <pubDate>Fri, 22 Jan 2021 17:01:37 +0530</pubDate>
+            
+            <guid>https://umangja.github.io/posts/2021/01/introdution-to-dynamic-programming/</guid>
+            <description>Slides
+Lecture
+Introduction In this lecture, We are working with Planing means someone gives us how the environment works i.e. someone tells us rewards function and State probability transition
+And we have MDPs means environment is fully observable.
+Policy Evaluation Now, we are given a policy $ \pi $ and our MDP = &amp;lt; S,A,P,R, $ \gamma $ &amp;gt;
+and we need to find the value function for that policy</description>
+            <content type="html"><![CDATA[<p><a href="https://www.davidsilver.uk/wp-content/uploads/2020/03/DP.pdf">Slides</a></p>
+<p><a href="https://www.youtube.com/watch?v=Nd1-UUMVfz4&amp;list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ&amp;index=3">Lecture</a></p>
+<h2 id="introduction">Introduction</h2>
+<p>In this lecture, We are working with Planing means someone gives us how the environment works i.e. someone tells us <strong>rewards function</strong> and <strong>State probability transition</strong></p>
+<p>And we have MDPs means environment is fully observable.</p>
+<h2 id="policy-evaluation">Policy Evaluation</h2>
+<p>Now, we are given a policy $ \pi $ and our MDP  = &lt; S,A,P,R, $ \gamma $ &gt;</p>
+<p>and we need to find the value function for that policy</p>
+<p>Now Acc. to Bellman expectation equation</p>
+<p>$  v_{\pi}[s] = \sum \pi[a|s] * q_{\pi}[s,  a] $</p>
+<p>$  q_{\pi}[s,  a] = R_s^a + \sum P^a_{s s^{'}} * v_{\pi}[s^{'}] $</p>
+<p>$  v_{\pi}[s] = \sum \pi[a|s] * ( R_s^a + \sum P^a_{s s^{'}} * v_{\pi}[s^{'}]) $</p>
+<h3 id="method---1">Method - 1</h3>
+<p>we can find average reward function over our current policy, $ \pi $ , and average state transition probability over $ \pi $  then,</p>
+<p>$ v_{\pi}[s] = R^{\pi}_s + \sum P^{\pi}_{ss^{'}} * v_{\pi}[s^{'}] $</p>
+<p>Now, we can write the above equation in matrix form and then find value function, V, by using inversion of matrix.</p>
+<h3 id="method---2---iterative-policy-evaluation">Method - 2 :- Iterative Policy Evaluation</h3>
+<p>Here, we start with a random value function and improve it over many iteration by iteratively applying Bellman expectation equation.</p>
+<p>$  v_{\pi}[s] = \sum \pi[a|s] * ( R_s^a + \sum P^a_{s s^{'}} * v_{\pi}[s^{'}]) $</p>
+<h2 id="policy-improvement">Policy Improvement</h2>
+<p>Here, we are given a policy and we need to improve it or from given policy we need to find optimal policy and corresponding value function.</p>
+<p>We evaluate the current policy, $ \pi $, and find state value function using Iterativer policy evaluation and then greedily update our policy.</p>
+<ol>
+<li>
+<p>$ \pi^{'} = greedy(v_{\pi}) $</p>
+</li>
+<li>
+<p>This process always converges to $ \pi_{*} $</p>
+</li>
+</ol>
+<p>by greedy we mean that we will choose action/state which will lead to maximum value function (action or state)</p>
+<p>Let $ \pi $ be a <strong>deterministic</strong> policy</p>
+<p>$ \pi^{'}[s] = max_{a} q_{\pi}[a|s] $</p>
+<p>We can prove this will always be $ \pi^{'}[s] $ will always be better than $ \pi $</p>
+<p>and</p>
+<p>After several interation we will converge on $ \pi^{*} $</p>
+<p>** we may also stop after some K iterative of policy improvement steps knows as k - convergence of value function  **</p>
+<h2 id="principle-of-optimality">Principle of optimality</h2>
+<p>It&rsquo;s means that an optimal policy is one that</p>
+<ol>
+<li>
+<p>first take optimal action</p>
+</li>
+<li>
+<p>and then follow optimal policy from successive state</p>
+</li>
+</ol>
+<p>A policy π(a|s) achieves the optimal value from state s,
+$ v_π(s) = v^∗(s) $,  if and only if
+For any state s' reachable from s π achieves the optimal value from state s'
+i.e.   $ v_π(s') = v∗(s') $</p>
+<h2 id="value-interation">Value Interation</h2>
+<p>Idea is we know the value funciton forany state then we can use <strong>Bellman optimality equation</strong> to get optimal value funtion to its preceding state.</p>
+<p>Intition is to start from final/terminating state and work backwords.</p>
+<p>$ V_*[s] = max_a(R_s^a + \sum P^a_{ss'} * V[s'] ) $</p>
+<p>It can also be proven that it will also convege to optimal policy</p>
+<p><strong>Notice that here intermediate value function do not have any meaning means there may not exist a policy that will give a particular intermediate value function</strong></p>
+<h2 id="asynchronous-dp">Asynchronous DP</h2>
+<p>In Synchronous Dp we update all state value function at once, But in asynchronous DP we update individual states value function.</p>
+<p>Helps to reduce commutation speed.</p>
+<p><strong>Will still lead to convergence if all states are choosen</strong></p>
+<h3 id="in-place-dp">In-place DP</h3>
+<p>Just keep updating on the go.</p>
+<h3 id="priority-based-dp">Priority based DP</h3>
+<p>Select state to update based on it&rsquo;s priority.</p>
+<p>Priority can be defined as the Bellman error.</p>
+<p>$ error/priority = abs( max_a(R_s^a + \sum P^a_{ss'} * V[s'] ) -v[s]) $</p>
+<h3 id="real-time-dp">Real Time DP</h3>
+<p>Get a real agent in the environment and update each state once it is visited.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Markov Decision Process</title>
+            <link>https://umangja.github.io/posts/2021/01/markov-decision-process/</link>
+            <pubDate>Fri, 22 Jan 2021 00:46:24 +0530</pubDate>
+            
+            <guid>https://umangja.github.io/posts/2021/01/markov-decision-process/</guid>
+            <description>Slides
+Lecture
+What is Markov Decision Process(MDP) MDP is a process where the environment is fully observable. i.e. current state fully characterizes the future process/outcomes
+POMDP can be converted to MDP
+$$ P[S_{t+1}|S_t] = P[S_{t+1}|S_t,S_{t-1},S_{t-2}..] $$
+What is a Markov Process (MP) Markov process/Markov chain is a sequence of states with markov properties
+MP = &amp;lt; S,P &amp;gt;
+S = set of states
+P_{ss^{&#39;}} = probability of transition from state s to s^{&#39;}.</description>
+            <content type="html"><![CDATA[<p><a href="https://www.davidsilver.uk/wp-content/uploads/2020/03/MDP.pdf">Slides</a></p>
+<p><a href="https://www.youtube.com/watch?v=lfHX2hHRMVQ&amp;list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ&amp;index=2">Lecture</a></p>
+<h2 id="what-is-markov-decision-processmdp">What is Markov Decision Process(MDP)</h2>
+<p>MDP is a process where the environment is fully observable.
+i.e. current state fully characterizes the future process/outcomes</p>
+<p>POMDP can be converted to MDP</p>
+<p>$$ P[S_{t+1}|S_t] = P[S_{t+1}|S_t,S_{t-1},S_{t-2}..] $$</p>
+<h2 id="what-is-a-markov-process-mp">What is a Markov Process (MP)</h2>
+<p>Markov process/Markov chain is a sequence of states with markov properties</p>
+<p>MP = &lt; S,P &gt;</p>
+<p>S = set of states</p>
+<p>P_{ss^{'}} = probability of transition from state s to s^{'}.</p>
+<p><strong>It&rsquo;s a DFA</strong></p>
+<h2 id="what-is-a-markov-reward-processmrp">What is a Markov Reward Process(MRP)</h2>
+<p>MRP is a MP where there is a reward assosiated with every state. This is the immediate reward we get from this state.</p>
+<p>MRP = &lt; S,P,R,$ \gamma $ &gt;</p>
+<p>S = set of states</p>
+<p>P_{ss^{'}} = probability of transition from state s to s^{'}.</p>
+<p>R = Reward function</p>
+<p>$ \gamma $ is discount factor</p>
+<h2 id="whats-our-goal-in-mrp">What&rsquo;s our goal in MRP</h2>
+<p>$$ G_t = E[R_t + \gamma * R_{t+1} + {\gamma}^2 * R_{t+2} + &hellip; + ]    $$</p>
+<p>As we want to maximize the cummulative reward so G_t is to be maximized.</p>
+<p>$ \gamma $ is used to</p>
+<ol>
+<li>
+<p>Math becomes easy</p>
+</li>
+<li>
+<p>Able to take care of non terminating and MRP with loops</p>
+</li>
+<li>
+<p>we are not 100% certain that our model is corrcect</p>
+</li>
+</ol>
+<h2 id="value-function">value function</h2>
+<p>$$ V[s] = E[ G_t | S_t = s ] $$</p>
+<p>It&rsquo;s tells us how much good our current state is ?</p>
+<p>That if I drop you in this state what&rsquo;s the rewards that you can get from here onwards.</p>
+<h2 id="bellman-equation-for-mrp">BELLMAN EQUATION for MRP</h2>
+<p>$$ V[s] = E[ R_s + \gamma * V[s^{'}] | S_t = s] $$</p>
+<p>$$ V[s] = R_s + \gamma * \sum  P_{s s^{'}}V[s^{'}]  $$</p>
+<h2 id="whatss-a-mdp">Whats&rsquo;s a MDP</h2>
+<p>MDP is a MRP with decision/actions.</p>
+<p>MDP = &lt; S,P,R,$ \gamma $ , A &gt;</p>
+<p>S = set of states</p>
+<p>A = set of actions</p>
+<p>$ P_{ss^{'}}^a $ = probability of transition from state s to $ s^{'} $ if action a is taken</p>
+<p>$ R_s^a $ = Reward we will get if we take action a from state s</p>
+<p>$ \gamma $ is discount factor</p>
+<h2 id="policy">Policy</h2>
+<p>we can have deterministic policy or stochastic policy.</p>
+<p>Its tells the the probability to take action a from state s</p>
+<p>$ \pi (a|s) = P[A_t = a | S_t = s] $</p>
+<h2 id="state-value-function">state value function</h2>
+<p>It tells us how good is a particular state is ?</p>
+<p>$ V_{\pi}[s] = E_{\pi}[ G_t | S_t = s]  $</p>
+<h2 id="action-value-function">action value function</h2>
+<p>It tells us how good is a particular action in a particular state is ?</p>
+<p>$ q_{\pi}[s,a] = E_{\pi}[ G_t | S_t = s, A_t = a]  $</p>
+<h2 id="bellman-expectation-equation">BELLMAN EXPECTATION EQUATION</h2>
+<p>$  v_{\pi}[s] = \sum \pi[a|s] * q_{\pi}[s,  a] $</p>
+<p>$  q_{\pi}[s,  a] = R_s^a + \sum P^a_{s s^{'}} * v_{\pi}[s^{'}] $</p>
+<p>$  v_{\pi}[s] = \sum \pi[a|s] * ( R_s^a + \sum P^a_{s s^{'}} * v_{\pi}[s^{'}]) $</p>
+<h2 id="optimal-policy">Optimal Policy</h2>
+<p>$ {pi}<em>{*} $ is  optimal if  $ {pi}</em>{*}[s] &gt;= {pi}[s] $ for all s</p>
+<p>There is always a optimal policy</p>
+<p>Optimal policy leads to optimal value and state function.</p>
+<h2 id="bellman-optimality-equations">BELLMAN OPTIMALITY EQUATIONS</h2>
+<p>$  v_{\pi}[s] = \max(q_{\pi}[s,  a]) $</p>
+<p>$  q_{\pi}[s,  a] = R_s^a + \sum P^a_{s s^{'}} * v_{\pi}[s^{'}] $</p>
+<p>$  v_{\pi}[s] = \max( R_s^a + \sum P^a_{s s^{'}} * v_{\pi}[s^{'}]) $</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Introduction to Reinforcement Learning</title>
+            <link>https://umangja.github.io/posts/2021/01/introduction-to-reinforcement-learning/</link>
+            <pubDate>Thu, 21 Jan 2021 18:52:57 +0530</pubDate>
+            
+            <guid>https://umangja.github.io/posts/2021/01/introduction-to-reinforcement-learning/</guid>
+            <description>LINKS Slides Video Lecture Link Short Explanations Rewards It is the central quantity that tells us how good are we doing at time t. Our job is to maximize this reward at the end of the episode.
+It is beleived that all goals that be achieved by maximizing cumulative total reward.
+History $ H_t = O_1R_1A_1O_2R_2A_2&amp;hellip;.O_tR_tA_t $
+State state is a summary of history.
+$ S_t = F(H_t) $
+Agent State Agent state is the information agent uses to predict next action.</description>
+            <content type="html"><![CDATA[<h2 id="links">LINKS</h2>
+<h3 id="slideshttpswwwdavidsilverukwp-contentuploads202003intro_rlpdf"><a href="https://www.davidsilver.uk/wp-content/uploads/2020/03/intro_RL.pdf">Slides</a></h3>
+<h3 id="video-lecture-linkhttpswwwyoutubecomwatchv2pwv7govuf0listplqymg7htrazdm-oyhwgpebj2mfcfzfobqindex1"><a href="https://www.youtube.com/watch?v=2pWv7GOvuf0&amp;list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ&amp;index=1">Video Lecture Link</a></h3>
+<h2 id="short-explanations">Short Explanations</h2>
+<h3 id="rewards">Rewards</h3>
+<p>It is the central quantity that tells us how good are we doing at time t. Our job is to maximize this reward at the end of the episode.</p>
+<p>It is beleived that all goals that be achieved by maximizing cumulative total reward.</p>
+<h3 id="history">History</h3>
+<p>$ H_t = O_1R_1A_1O_2R_2A_2&hellip;.O_tR_tA_t $</p>
+<h3 id="state">State</h3>
+<p>state is a summary of history.</p>
+<p>$ S_t = F(H_t) $</p>
+<h4 id="agent-state">Agent State</h4>
+<p>Agent state is the information agent uses to predict next action.</p>
+<h4 id="environment-state">Environment State</h4>
+<p>Environment state is the information environment uses to give rewards and observation.</p>
+<h4 id="markov-state-aka-information-state">Markov State aka Information State</h4>
+<p>If we have a markov state that means future is independent of past given the future.</p>
+<p>$$ P[S_{t+1}|S_t] = P[S_{t+1}|S_t,S_{t-1},S_{t-2},S_{t-3}] $$</p>
+<p>By defination :-</p>
+<p>$H_t$ is always Markov State.</p>
+<p>Environment State is always Markov State.</p>
+<p>So for a manuvering helicopter, <strong>only position</strong> is not a markov as it is not sufficient to get future position but <strong>position + velocity + wind speed +direction</strong> is markov.</p>
+<h3 id="fully-observable-environment-aka-mdp">Fully Observable Environment aka MDP</h3>
+<p>Where environment is fully observable means we know environment state.</p>
+<p>It&rsquo;s a MDP because environment state is markov by defination</p>
+<h3 id="policy">Policy</h3>
+<p>A policy is a maping from state to action</p>
+<p>$$ \pi[S_t] = A_t $$</p>
+<p>$$ \pi[a_t|s_t] = P[A_t=a_t|S_t=s_t] $$</p>
+<p><strong>Notice that for every state there is only one action every time. Because of the defination of state</strong></p>
+<h3 id="value-function">Value Function</h3>
+<p>It tells how good a particular state is ?</p>
+<p>As how good a state is also depends on the actions till now so value function also depends on policy</p>
+<p>$$ v_{\pi}[s] = E_{\pi}[ R_{t} + y*R_{t+1} + y^2*R_{t+2} + &hellip; +  | S_t = s ] $$</p>
+<h3 id="model">Model</h3>
+<p>It&rsquo;s the prediction of how the environment behave.</p>
+<p>$$ p^a_{s^{'}s} = P( S_{t+1} = s^{'} | A_t = a , S_t = s ) $$</p>
+<p>$$ p^a_{s^{'}s} = E( R_{t+1} | A_t = a , S_t = s ) $$</p>
+<h2 id="learning-vs-planing">Learning vs Planing</h2>
+<p><strong>Learning</strong> :- We interact with environment and inprove our policy</p>
+<p><strong>Planing</strong>  :- We know the environment, performs computation with environment without interacting with the actual environment</p>
+<h2 id="exploration-vs-exploitation">Exploration vs Exploitation</h2>
+<h2 id="prediction-vs-control">Prediction vs control</h2>
+]]></content>
+        </item>
+        
+    </channel>
+</rss>
