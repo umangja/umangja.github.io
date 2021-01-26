@@ -34,6 +34,8 @@ If we go back to Lecture 3 :- Introduction to dynamic programming. In there the 
 <p>$$ \pi[s] = argmax_a( Q[s,a] )  $$</p>
 <h3 id="problem-2-">Problem 2:-</h3>
 <p>If we keep on following greey policy, it is highly unlikely that we would over the whole action state space. And thats too bad as if we may explore, we may get a policy giving better value functions.</p>
+<p><strong>EXPLORING STARTS</strong>
+one way to solve this is to start from every state infinitely many times. This guarantees that all the states will be visited but It is not usually a good idea specially when learning from actual experience because it&rsquo;s unrealistic to assume that we can start from any state. Often it is the case that we can start only from a small subset of states</p>
 <p>So we will use e-greedy policy improvement in which with probability e we will choose randomly any action and otherwise we will go greedy.</p>
 <p><strong>It can be proven that this will converge to optimal policy.</strong></p>
 <p><strong>Policy Evaluation</strong> :- MC on Action Valur</p>
@@ -95,6 +97,18 @@ If we go back to Lecture 3 :- Introduction to dynamic programming. In there the 
 </ol>
 <p>$$ Q[S_t,A_t] = Q[S_t,A_t] + \alpha * ( R_{t+1} + \lambda * max_{A'}Q[S_{t+1},A'] - Q[S_t,A_t]) $$</p>
 <p><strong>Again it can be proven that this will converge to optimal policy</strong></p>
+<h2 id="q-learning-vs-sarsa">Q-Learning vs SARSA</h2>
+<ol>
+<li>
+<p>Q-Learning is directly learning optimal policy while sarsa leads to a near optimal policy If we want to get optimal policy using sarsa, we need to decrease $ \epsilon $ continously, meaning $ Lim_{t-&gt;inf} \epsilon = 0 $.</p>
+</li>
+<li>
+<p>Sarsa is more conservative than Q-Learning means Q-Learning will lead to a optimal but dangerous policy as opposed to sarsa which will lead to a near optimal but conservative policy.</p>
+</li>
+<li>
+<p>Q-Learning has hgher variance as compared to sarsa.</p>
+</li>
+</ol>
 ]]></content>
         </item>
         
@@ -240,6 +254,25 @@ and we need to find the value function for that policy</description>
 <h3 id="method---2---iterative-policy-evaluation">Method - 2 :- Iterative Policy Evaluation</h3>
 <p>Here, we start with a random value function and improve it over many iteration by iteratively applying Bellman expectation equation.</p>
 <p>$  v_{\pi}[s] = \sum \pi[a|s] * ( R_s^a + \sum P^a_{s s^{'}} * v_{\pi}[s^{'}]) $</p>
+<h2 id="principle-of-optimality">Principle of optimality</h2>
+<p>It&rsquo;s means that an optimal policy is one that</p>
+<ol>
+<li>
+<p>first take optimal action</p>
+</li>
+<li>
+<p>and then follow optimal policy from successive state</p>
+</li>
+</ol>
+<p>A policy π(a|s) achieves the optimal value from state s,
+$ v_π(s) = v^∗(s) $,  if and only if
+For any state s' reachable from s π achieves the optimal value from state s'
+i.e.   $ v_π(s') = v∗(s') $</p>
+<h2 id="policy-improvement-theorem">Policy Improvement Theorem</h2>
+<p>Let $\pi$ and $ \pi^{'} $ be two deterministic policy such that</p>
+<p>$$  q_{\pi}(s,\pi^{'}[s]) &gt;= v_{\pi}[s] $$</p>
+<p>Then the policy π' must be as good as, or better than, π. i.e.</p>
+<p>$ v_{\pi^{'}}[s] &gt;= v_{\pi} $ for all state s</p>
 <h2 id="policy-improvement">Policy Improvement</h2>
 <p>Here, we are given a policy and we need to improve it or from given policy we need to find optimal policy and corresponding value function.</p>
 <p>We evaluate the current policy, $ \pi $, and find state value function using Iterativer policy evaluation and then greedily update our policy.</p>
@@ -258,20 +291,6 @@ and we need to find the value function for that policy</description>
 <p>and</p>
 <p>After several interation we will converge on $ \pi^{*} $</p>
 <p>** we may also stop after some K iterative of policy improvement steps knows as k - convergence of value function  **</p>
-<h2 id="principle-of-optimality">Principle of optimality</h2>
-<p>It&rsquo;s means that an optimal policy is one that</p>
-<ol>
-<li>
-<p>first take optimal action</p>
-</li>
-<li>
-<p>and then follow optimal policy from successive state</p>
-</li>
-</ol>
-<p>A policy π(a|s) achieves the optimal value from state s,
-$ v_π(s) = v^∗(s) $,  if and only if
-For any state s' reachable from s π achieves the optimal value from state s'
-i.e.   $ v_π(s') = v∗(s') $</p>
 <h2 id="value-interation">Value Interation</h2>
 <p>Idea is we know the value funciton forany state then we can use <strong>Bellman optimality equation</strong> to get optimal value funtion to its preceding state.</p>
 <p>Intition is to start from final/terminating state and work backwords.</p>

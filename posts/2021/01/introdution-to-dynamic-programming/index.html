@@ -55,7 +55,7 @@ Policy Evaluation Now, we are given a policy $ \pi $ and our MDP = &lt; S,A,P,R,
 and we need to find the value function for that policy">
 <meta itemprop="datePublished" content="2021-01-22T17:01:37+05:30" />
 <meta itemprop="dateModified" content="2021-01-22T17:01:37+05:30" />
-<meta itemprop="wordCount" content="607">
+<meta itemprop="wordCount" content="650">
 <meta itemprop="image" content="https://umangja.github.io"/>
 
 
@@ -107,6 +107,12 @@ and we need to find the value function for that policy" />
     </head>
 
     <body class="dark-theme">
+
+
+<script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101298385);</script>
+<script async src="//static.getclicky.com/js"></script>
+
+
         <div class="container">
             <header class="header">
     <span class="header__inner">
@@ -183,7 +189,7 @@ and we need to find the value function for that policy" />
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        3 minutes
+        4 minutes
 
         
       </p>
@@ -216,6 +222,25 @@ and we need to find the value function for that policy" />
 <h3 id="method---2---iterative-policy-evaluation">Method - 2 :- Iterative Policy Evaluation</h3>
 <p>Here, we start with a random value function and improve it over many iteration by iteratively applying Bellman expectation equation.</p>
 <p>$  v_{\pi}[s] = \sum \pi[a|s] * ( R_s^a + \sum P^a_{s s^{'}} * v_{\pi}[s^{'}]) $</p>
+<h2 id="principle-of-optimality">Principle of optimality</h2>
+<p>It&rsquo;s means that an optimal policy is one that</p>
+<ol>
+<li>
+<p>first take optimal action</p>
+</li>
+<li>
+<p>and then follow optimal policy from successive state</p>
+</li>
+</ol>
+<p>A policy π(a|s) achieves the optimal value from state s,
+$ v_π(s) = v^∗(s) $,  if and only if
+For any state s' reachable from s π achieves the optimal value from state s'
+i.e.   $ v_π(s') = v∗(s') $</p>
+<h2 id="policy-improvement-theorem">Policy Improvement Theorem</h2>
+<p>Let $\pi$ and $ \pi^{'} $ be two deterministic policy such that</p>
+<p>$$  q_{\pi}(s,\pi^{'}[s]) &gt;= v_{\pi}[s] $$</p>
+<p>Then the policy π' must be as good as, or better than, π. i.e.</p>
+<p>$ v_{\pi^{'}}[s] &gt;= v_{\pi} $ for all state s</p>
 <h2 id="policy-improvement">Policy Improvement</h2>
 <p>Here, we are given a policy and we need to improve it or from given policy we need to find optimal policy and corresponding value function.</p>
 <p>We evaluate the current policy, $ \pi $, and find state value function using Iterativer policy evaluation and then greedily update our policy.</p>
@@ -234,20 +259,6 @@ and we need to find the value function for that policy" />
 <p>and</p>
 <p>After several interation we will converge on $ \pi^{*} $</p>
 <p>** we may also stop after some K iterative of policy improvement steps knows as k - convergence of value function  **</p>
-<h2 id="principle-of-optimality">Principle of optimality</h2>
-<p>It&rsquo;s means that an optimal policy is one that</p>
-<ol>
-<li>
-<p>first take optimal action</p>
-</li>
-<li>
-<p>and then follow optimal policy from successive state</p>
-</li>
-</ol>
-<p>A policy π(a|s) achieves the optimal value from state s,
-$ v_π(s) = v^∗(s) $,  if and only if
-For any state s' reachable from s π achieves the optimal value from state s'
-i.e.   $ v_π(s') = v∗(s') $</p>
 <h2 id="value-interation">Value Interation</h2>
 <p>Idea is we know the value funciton forany state then we can use <strong>Bellman optimality equation</strong> to get optimal value funtion to its preceding state.</p>
 <p>Intition is to start from final/terminating state and work backwords.</p>
@@ -298,7 +309,7 @@ i.e.   $ v_π(s') = v∗(s') $</p>
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        607 Words
+        650 Words
       </p>
 
       <p>

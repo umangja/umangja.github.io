@@ -51,7 +51,7 @@ Introduction In the last lecture we did model free prediction now we want to do 
 If we go back to Lecture 3 :- Introduction to dynamic programming. In there the path we followed is that first we learnt how to do policy evaluation and find state value function and then take a greedy step to form new policy acc.">
 <meta itemprop="datePublished" content="2021-01-23T11:45:00+05:30" />
 <meta itemprop="dateModified" content="2021-01-23T11:45:00+05:30" />
-<meta itemprop="wordCount" content="637">
+<meta itemprop="wordCount" content="783">
 <meta itemprop="image" content="https://umangja.github.io"/>
 
 
@@ -99,6 +99,12 @@ If we go back to Lecture 3 :- Introduction to dynamic programming. In there the 
     </head>
 
     <body class="dark-theme">
+
+
+<script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101298385);</script>
+<script async src="//static.getclicky.com/js"></script>
+
+
         <div class="container">
             <header class="header">
     <span class="header__inner">
@@ -175,7 +181,7 @@ If we go back to Lecture 3 :- Introduction to dynamic programming. In there the 
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        3 minutes
+        4 minutes
 
         
       </p>
@@ -204,6 +210,8 @@ If we go back to Lecture 3 :- Introduction to dynamic programming. In there the 
 <p>$$ \pi[s] = argmax_a( Q[s,a] )  $$</p>
 <h3 id="problem-2-">Problem 2:-</h3>
 <p>If we keep on following greey policy, it is highly unlikely that we would over the whole action state space. And thats too bad as if we may explore, we may get a policy giving better value functions.</p>
+<p><strong>EXPLORING STARTS</strong>
+one way to solve this is to start from every state infinitely many times. This guarantees that all the states will be visited but It is not usually a good idea specially when learning from actual experience because it&rsquo;s unrealistic to assume that we can start from any state. Often it is the case that we can start only from a small subset of states</p>
 <p>So we will use e-greedy policy improvement in which with probability e we will choose randomly any action and otherwise we will go greedy.</p>
 <p><strong>It can be proven that this will converge to optimal policy.</strong></p>
 <p><strong>Policy Evaluation</strong> :- MC on Action Valur</p>
@@ -265,6 +273,18 @@ If we go back to Lecture 3 :- Introduction to dynamic programming. In there the 
 </ol>
 <p>$$ Q[S_t,A_t] = Q[S_t,A_t] + \alpha * ( R_{t+1} + \lambda * max_{A'}Q[S_{t+1},A'] - Q[S_t,A_t]) $$</p>
 <p><strong>Again it can be proven that this will converge to optimal policy</strong></p>
+<h2 id="q-learning-vs-sarsa">Q-Learning vs SARSA</h2>
+<ol>
+<li>
+<p>Q-Learning is directly learning optimal policy while sarsa leads to a near optimal policy If we want to get optimal policy using sarsa, we need to decrease $ \epsilon $ continously, meaning $ Lim_{t-&gt;inf} \epsilon = 0 $.</p>
+</li>
+<li>
+<p>Sarsa is more conservative than Q-Learning means Q-Learning will lead to a optimal but dangerous policy as opposed to sarsa which will lead to a near optimal but conservative policy.</p>
+</li>
+<li>
+<p>Q-Learning has hgher variance as compared to sarsa.</p>
+</li>
+</ol>
 
       </div>
     </article>
@@ -297,7 +317,7 @@ If we go back to Lecture 3 :- Introduction to dynamic programming. In there the 
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        637 Words
+        783 Words
       </p>
 
       <p>
