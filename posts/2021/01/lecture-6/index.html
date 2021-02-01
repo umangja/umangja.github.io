@@ -5,19 +5,16 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="Umang Jain ">
-<meta name="description" content="Slides
-Lecture
-Introduction In the last lecture we did model free prediction now we want to do model free control means we want to find the optimal policy.
-If we go back to Lecture 3 :- Introduction to dynamic programming. In there the path we followed is that first we learnt how to do policy evaluation and find state value function and then take a greedy step to form new policy acc." />
+<meta name="description" content="" />
 <meta name="keywords" content=", RL" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="#252627" />
-<link rel="canonical" href="https://umangja.github.io/posts/2021/01/model-free-control/" />
+<link rel="canonical" href="https://umangja.github.io/posts/2021/01/lecture-6/" />
 
 
     <title>
         
-            Model Free Control :: UMANG JAIN  — Blogs
+            Lecture 6 :: UMANG JAIN  — Blogs
         
     </title>
 
@@ -44,14 +41,11 @@ If we go back to Lecture 3 :- Introduction to dynamic programming. In there the 
 
 
 
-<meta itemprop="name" content="Model Free Control">
-<meta itemprop="description" content="Slides
-Lecture
-Introduction In the last lecture we did model free prediction now we want to do model free control means we want to find the optimal policy.
-If we go back to Lecture 3 :- Introduction to dynamic programming. In there the path we followed is that first we learnt how to do policy evaluation and find state value function and then take a greedy step to form new policy acc.">
-<meta itemprop="datePublished" content="2021-01-23T11:45:00+05:30" />
-<meta itemprop="dateModified" content="2021-01-23T11:45:00+05:30" />
-<meta itemprop="wordCount" content="783">
+<meta itemprop="name" content="Lecture 6">
+<meta itemprop="description" content="">
+<meta itemprop="datePublished" content="2021-01-27T12:28:25+05:30" />
+<meta itemprop="dateModified" content="2021-01-27T12:28:25+05:30" />
+<meta itemprop="wordCount" content="0">
 <meta itemprop="image" content="https://umangja.github.io"/>
 
 
@@ -61,24 +55,18 @@ If we go back to Lecture 3 :- Introduction to dynamic programming. In there the 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://umangja.github.io"/>
 
-<meta name="twitter:title" content="Model Free Control"/>
-<meta name="twitter:description" content="Slides
-Lecture
-Introduction In the last lecture we did model free prediction now we want to do model free control means we want to find the optimal policy.
-If we go back to Lecture 3 :- Introduction to dynamic programming. In there the path we followed is that first we learnt how to do policy evaluation and find state value function and then take a greedy step to form new policy acc."/>
+<meta name="twitter:title" content="Lecture 6"/>
+<meta name="twitter:description" content=""/>
 
 
 
-    <meta property="og:title" content="Model Free Control" />
-<meta property="og:description" content="Slides
-Lecture
-Introduction In the last lecture we did model free prediction now we want to do model free control means we want to find the optimal policy.
-If we go back to Lecture 3 :- Introduction to dynamic programming. In there the path we followed is that first we learnt how to do policy evaluation and find state value function and then take a greedy step to form new policy acc." />
+    <meta property="og:title" content="Lecture 6" />
+<meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://umangja.github.io/posts/2021/01/model-free-control/" />
+<meta property="og:url" content="https://umangja.github.io/posts/2021/01/lecture-6/" />
 <meta property="og:image" content="https://umangja.github.io"/>
-<meta property="article:published_time" content="2021-01-23T11:45:00+05:30" />
-<meta property="article:modified_time" content="2021-01-23T11:45:00+05:30" />
+<meta property="article:published_time" content="2021-01-27T12:28:25+05:30" />
+<meta property="article:modified_time" content="2021-01-27T12:28:25+05:30" />
 
 
 
@@ -87,7 +75,7 @@ If we go back to Lecture 3 :- Introduction to dynamic programming. In there the 
 
 
 
-    <meta property="article:published_time" content="2021-01-23 11:45:00 &#43;0530 IST" />
+    <meta property="article:published_time" content="2021-01-27 12:28:25 &#43;0530 IST" />
 
 
 
@@ -181,7 +169,7 @@ If we go back to Lecture 3 :- Introduction to dynamic programming. In there the 
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        4 minutes
+        0 minutes
 
         
       </p>
@@ -189,103 +177,13 @@ If we go back to Lecture 3 :- Introduction to dynamic programming. In there the 
 
     <article>
       <h1 class="post-title">
-        <a href="https://umangja.github.io/posts/2021/01/model-free-control/">Model Free Control</a>
+        <a href="https://umangja.github.io/posts/2021/01/lecture-6/">Lecture 6</a>
       </h1>
 
       
 
       <div class="post-content">
-        <p><a href="https://www.davidsilver.uk/wp-content/uploads/2020/03/control.pdf">Slides</a></p>
-<p><a href="https://www.youtube.com/watch?v=Nd1-UUMVfz4&amp;list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ&amp;index=5">Lecture</a></p>
-<h2 id="introduction">Introduction</h2>
-<p>In the last lecture we did model free prediction now we want to do model free control means we want to find the optimal policy.</p>
-<p>If we go back to Lecture 3 :- Introduction to dynamic programming. In there the path we followed is that first we learnt how to do policy evaluation and find state value function and then take a greedy step to form new policy acc. to state value function.</p>
-<p>We can follow the same steps here too.</p>
-<h2 id="policy-iteration-using-monte-carlo">Policy Iteration using Monte-Carlo</h2>
-<h3 id="problem-1-">Problem 1:-</h3>
-<p>In Policy Improvement step :- we are using greedy policy improvement i.e.</p>
-<p>$$  \pi[s] = argmax_a( R^a_s + P^a_{ss'}*v[s'] ) $$</p>
-<p>But Problem is here we need the state probability distribution aka model.</p>
-<p>So we will use action value function</p>
-<p>$$ \pi[s] = argmax_a( Q[s,a] )  $$</p>
-<h3 id="problem-2-">Problem 2:-</h3>
-<p>If we keep on following greey policy, it is highly unlikely that we would over the whole action state space. And thats too bad as if we may explore, we may get a policy giving better value functions.</p>
-<p><strong>EXPLORING STARTS</strong>
-one way to solve this is to start from every state infinitely many times. This guarantees that all the states will be visited but It is not usually a good idea specially when learning from actual experience because it&rsquo;s unrealistic to assume that we can start from any state. Often it is the case that we can start only from a small subset of states</p>
-<p>So we will use e-greedy policy improvement in which with probability e we will choose randomly any action and otherwise we will go greedy.</p>
-<p><strong>It can be proven that this will converge to optimal policy.</strong></p>
-<p><strong>Policy Evaluation</strong> :- MC on Action Valur</p>
-<p><strong>Policy Iteration</strong>  :- e-greedy</p>
-<p>We can improve the above algorithm by Improving policy afer every episode.</p>
-<h2 id="glie">GLIE</h2>
-<p>Glie property say that</p>
-<ol>
-<li>
-<p>All state action pair must be explored infinitely many times.</p>
-</li>
-<li>
-<p>Eventually policy must converge to optimal policy</p>
-</li>
-</ol>
-<p><strong>we can use e = 1/K where K is the number of episode</strong></p>
-<h2 id="policy-iteration-using-td-with-action-value-or-sarsa">Policy Iteration using TD with action value (or sarsa)</h2>
-<p>$$ Q[s,a] = Q[s,a] + \alpha * ( R + \gamma * Q[S',A'] - Q[s,a]) $$</p>
-<p><strong>Every timestep in a episode update Q[s,a] and then do e-greedy plicy improvement</strong></p>
-<p><strong>There are conditions for the convergence of sarsa, But lets not care about them now</strong></p>
-<h2 id="n-step-sarsa">n-step sarsa</h2>
-<p>As we have n-step TD, in the same fastion we have n-step sarsa.</p>
-<p>$$ q_t^{\lambda} = (1-\lambda) * \sum_{n=1}^{n=inf} (\lambda)^{n-1} * q_t^n  $$</p>
-<p>$$ Q[s,a] = Q[s,a] + \alpha * ( q_t^{\lambda} - Q[s,a]) $$</p>
-<h2 id="backward-view-of-n-step-sarsa">Backward View of n-step sarsa</h2>
-<p>The idea/intuition is similar to TD, But in sarsa we gonna work with action value function instead of state value function.</p>
-<p>$$ \delta_t = R_t + \lamda * Q[S_{t+1},A_{t+1}] - Q[S_{t},A_{t}] $$</p>
-<p><strong>for every state action pair (s,a)</strong></p>
-<p>$$ E_t[s,a] = \lambda * \gamma * E[s,a] + 1(S_t==s and A_t==a) $$</p>
-<p>$$ Q[s,a] = Q[s,a] + \alpha * \delta_t * E_t[s,a] $$</p>
-<p><strong>$ \lambda $ decides how much back do we want our information to flow</strong></p>
-<p>Whatever we have seen so far in this lecture in on policy learning means we are learning and improving from the same policy</p>
-<h2 id="off-policy-learning">Off-policy Learning</h2>
-<p>In here, we have a target policy, $\pi$, that we want to improve and a behaviour policy, $ \mu $, from which we want to choose our actions.</p>
-<h3 id="method-1---important-sampling">Method 1 :- Important Sampling</h3>
-<p>But this is neither good in MC nor in TD as it has high variance.</p>
-<h3 id="method-2---q-learning">Method 2 :- Q Learning</h3>
-<ol>
-<li>
-<p>Next action is chosen using behaviour policy $ A_{t+1} ∼ \mu(·|S_t) $</p>
-</li>
-<li>
-<p>But we consider alternative successor action A' according to our policy that we want to learn, $\pi$.</p>
-</li>
-</ol>
-<p>Basically idea is to behave acc. to behaviour policy but update acc. to actual policy.</p>
-<p>$$ Q[S_t,A_t] = Q[S_t,A_t] + \alpha * ( R_{t+1} + \lambda * Q[S_{t+1},A'] - Q[S_t,A_t]) $$</p>
-<h2 id="off-policy-control-using-q-sampling">Off policy control using Q sampling</h2>
-<ol>
-<li>
-<p>Our target policy, $\pi$, is greedy wrt Q.</p>
-</li>
-<li>
-<p>Our behaviour policy, $\mu$, is e-greedy wrt Q.</p>
-</li>
-<li>
-<p>This will improve both target and behaviour policy.</p>
-</li>
-</ol>
-<p>$$ Q[S_t,A_t] = Q[S_t,A_t] + \alpha * ( R_{t+1} + \lambda * max_{A'}Q[S_{t+1},A'] - Q[S_t,A_t]) $$</p>
-<p><strong>Again it can be proven that this will converge to optimal policy</strong></p>
-<h2 id="q-learning-vs-sarsa">Q-Learning vs SARSA</h2>
-<ol>
-<li>
-<p>Q-Learning is directly learning optimal policy while sarsa leads to a near optimal policy If we want to get optimal policy using sarsa, we need to decrease $ \epsilon $ continously, meaning $ Lim_{t-&gt;inf} \epsilon = 0 $.</p>
-</li>
-<li>
-<p>Sarsa is more conservative than Q-Learning means Q-Learning will lead to a optimal but dangerous policy as opposed to sarsa which will lead to a near optimal but conservative policy.</p>
-</li>
-<li>
-<p>Q-Learning has hgher variance as compared to sarsa.</p>
-</li>
-</ol>
-
+        
       </div>
     </article>
 
@@ -317,7 +215,7 @@ one way to solve this is to start from every state infinitely many times. This g
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        783 Words
+        0 Words
       </p>
 
       <p>
@@ -328,7 +226,7 @@ one way to solve this is to start from every state infinitely many times. This g
           <line x1="3" y1="10" x2="21" y2="10"></line>
         </svg>
         
-          2021-01-23 11:45
+          2021-01-27 12:28
         
 
          
@@ -339,7 +237,7 @@ one way to solve this is to start from every state infinitely many times. This g
       <hr />
       <div class="sharing-buttons">
         
-<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f01%2fmodel-free-control%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f01%2flecture-6%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
   <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
     </div>
@@ -351,7 +249,7 @@ one way to solve this is to start from every state infinitely many times. This g
 
 
 
-<a class="resp-sharing-button__link" href="mailto:?subject=Model%20Free%20Control&amp;body=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f01%2fmodel-free-control%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
+<a class="resp-sharing-button__link" href="mailto:?subject=Lecture%206&amp;body=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f01%2flecture-6%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
   <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
     </div>
@@ -361,7 +259,7 @@ one way to solve this is to start from every state infinitely many times. This g
 
 
 
-<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f01%2fmodel-free-control%2f&amp;title=Model%20Free%20Control&amp;summary=Model%20Free%20Control&amp;source=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f01%2fmodel-free-control%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f01%2flecture-6%2f&amp;title=Lecture%206&amp;summary=Lecture%206&amp;source=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f01%2flecture-6%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
   <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
     </div>
@@ -388,18 +286,11 @@ one way to solve this is to start from every state infinitely many times. This g
 
         <div class="pagination__buttons">
           
-            <span class="button previous">
-              <a href="https://umangja.github.io/posts/2021/01/lecture-6/">
-                <span class="button__icon">←</span>
-                <span class="button__text">Lecture 6</span>
-              </a>
-            </span>
-          
 
           
             <span class="button next">
-              <a href="https://umangja.github.io/posts/2021/01/model-free-prediction/">
-                <span class="button__text">Model Free Prediction</span>
+              <a href="https://umangja.github.io/posts/2021/01/model-free-control/">
+                <span class="button__text">Model Free Control</span>
                 <span class="button__icon">→</span>
               </a>
             </span>

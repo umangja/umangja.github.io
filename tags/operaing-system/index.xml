@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>operaing system on UMANG JAIN</title>
+    <link>https://umangja.github.io/tags/operaing-system/</link>
+    <description>Recent content in operaing system on UMANG JAIN</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 01 Feb 2021 14:26:32 +0530</lastBuildDate><atom:link href="https://umangja.github.io/tags/operaing-system/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chapter 3</title>
+      <link>https://umangja.github.io/posts/2021/02/chapter-3/</link>
+      <pubDate>Mon, 01 Feb 2021 14:26:32 +0530</pubDate>
+      
+      <guid>https://umangja.github.io/posts/2021/02/chapter-3/</guid>
+      <description>Solution 3.1  &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; As fork basically creates a duplicate of current process, identical in almost very way except a few. As it as a different pid, and parent pid. But idea is to create as identical copy as possible. Hence copy of variables, stack and heap, are created. Hence child process variable and parent process variable are now different. So ans is 5. 3.2  8</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -10,6 +10,16 @@
         <atom:link href="https://umangja.github.io/posts/reinforcementlearning/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>Lecture 6</title>
+            <link>https://umangja.github.io/posts/2021/01/lecture-6/</link>
+            <pubDate>Wed, 27 Jan 2021 12:28:25 +0530</pubDate>
+            
+            <guid>https://umangja.github.io/posts/2021/01/lecture-6/</guid>
+            <description></description>
+            <content type="html"><![CDATA[]]></content>
+        </item>
+        
+        <item>
             <title>Model Free Control</title>
             <link>https://umangja.github.io/posts/2021/01/model-free-control/</link>
             <pubDate>Sat, 23 Jan 2021 11:45:00 +0530</pubDate>

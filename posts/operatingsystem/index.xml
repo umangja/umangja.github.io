@@ -1,0 +1,62 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Operating System on UMANG JAIN</title>
+        <link>https://umangja.github.io/posts/operatingsystem/</link>
+        <description>Recent content in Operating System on UMANG JAIN</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+        <lastBuildDate>Sun, 31 Jan 2021 20:51:24 +0530</lastBuildDate>
+        <atom:link href="https://umangja.github.io/posts/operatingsystem/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Chapter 3</title>
+            <link>https://umangja.github.io/posts/2021/02/chapter-3/</link>
+            <pubDate>Mon, 01 Feb 2021 14:26:32 +0530</pubDate>
+            
+            <guid>https://umangja.github.io/posts/2021/02/chapter-3/</guid>
+            <description>Solution 3.1  &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; As fork basically creates a duplicate of current process, identical in almost very way except a few. As it as a different pid, and parent pid. But idea is to create as identical copy as possible. Hence copy of variables, stack and heap, are created. Hence child process variable and parent process variable are now different. So ans is 5. 3.2  8</description>
+            <content type="html"><![CDATA[<h2 id="solution">Solution</h2>
+<h3 id="31">3.1</h3>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;
+As fork basically creates a duplicate of current process, identical in almost very way except a few. As it as a different pid, and parent pid. But idea is to create as identical copy as possible. Hence copy of variables, stack and heap, are created. 
+Hence child process variable and parent process variable are now different. 
+So ans is 5.
+</p>
+<h3 id="32">3.2</h3>
+<p>       
+8</p>
+<h3 id="33">3.3</h3>
+<p>       
+There is a lot of complications that occurs :-</p>
+<ol>
+<li>
+<p>How to effectively share resources among different process.</p>
+</li>
+<li>
+<p>How to effectively allow access to shared memory without different process accessing same location simultaneously.</p>
+</li>
+<li>
+<p>Prevention of deadlocks.</p>
+</li>
+</ol>
+<h3 id="34">3.4</h3>
+<p>       
+If the new context in already in register set  space, then CPU current context pointer changes to register corresponding to new context.</p>
+<p>But if new context is in memory space and all register in register set are full then,
+one of the register in register set is chossen and its data is saved in memory and new context is loaded in this choosen register.</p>
+<h3 id="35">3.5</h3>
+<p>       
+As mentioned in problem 1, child process create its own copy of stack and heap. But shared memory is shared between child and parent process.</p>
+<p>Because the way shared memory is implemented is that shared memory space is mapped to current process address space ( using a pointer to starting of shared memory state ) and when current process forks, child process tries to duplicate parent process address space, getting the same mapping. (pointer)</p>
+<h3 id="36">3.6</h3>
+<p>       
+To do</p>
+<h3 id="37">3.7</h3>
+<p>       
+To do left</p>
+]]></content>
+        </item>
+        
+    </channel>
+</rss>

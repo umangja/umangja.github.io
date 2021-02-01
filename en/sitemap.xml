@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://umangja.github.io/</loc>
-    <lastmod>2021-01-23T21:30:49+05:30</lastmod>
+    <lastmod>2021-02-01T14:26:32+05:30</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -20,8 +20,73 @@
   
   <url>
     <loc>https://umangja.github.io/posts/</loc>
-    <lastmod>2021-01-23T21:30:49+05:30</lastmod>
+    <lastmod>2021-02-01T14:26:32+05:30</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/categories/</loc>
+    <lastmod>2021-02-01T14:26:32+05:30</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://umangja.github.io/fr/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://umangja.github.io/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/posts/2021/02/chapter-3/</loc>
+    <lastmod>2021-02-01T14:26:32+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/tags/operaing-system/</loc>
+    <lastmod>2021-02-01T14:26:32+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/tags/process/</loc>
+    <lastmod>2021-02-01T14:26:32+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/tags/</loc>
+    <lastmod>2021-02-01T14:26:32+05:30</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://umangja.github.io/fr/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://umangja.github.io/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/categories/tutorial/</loc>
+    <lastmod>2021-02-01T14:26:32+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/posts/operatingsystem/</loc>
+    <lastmod>2021-01-31T20:51:24+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/posts/2021/01/lecture-6/</loc>
+    <lastmod>2021-01-27T12:28:25+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/tags/rl/</loc>
+    <lastmod>2021-01-27T12:28:25+05:30</lastmod>
   </url>
   
   <url>
@@ -40,52 +105,12 @@
   </url>
   
   <url>
-    <loc>https://umangja.github.io/categories/</loc>
-    <lastmod>2021-01-23T21:30:49+05:30</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://umangja.github.io/fr/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://umangja.github.io/categories/"
-                />
-  </url>
-  
-  <url>
     <loc>https://umangja.github.io/categories/competitive-programming/</loc>
     <lastmod>2021-01-23T21:30:49+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://umangja.github.io/tags/</loc>
-    <lastmod>2021-01-23T21:30:49+05:30</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://umangja.github.io/fr/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://umangja.github.io/tags/"
-                />
-  </url>
-  
-  <url>
     <loc>https://umangja.github.io/posts/2021/01/model-free-control/</loc>
-    <lastmod>2021-01-23T11:45:00+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://umangja.github.io/tags/rl/</loc>
-    <lastmod>2021-01-23T11:45:00+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://umangja.github.io/categories/tutorial/</loc>
     <lastmod>2021-01-23T11:45:00+05:30</lastmod>
   </url>
   

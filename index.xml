@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 23 Jan 2021 21:30:49 +0530</lastBuildDate><atom:link href="https://umangja.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Feb 2021 14:26:32 +0530</lastBuildDate><atom:link href="https://umangja.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chapter 3</title>
+      <link>https://umangja.github.io/posts/2021/02/chapter-3/</link>
+      <pubDate>Mon, 01 Feb 2021 14:26:32 +0530</pubDate>
+      
+      <guid>https://umangja.github.io/posts/2021/02/chapter-3/</guid>
+      <description>Solution 3.1  &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; As fork basically creates a duplicate of current process, identical in almost very way except a few. As it as a different pid, and parent pid. But idea is to create as identical copy as possible. Hence copy of variables, stack and heap, are created. Hence child process variable and parent process variable are now different. So ans is 5. 3.2  8</description>
+    </item>
+    
+    <item>
+      <title>Lecture 6</title>
+      <link>https://umangja.github.io/posts/2021/01/lecture-6/</link>
+      <pubDate>Wed, 27 Jan 2021 12:28:25 +0530</pubDate>
+      
+      <guid>https://umangja.github.io/posts/2021/01/lecture-6/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Atcoder ABC 189</title>
       <link>https://umangja.github.io/posts/2021/01/atcoder-abc-189/</link>
@@ -121,34 +139,6 @@ Problem B - Last minute enhancements Problem Link
 we can simply notice that
 if
 1) A[i] &amp;gt; A[i-1] ----&amp;gt; Then its never better to increase A[i] as neighter it does any good for ith index nor it will be any good for futher indexex 2) A[i] &amp;lt;= A[i-1] ----&amp;gt; Then its always good to increase A[i] to A[i]+1.</description>
-    </item>
-    
-    <item>
-      <title>CodeChef December Cookoff</title>
-      <link>https://umangja.github.io/posts/2020/12/codechef-december-cookoff/</link>
-      <pubDate>Fri, 25 Dec 2020 23:13:54 +0530</pubDate>
-      
-      <guid>https://umangja.github.io/posts/2020/12/codechef-december-cookoff/</guid>
-      <description>Solutions Problem - Self-Destructing Strings Problem Link
-As every deletion operation, deletes EXACTLY 2 character means parity of length of string does not change. Our objective is to make reduce string to empty string means to string of length of 0 which is even hence length of original string must also be even
-Also, After going through few examples we can see, we need abs(cnt[0]-cnt[1])/2 operations.
-But, There is one edge case :- when string contain only all same character then it is impossible to reduce it to empty string</description>
-    </item>
-    
-    <item>
-      <title>CodeChef UWCOI 2021</title>
-      <link>https://umangja.github.io/posts/2020/12/codechef-uwcoi-2021/</link>
-      <pubDate>Fri, 25 Dec 2020 19:57:13 +0530</pubDate>
-      
-      <guid>https://umangja.github.io/posts/2020/12/codechef-uwcoi-2021/</guid>
-      <description>Introduction Few days back, I participitated in UWCOI 2021 contest on CodeChef. I am able to do only first 3 problems during the contest and upsolved 2 problems later on .
-Now lets jump directly to Explations/Solutions
-Solutions Problem - Hidden Numbers Problem Link
-We can just output A 1
-code cin&amp;gt;&amp;gt;A; cout&amp;lt;&amp;lt;A&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;1&amp;lt;&amp;lt;&amp;quot;\n&amp;quot;;
-Problem - Array Swaps Problem Link
-In optimal case :-
-&#39;A&#39; array will be sorted in ascending,  and</description>
     </item>
     
   </channel>
