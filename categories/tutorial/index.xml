@@ -7,14 +7,41 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 01 Feb 2021 14:26:32 +0530</lastBuildDate><atom:link href="https://umangja.github.io/categories/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Feb 2021 11:43:11 +0530</lastBuildDate><atom:link href="https://umangja.github.io/categories/tutorial/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Chapter 3</title>
-      <link>https://umangja.github.io/posts/2021/02/chapter-3/</link>
+      <title>UCRL2</title>
+      <link>https://umangja.github.io/posts/2021/02/ucrl2/</link>
+      <pubDate>Fri, 19 Feb 2021 11:43:11 +0530</pubDate>
+      
+      <guid>https://umangja.github.io/posts/2021/02/ucrl2/</guid>
+      <description>Introduction In a Markov Decision Process (MDP) M with finite space S and finite action space A, a learner in some state &amp;rsquo;s&#39; choose some action &amp;lsquo;a&amp;rsquo; and receives a reward &amp;lsquo;r&amp;rsquo; independently from some probability distribution in [0-1] with mean r_hat(s,a). And then according to some transition probability it transits to some state s&#39;.
+We need to form such a learner that always chooses optimal action which maximizes the expected reward.</description>
+    </item>
+    
+    <item>
+      <title>Threads</title>
+      <link>https://umangja.github.io/posts/2021/02/threads/</link>
+      <pubDate>Tue, 02 Feb 2021 16:31:58 +0530</pubDate>
+      
+      <guid>https://umangja.github.io/posts/2021/02/threads/</guid>
+      <description>WHERE DOES DIFFERENT KIND OF VARIABLES GOES
+Memory of a process is divided into different memory segments :- stack, heap, data, code.
+code section contain executable instructions.
+Global/Stack Variable :- data
+Const Variable :- code
+Local Variable/Temporay Variables :- stack
+Dynamically allocated memory :- heap
+Pointers :- stack/heap/data. ( const pointer goes to data, non constant pointer goes to stack, ptr itself is in either stack or data but pointed memory may also be a heap)</description>
+    </item>
+    
+    <item>
+      <title>Process</title>
+      <link>https://umangja.github.io/posts/2021/02/process/</link>
       <pubDate>Mon, 01 Feb 2021 14:26:32 +0530</pubDate>
       
-      <guid>https://umangja.github.io/posts/2021/02/chapter-3/</guid>
-      <description>Solution 3.1  &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; As fork basically creates a duplicate of current process, identical in almost very way except a few. As it as a different pid, and parent pid. But idea is to create as identical copy as possible. Hence copy of variables, stack and heap, are created. Hence child process variable and parent process variable are now different. So ans is 5. 3.2  8</description>
+      <guid>https://umangja.github.io/posts/2021/02/process/</guid>
+      <description>TO-DO EXAMPLES OF IPC SYSTEMS communication in client - server systems
+Solution 3.1  &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; As fork basically creates a duplicate of current process, identical in almost very way except a few. As it as a different pid, and parent pid. But idea is to create as identical copy as possible. Hence copy of variables, stack and heap, are created. Hence child process variable and parent process variable are now different.</description>
     </item>
     
     <item>

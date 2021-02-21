@@ -1,0 +1,214 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Object Oriented Programming Concepts on UMANG JAIN</title>
+        <link>https://umangja.github.io/posts/objectorientedprogramming/</link>
+        <description>Recent content in Object Oriented Programming Concepts on UMANG JAIN</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+        <lastBuildDate>Sun, 31 Jan 2021 20:51:24 +0530</lastBuildDate>
+        <atom:link href="https://umangja.github.io/posts/objectorientedprogramming/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Operator Overloading</title>
+            <link>https://umangja.github.io/posts/2021/02/operator-overloading/</link>
+            <pubDate>Tue, 02 Feb 2021 20:54:08 +0530</pubDate>
+            
+            <guid>https://umangja.github.io/posts/2021/02/operator-overloading/</guid>
+            <description>Operator overloading is a way to make an operator work in different ways based on types of operants.
+Some Rules about Operator overloading :-
+  New operators can not be created.
+  Precedence and associativity of the operators cannot be changed.
+  Overloaded operators cannot have default arguments except the function call operator ().
+  Operators cannot be overloaded for built in types only. At least one operand must be used defined type.</description>
+            <content type="html"><![CDATA[<p>Operator overloading is a way to make an operator work in different ways based on types of operants.</p>
+<p>Some Rules about Operator overloading :-</p>
+<ol>
+<li>
+<p>New operators can not be created.</p>
+</li>
+<li>
+<p>Precedence and associativity of the operators cannot be changed.</p>
+</li>
+<li>
+<p>Overloaded operators cannot have default arguments except the function call operator ().</p>
+</li>
+<li>
+<p>Operators cannot be overloaded for built in types only. At least one operand must be used defined type.</p>
+</li>
+<li>
+<p>Assignment (=), subscript ([]), function call (“()”), and member selection (-&gt;) operators must be defined as member functions</p>
+</li>
+<li>
+<p>Except the operators in above point, all other operators can be either member functions or a non member functions.</p>
+</li>
+<li>
+<p>Some operators like (assignment)=, (address)&amp; and comma (,) are by default overloaded.</p>
+</li>
+<li>
+<p>operators &lsquo;.&rsquo; , &lsquo;::&rsquo;, &lsquo;?:&rsquo;, &lsquo;sizeof&rsquo;.</p>
+</li>
+<li>
+<p>Any constructor that can be called with a single argument can act as a convesion operator and hence can implicitly convert.</p>
+</li>
+<li>
+<p>some operator for eg =,+=,-=,etc has to be non-static member functions;</p>
+</li>
+</ol>
+<pre><code>className operator + (const className &amp;){
+
+}
+
+</code></pre><p>Operator overloading is just like function overloading with difference being instead of function name we use operator &lsquo;symbol&rsquo;</p>
+<h3 id="assignment-operator">Assignment Operator</h3>
+<pre><code>ClassName &amp; operator = (const ClassName &amp;obj){
+
+  if( this != &amp;obj ) // see how we are comparing address 
+  {
+
+  }
+
+  return *this;
+}
+
+</code></pre><p><strong>Remmber to check self equality check in assignment operator overloading.</strong></p>
+<p>If we don&rsquo;t check self assignment then we may have undifined behaviour in cases like when we are deallocating memory from current object.</p>
+<p><strong>It recommended to return non-const reference from a assignment operator through it can be anything(may be a void but then a=b=c  would&rsquo;t work)</strong></p>
+<p>The reason to return <strong>non const reference</strong> is that  is a requirement for &ldquo;Assignable&rdquo; in the standard.</p>
+<p>So if we return a <strong>const reference</strong> than we can not do stuff like</p>
+<pre><code>(a=b).non_constant_function
+
+or 
+
+(a=b)=c;
+
+</code></pre><h3 id="deep-copy-vs-shallow-copy">Deep Copy vs Shallow copy</h3>
+<p>In shallow copy, All the member field values are copied. This works good if fields are values but if fields are pointer pointing to dynamically allocated memory then pointer will get copied but not the dynamically allocated memory.</p>
+<p>Hence both, original and copied pointer, will point to same dynamic memory.</p>
+<p>In deep copy, dynamic allocated memory is also copied.</p>
+<p><strong>Default copy constructor and assignment operator create shallow copy.</strong></p>
+<p>A class that requires deep copies generally needs:</p>
+<ol>
+<li>A constructor to either make an initial allocation or set the pointer to NULL.</li>
+<li>A destructor to delete the dynamically allocated memory.</li>
+<li>A copy constructor to make a copy of the dynamically allocated memory.</li>
+<li>An overloaded assignment operator to make a copy of the dynamically allocated memory.</li>
+</ol>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Function Overloading</title>
+            <link>https://umangja.github.io/posts/2021/02/function-overloading/</link>
+            <pubDate>Mon, 01 Feb 2021 19:00:44 +0530</pubDate>
+            
+            <guid>https://umangja.github.io/posts/2021/02/function-overloading/</guid>
+            <description>Function overloading is a way to exploit polymorphism in C++.
+Function Overloading is the feature where two functions with same name but with different parameter type, no. of parameter can behave as two seperate functions.
+Function overloading is compile time polymorphism
+ Possible with type of paramter and number of parameter. But  int fun(int a); int fun(double a); fun(2.0) // error as float or double can be implicitely converted to int.</description>
+            <content type="html"><![CDATA[<p>Function overloading is a way to exploit polymorphism in C++.</p>
+<p>Function Overloading is the feature where two functions with same name but with different parameter type, no. of parameter can behave as two seperate functions.</p>
+<p><strong>Function overloading is compile time polymorphism</strong></p>
+<ol>
+<li>Possible with type of paramter and number of parameter. But</li>
+</ol>
+<pre><code>int fun(int a);
+
+int fun(double a);
+
+fun(2.0) // error as float or double can be implicitely converted to int.
+
+double x = 2.0;
+fun(x); // works
+
+</code></pre><ol start="2">
+<li>Not with  different  return type. As compiler need to know at compile time which function you want to call but if only return type differs this is not possible.</li>
+</ol>
+<pre><code>int Add(int a,int b);
+
+double Add(int a,int b);
+
+cout&lt;&lt;Add(1,2); // error as compiler doesn't know which function to call
+
+// or
+
+int x  =  fun(1,2); // error as compiler doesn't know which function to call because double or float can get implicitly converted to int
+
+// or
+
+fun(1,2); // error as compiler doesn't know which function to call
+
+</code></pre><ol start="3">
+<li>Functions can be overridden on the constant-ness of the parameters if parameter is a pointer or passed by reference.</li>
+</ol>
+<pre><code>void fun(int &amp;i);       // 1st    // fun(int *i) 
+void fun(const int &amp;i); // 2nd   // fun(const int *i)
+
+void fun2(int i);
+void fun2(const int i);
+
+int i;
+fun(i); // 1st called
+fun2(i); // error as compiler doesn't know which one to call
+
+const int j;
+fun(j); // 2nd called
+fun2(j); // error as compiler doesn't know which one to call
+
+</code></pre><p>And its makes sense as if vaiable is send by value then a copy of that vaiable is passed and Hence function can never can the variable (<strong>in main</strong>) no matter it is passed as const or not.</p>
+<ol start="4">
+<li>
+<p>Member function of a class can be overloaded based on consant-ness of the member function.</p>
+<p>In class, we can even make a function const which means that this function would not be changing the current object.</p>
+<p>const member function can be called on any object type but non const member function can only be called on non-constant class object. Same is the case when parameter passed by referenced /pointer is const ot not.</p>
+</li>
+</ol>
+<pre><code>class Test{
+  public:
+    int x;
+    Test(int x) : x(x) {}
+    void fun() { return 0; }   // 1st function
+    void fun() const { return 0; } // 2nd function
+};
+
+int main(){
+  const Test t1(20);
+  Test t2(30);
+
+  t1.fun(); // 2nd function called
+  t2.fun(); // 1st function called
+
+}
+
+</code></pre><ol start="5">
+<li>Member function differing in only static keyword can <strong>not</strong> be overloaded.</li>
+</ol>
+<pre><code>class Test { 
+   static void fun(int i) {} 
+   void fun(int i) {}    
+
+   // redefination error even if we don't initiate a single objectr
+}; 
+
+</code></pre><ol start="6">
+<li>
+<p>Function differing only in pointer vs array are equivalent. <strong>Only the second and subsequent array dimensions are significant in parameter types.</strong></p>
+</li>
+<li>
+<p>Parameter declarations that differ only in that one is a function type and the other is a pointer to the same function type are equivalent.</p>
+</li>
+<li>
+<p>Two parameter declarations that differ only in default values are equivalent in their function signature.</p>
+</li>
+</ol>
+<pre><code>int fun(int a,int b);
+int fun(int a,int b = 10);
+
+// redefination error even if we don't initiate a single objectr
+
+</code></pre>]]></content>
+        </item>
+        
+    </channel>
+</rss>

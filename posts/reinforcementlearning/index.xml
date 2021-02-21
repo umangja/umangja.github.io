@@ -10,6 +10,74 @@
         <atom:link href="https://umangja.github.io/posts/reinforcementlearning/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>UCRL2</title>
+            <link>https://umangja.github.io/posts/2021/02/ucrl2/</link>
+            <pubDate>Fri, 19 Feb 2021 11:43:11 +0530</pubDate>
+            
+            <guid>https://umangja.github.io/posts/2021/02/ucrl2/</guid>
+            <description>Introduction In a Markov Decision Process (MDP) M with finite space S and finite action space A, a learner in some state &amp;rsquo;s&#39; choose some action &amp;lsquo;a&amp;rsquo; and receives a reward &amp;lsquo;r&amp;rsquo; independently from some probability distribution in [0-1] with mean r_hat(s,a). And then according to some transition probability it transits to some state s&#39;.
+We need to form such a learner that always chooses optimal action which maximizes the expected reward.</description>
+            <content type="html"><![CDATA[<h2 id="introduction">Introduction</h2>
+<p>In a Markov Decision Process (MDP) <strong>M</strong> with finite space <strong>S</strong> and finite action space <strong>A</strong>, a learner in some state <strong>&rsquo;s'</strong> choose some action <strong>&lsquo;a&rsquo;</strong> and receives a reward <strong>&lsquo;r&rsquo;</strong> independently from some probability distribution in [0-1] with mean <strong>r_hat(s,a)</strong>. And then according to some transition probability it transits to some state <strong>s'</strong>.</p>
+<p>We need to form such a learner that always chooses optimal action which maximizes the expected reward.</p>
+<p>Until Now, we have considered few ways to do so. All of them follows a general policy which is</p>
+<ol>
+<li>Intialize a random policy</li>
+<li>Repeat 3 - 4</li>
+<li>Evaluate the current policy i.e find state-value function / action-state-value function for current policy</li>
+<li>Move greedily or e-greedily according to current state-value function / action-state-value function and improve current policy.</li>
+</ol>
+<p><strong>So we are considering the performance of the learned policy.</strong></p>
+<p>In UCRL or UCRL2 we are interested in performance of the learning algorithm during learning. We compare the reward collected by the algorithm with the reward of the optimal policy</p>
+<p>We can define the undiscounted accumulated rewards as</p>
+<p>$$  R(s) = \sum r_t  $$
+where s is the starting state</p>
+<p>Above defined reward is a random variable wrt to the stocastic MDP.</p>
+<p>The <strong>expected accumulated reward</strong> is define as</p>
+<p>$$  \sigma(s) = Lim_{T -&gt; inf} (1/T) * E[R]  $$</p>
+<p>where s is the starting state</p>
+<p><strong>Note that this is dependent on intial state</strong></p>
+<p>We need to form a policy that maximizes the axpected accumulated reward or average reward.</p>
+<p>Here we define a new term <strong>Diameter of MDP</strong> : It is defined as the maximal expected time taken to move from any state s to any state s' using an appropiate policy for all s and s'.</p>
+<p>$$ D(M) = max_{s!=s'} min_{all \pi} E[ T(s'| M,\pi,s) ] $$</p>
+<p><strong>Communicating MDP :</strong> These are MDPs with finite Diameter.</p>
+<p><strong>For communicating MDP, optimal average reward is independent of intial state</strong></p>
+<p>$  \sigma = Lim_{T -&gt; inf} (1/T) * E[R]  $  is independent of intial state</p>
+<p><strong>Regret</strong> after time T is :- $ T * \sigma  - R $</p>
+<h2 id="ucrl2-algorithm">UCRL2 ALGORITHM</h2>
+<p>UCRL2 is a extension of UCRL hence it also works on <strong>&ldquo;OPTIMALITY IN THE FACE OF UNCERTAINITY&rdquo;</strong>.</p>
+<p>UCRL2 defines a set of pausible MDPs based on the observation so far, and choose the optimal MDP $ \hat{M} $ and the optimal policy for the optimal MDP $\hat{M}$.</p>
+
+    <img src="/img/posts/ReinforcementLearning/UCRL2/UCRL2.png"  alt="Algorithm"  class="center"  style="border-radius: 8px;"  />
+
+
+<p>In steps 2 and 3 : UCRL2 computes estimates $ \hat{ p_k(s'|s,a) } $ and $ \hat{R_k(s,a) } $  for the mean state transition probability and mean reward from the observation made before episode k.</p>
+<p>In step 4 : A set of statistically pausible MDPs are defined in term of condifidence interval for mean state transition probability and mean reward</p>
+<p>In step 5 : <strong>Extended Value Iteration</strong> is used to find optimal MDP and optimal Policy.</p>
+<p>In step 6 : The policy found in step 5 is executed. Episode k ends when a state-action pair, (s,a) has been visited in current episodes as many times as before current episode.</p>
+<h3 id="extended-value-iteration">Extended Value Iteration</h3>
+<p>Let M be the set of MDPs with same state space S and same action state A, mean transition probability $ \hat{ p}_k(s'|s,a) $ and $ \hat{R}_k(s,a) $ for mean rewards such that for any MDP in M with transition probability $ \tilde{ p}_k(s'|s,a) $ and reward function $ \tilde{R}_k(s,a) $.</p>
+<p>$$    || \hat{ p}_k(s'|s,a) - \tilde{ p}_k(s'|s,a)  &lt;  d(s,a) ||  $$</p>
+<p>$$    || \hat{R}_k(s,a) - \tilde{R}_k(s,a) &lt; d'(s,a) ||          $$</p>
+<p>We can proof that if we combine the whole set of MDP, M into asingle M'  with extended action space A' then finding optimal policy in M' is equivalent to find optimal MDP in M and its corresponding optimal policy.</p>
+
+    <img src="/img/posts/ReinforcementLearning/UCRL2/innerMaximum.png"  alt="Algorithm"  class="center"  style="border-radius: 8px;"  />
+
+
+<p>Let the state value of the ith iteration be $u_i(s)$. Then undiscounted extended value interation :-</p>
+<p>$$ u_0(s) = 0 $$</p>
+<p>$$ u_{i+1}(s) = max_{a} (  \tilde{r}(s,a) + max_{p} ( p[s'] * u_i[s'] ) ) $$</p>
+<p>where $ \tilde{r}(s,a)  = \hat{r}(s,a) + d'(s,a) $</p>
+<p><strong>Note the optimism in face of uncertainity</strong></p>
+<p><strong>Now, in inner maximum can be efficiently computed using above given equation.</strong></p>
+<h2 id="questions--">Questions :-</h2>
+<p>Page 1 :- We are interested in performance of the learnning algorithm during learning.</p>
+<p>page 7 :- How the new MDP containing whole set has continuous action state.</p>
+<p>page 9 :- How does inner maximum work</p>
+]]></content>
+        </item>
+        
+        <item>
             <title>Lecture 6</title>
             <link>https://umangja.github.io/posts/2021/01/lecture-6/</link>
             <pubDate>Wed, 27 Jan 2021 12:28:25 +0530</pubDate>

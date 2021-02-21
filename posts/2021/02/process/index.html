@@ -5,16 +5,17 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="Umang Jain ">
-<meta name="description" content="" />
-<meta name="keywords" content=", RL" />
+<meta name="description" content="TO-DO EXAMPLES OF IPC SYSTEMS communication in client - server systems
+Solution 3.1  &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; As fork basically creates a duplicate of current process, identical in almost very way except a few. As it as a different pid, and parent pid. But idea is to create as identical copy as possible. Hence copy of variables, stack and heap, are created. Hence child process variable and parent process variable are now different." />
+<meta name="keywords" content=", operaing system, process" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="#252627" />
-<link rel="canonical" href="https://umangja.github.io/posts/2021/01/lecture-6/" />
+<link rel="canonical" href="https://umangja.github.io/posts/2021/02/process/" />
 
 
     <title>
         
-            Lecture 6 :: UMANG JAIN  — Blogs
+            Process :: UMANG JAIN  — Blogs
         
     </title>
 
@@ -41,32 +42,35 @@
 
 
 
-<meta itemprop="name" content="Lecture 6">
-<meta itemprop="description" content="">
-<meta itemprop="datePublished" content="2021-01-27T12:28:25+05:30" />
-<meta itemprop="dateModified" content="2021-01-27T12:28:25+05:30" />
-<meta itemprop="wordCount" content="0">
+<meta itemprop="name" content="Process">
+<meta itemprop="description" content="TO-DO EXAMPLES OF IPC SYSTEMS communication in client - server systems
+Solution 3.1  &nbsp; &nbsp; &nbsp; &nbsp; As fork basically creates a duplicate of current process, identical in almost very way except a few. As it as a different pid, and parent pid. But idea is to create as identical copy as possible. Hence copy of variables, stack and heap, are created. Hence child process variable and parent process variable are now different.">
+<meta itemprop="datePublished" content="2021-02-01T14:26:32+05:30" />
+<meta itemprop="dateModified" content="2021-02-01T14:26:32+05:30" />
+<meta itemprop="wordCount" content="352">
 <meta itemprop="image" content="https://umangja.github.io"/>
 
 
 
-<meta itemprop="keywords" content="RL," />
+<meta itemprop="keywords" content="operaing system,process," />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://umangja.github.io"/>
 
-<meta name="twitter:title" content="Lecture 6"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Process"/>
+<meta name="twitter:description" content="TO-DO EXAMPLES OF IPC SYSTEMS communication in client - server systems
+Solution 3.1  &nbsp; &nbsp; &nbsp; &nbsp; As fork basically creates a duplicate of current process, identical in almost very way except a few. As it as a different pid, and parent pid. But idea is to create as identical copy as possible. Hence copy of variables, stack and heap, are created. Hence child process variable and parent process variable are now different."/>
 
 
 
-    <meta property="og:title" content="Lecture 6" />
-<meta property="og:description" content="" />
+    <meta property="og:title" content="Process" />
+<meta property="og:description" content="TO-DO EXAMPLES OF IPC SYSTEMS communication in client - server systems
+Solution 3.1  &nbsp; &nbsp; &nbsp; &nbsp; As fork basically creates a duplicate of current process, identical in almost very way except a few. As it as a different pid, and parent pid. But idea is to create as identical copy as possible. Hence copy of variables, stack and heap, are created. Hence child process variable and parent process variable are now different." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://umangja.github.io/posts/2021/01/lecture-6/" />
+<meta property="og:url" content="https://umangja.github.io/posts/2021/02/process/" />
 <meta property="og:image" content="https://umangja.github.io"/>
-<meta property="article:published_time" content="2021-01-27T12:28:25+05:30" />
-<meta property="article:modified_time" content="2021-01-27T12:28:25+05:30" />
+<meta property="article:published_time" content="2021-02-01T14:26:32+05:30" />
+<meta property="article:modified_time" content="2021-02-01T14:26:32+05:30" />
 
 
 
@@ -75,7 +79,7 @@
 
 
 
-    <meta property="article:published_time" content="2021-01-27 12:28:25 &#43;0530 IST" />
+    <meta property="article:published_time" content="2021-02-01 14:26:32 &#43;0530 IST" />
 
 
 
@@ -169,7 +173,7 @@
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        0 minutes
+        2 minutes
 
         
       </p>
@@ -177,13 +181,68 @@
 
     <article>
       <h1 class="post-title">
-        <a href="https://umangja.github.io/posts/2021/01/lecture-6/">Lecture 6</a>
+        <a href="https://umangja.github.io/posts/2021/02/process/">Process</a>
       </h1>
 
       
 
       <div class="post-content">
-        
+        <h2 id="to-do">TO-DO</h2>
+<p><strong>EXAMPLES OF IPC SYSTEMS</strong>
+<strong>communication in client - server systems</strong></p>
+<h2 id="solution">Solution</h2>
+<h3 id="31">3.1</h3>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;
+As fork basically creates a duplicate of current process, identical in almost very way except a few. As it as a different pid, and parent pid. But idea is to create as identical copy as possible. Hence copy of variables, stack and heap, are created. 
+Hence child process variable and parent process variable are now different. 
+So ans is 5.
+</p>
+<h3 id="32">3.2</h3>
+<p>       
+8</p>
+<h3 id="33">3.3</h3>
+<p>       
+There is a lot of complications that occurs :-</p>
+<ol>
+<li>
+<p>How to effectively share resources among different process.</p>
+</li>
+<li>
+<p>How to effectively allow access to shared memory without different process accessing same location simultaneously.</p>
+</li>
+<li>
+<p>Prevention of deadlocks.</p>
+</li>
+</ol>
+<h3 id="34">3.4</h3>
+<p>       
+If the new context in already in register set  space, then CPU current context pointer changes to register corresponding to new context.</p>
+<p>But if new context is in memory space and all register in register set are full then,
+one of the register in register set is chossen and its data is saved in memory and new context is loaded in this choosen register.</p>
+<h3 id="35">3.5</h3>
+<p>       
+As mentioned in problem 1, child process create its own copy of stack and heap. But shared memory is shared between child and parent process.</p>
+<p>Because the way shared memory is implemented is that shared memory space is mapped to current process address space ( using a pointer to starting of shared memory state ) and when current process forks, child process tries to duplicate parent process address space, getting the same mapping. (pointer)</p>
+<h3 id="36">3.6</h3>
+<p>       
+To do</p>
+<h3 id="37">3.7</h3>
+<p>       
+To do left</p>
+<h3 id="38">3.8</h3>
+<p>       </p>
+<ol>
+<li>
+<p><strong>Short-term scheduling</strong> :- This scheduling select which process from the ready queue should be selected now in order of have most efficient system. This is called frequently and thus should be very fast.</p>
+</li>
+<li>
+<p><strong>Long-term scheduling</strong> :- This scheduling algo. selects process waiting to be executed and load them into memory(ready queue). This controls the degree of multi-programming (number of process in ready queue).</p>
+</li>
+<li>
+<p><strong>Medium-term scheduling</strong> :- Many times it is better to remove a process from memory and hold it&rsquo;s execution and later put it back in the memory.</p>
+</li>
+</ol>
+
       </div>
     </article>
 
@@ -194,7 +253,8 @@
     <p>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
 
-        <span class="tag"><a href="https://umangja.github.io/tags/rl/">RL</a></span>
+        <span class="tag"><a href="https://umangja.github.io/tags/operaing-system/">operaing system</a></span>
+        <span class="tag"><a href="https://umangja.github.io/tags/process/">process</a></span>
         
     </p>
 
@@ -215,7 +275,7 @@
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        0 Words
+        352 Words
       </p>
 
       <p>
@@ -226,7 +286,7 @@
           <line x1="3" y1="10" x2="21" y2="10"></line>
         </svg>
         
-          2021-01-27 12:28
+          2021-02-01 14:26
         
 
          
@@ -237,7 +297,7 @@
       <hr />
       <div class="sharing-buttons">
         
-<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f01%2flecture-6%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f02%2fprocess%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
   <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
     </div>
@@ -249,7 +309,7 @@
 
 
 
-<a class="resp-sharing-button__link" href="mailto:?subject=Lecture%206&amp;body=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f01%2flecture-6%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
+<a class="resp-sharing-button__link" href="mailto:?subject=Process&amp;body=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f02%2fprocess%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
   <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
     </div>
@@ -259,7 +319,7 @@
 
 
 
-<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f01%2flecture-6%2f&amp;title=Lecture%206&amp;summary=Lecture%206&amp;source=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f01%2flecture-6%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f02%2fprocess%2f&amp;title=Process&amp;summary=Process&amp;source=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f02%2fprocess%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
   <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
     </div>
@@ -287,20 +347,13 @@
         <div class="pagination__buttons">
           
             <span class="button previous">
-              <a href="https://umangja.github.io/posts/2021/02/ucrl2/">
+              <a href="https://umangja.github.io/posts/2021/02/threads/">
                 <span class="button__icon">←</span>
-                <span class="button__text">UCRL2</span>
+                <span class="button__text">Threads</span>
               </a>
             </span>
           
 
-          
-            <span class="button next">
-              <a href="https://umangja.github.io/posts/2021/01/model-free-control/">
-                <span class="button__text">Model Free Control</span>
-                <span class="button__icon">→</span>
-              </a>
-            </span>
           
         </div>
       </div>

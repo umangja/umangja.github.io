@@ -5,16 +5,21 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="Umang Jain ">
-<meta name="description" content="" />
-<meta name="keywords" content=", RL" />
+<meta name="description" content="Operator overloading is a way to make an operator work in different ways based on types of operants.
+Some Rules about Operator overloading :-
+  New operators can not be created.
+  Precedence and associativity of the operators cannot be changed.
+  Overloaded operators cannot have default arguments except the function call operator ().
+  Operators cannot be overloaded for built in types only. At least one operand must be used defined type." />
+<meta name="keywords" content=", untagged" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="#252627" />
-<link rel="canonical" href="https://umangja.github.io/posts/2021/01/lecture-6/" />
+<link rel="canonical" href="https://umangja.github.io/posts/2021/02/operator-overloading/" />
 
 
     <title>
         
-            Lecture 6 :: UMANG JAIN  — Blogs
+            Operator Overloading :: UMANG JAIN  — Blogs
         
     </title>
 
@@ -41,41 +46,56 @@
 
 
 
-<meta itemprop="name" content="Lecture 6">
-<meta itemprop="description" content="">
-<meta itemprop="datePublished" content="2021-01-27T12:28:25+05:30" />
-<meta itemprop="dateModified" content="2021-01-27T12:28:25+05:30" />
-<meta itemprop="wordCount" content="0">
+<meta itemprop="name" content="Operator Overloading">
+<meta itemprop="description" content="Operator overloading is a way to make an operator work in different ways based on types of operants.
+Some Rules about Operator overloading :-
+  New operators can not be created.
+  Precedence and associativity of the operators cannot be changed.
+  Overloaded operators cannot have default arguments except the function call operator ().
+  Operators cannot be overloaded for built in types only. At least one operand must be used defined type.">
+<meta itemprop="datePublished" content="2021-02-02T20:54:08+05:30" />
+<meta itemprop="dateModified" content="2021-02-02T20:54:08+05:30" />
+<meta itemprop="wordCount" content="425">
 <meta itemprop="image" content="https://umangja.github.io"/>
 
 
 
-<meta itemprop="keywords" content="RL," />
+<meta itemprop="keywords" content="untagged," />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://umangja.github.io"/>
 
-<meta name="twitter:title" content="Lecture 6"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Operator Overloading"/>
+<meta name="twitter:description" content="Operator overloading is a way to make an operator work in different ways based on types of operants.
+Some Rules about Operator overloading :-
+  New operators can not be created.
+  Precedence and associativity of the operators cannot be changed.
+  Overloaded operators cannot have default arguments except the function call operator ().
+  Operators cannot be overloaded for built in types only. At least one operand must be used defined type."/>
 
 
 
-    <meta property="og:title" content="Lecture 6" />
-<meta property="og:description" content="" />
+    <meta property="og:title" content="Operator Overloading" />
+<meta property="og:description" content="Operator overloading is a way to make an operator work in different ways based on types of operants.
+Some Rules about Operator overloading :-
+  New operators can not be created.
+  Precedence and associativity of the operators cannot be changed.
+  Overloaded operators cannot have default arguments except the function call operator ().
+  Operators cannot be overloaded for built in types only. At least one operand must be used defined type." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://umangja.github.io/posts/2021/01/lecture-6/" />
+<meta property="og:url" content="https://umangja.github.io/posts/2021/02/operator-overloading/" />
 <meta property="og:image" content="https://umangja.github.io"/>
-<meta property="article:published_time" content="2021-01-27T12:28:25+05:30" />
-<meta property="article:modified_time" content="2021-01-27T12:28:25+05:30" />
+<meta property="article:published_time" content="2021-02-02T20:54:08+05:30" />
+<meta property="article:modified_time" content="2021-02-02T20:54:08+05:30" />
 
 
 
 
-    <meta property="article:section" content="Tutorial" />
+    <meta property="article:section" content="oops" />
 
 
 
-    <meta property="article:published_time" content="2021-01-27 12:28:25 &#43;0530 IST" />
+    <meta property="article:published_time" content="2021-02-02 20:54:08 &#43;0530 IST" />
 
 
 
@@ -169,7 +189,7 @@
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        0 minutes
+        2 minutes
 
         
       </p>
@@ -177,13 +197,86 @@
 
     <article>
       <h1 class="post-title">
-        <a href="https://umangja.github.io/posts/2021/01/lecture-6/">Lecture 6</a>
+        <a href="https://umangja.github.io/posts/2021/02/operator-overloading/">Operator Overloading</a>
       </h1>
 
       
 
       <div class="post-content">
-        
+        <p>Operator overloading is a way to make an operator work in different ways based on types of operants.</p>
+<p>Some Rules about Operator overloading :-</p>
+<ol>
+<li>
+<p>New operators can not be created.</p>
+</li>
+<li>
+<p>Precedence and associativity of the operators cannot be changed.</p>
+</li>
+<li>
+<p>Overloaded operators cannot have default arguments except the function call operator ().</p>
+</li>
+<li>
+<p>Operators cannot be overloaded for built in types only. At least one operand must be used defined type.</p>
+</li>
+<li>
+<p>Assignment (=), subscript ([]), function call (“()”), and member selection (-&gt;) operators must be defined as member functions</p>
+</li>
+<li>
+<p>Except the operators in above point, all other operators can be either member functions or a non member functions.</p>
+</li>
+<li>
+<p>Some operators like (assignment)=, (address)&amp; and comma (,) are by default overloaded.</p>
+</li>
+<li>
+<p>operators &lsquo;.&rsquo; , &lsquo;::&rsquo;, &lsquo;?:&rsquo;, &lsquo;sizeof&rsquo;.</p>
+</li>
+<li>
+<p>Any constructor that can be called with a single argument can act as a convesion operator and hence can implicitly convert.</p>
+</li>
+<li>
+<p>some operator for eg =,+=,-=,etc has to be non-static member functions;</p>
+</li>
+</ol>
+<pre><code>className operator + (const className &amp;){
+
+}
+
+</code></pre><p>Operator overloading is just like function overloading with difference being instead of function name we use operator &lsquo;symbol&rsquo;</p>
+<h3 id="assignment-operator">Assignment Operator</h3>
+<pre><code>ClassName &amp; operator = (const ClassName &amp;obj){
+
+  if( this != &amp;obj ) // see how we are comparing address 
+  {
+
+  }
+
+  return *this;
+}
+
+</code></pre><p><strong>Remmber to check self equality check in assignment operator overloading.</strong></p>
+<p>If we don&rsquo;t check self assignment then we may have undifined behaviour in cases like when we are deallocating memory from current object.</p>
+<p><strong>It recommended to return non-const reference from a assignment operator through it can be anything(may be a void but then a=b=c  would&rsquo;t work)</strong></p>
+<p>The reason to return <strong>non const reference</strong> is that  is a requirement for &ldquo;Assignable&rdquo; in the standard.</p>
+<p>So if we return a <strong>const reference</strong> than we can not do stuff like</p>
+<pre><code>(a=b).non_constant_function
+
+or 
+
+(a=b)=c;
+
+</code></pre><h3 id="deep-copy-vs-shallow-copy">Deep Copy vs Shallow copy</h3>
+<p>In shallow copy, All the member field values are copied. This works good if fields are values but if fields are pointer pointing to dynamically allocated memory then pointer will get copied but not the dynamically allocated memory.</p>
+<p>Hence both, original and copied pointer, will point to same dynamic memory.</p>
+<p>In deep copy, dynamic allocated memory is also copied.</p>
+<p><strong>Default copy constructor and assignment operator create shallow copy.</strong></p>
+<p>A class that requires deep copies generally needs:</p>
+<ol>
+<li>A constructor to either make an initial allocation or set the pointer to NULL.</li>
+<li>A destructor to delete the dynamically allocated memory.</li>
+<li>A copy constructor to make a copy of the dynamically allocated memory.</li>
+<li>An overloaded assignment operator to make a copy of the dynamically allocated memory.</li>
+</ol>
+
       </div>
     </article>
 
@@ -194,7 +287,7 @@
     <p>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
 
-        <span class="tag"><a href="https://umangja.github.io/tags/rl/">RL</a></span>
+        <span class="tag"><a href="https://umangja.github.io/tags/untagged/">untagged</a></span>
         
     </p>
 
@@ -202,7 +295,7 @@
     <p>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
 
-        <span class="tag"><a href="https://umangja.github.io/categories/tutorial/">Tutorial</a></span>
+        <span class="tag"><a href="https://umangja.github.io/categories/oops/">oops</a></span>
         
     </p>
 
@@ -215,7 +308,7 @@
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        0 Words
+        425 Words
       </p>
 
       <p>
@@ -226,7 +319,7 @@
           <line x1="3" y1="10" x2="21" y2="10"></line>
         </svg>
         
-          2021-01-27 12:28
+          2021-02-02 20:54
         
 
          
@@ -237,7 +330,7 @@
       <hr />
       <div class="sharing-buttons">
         
-<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f01%2flecture-6%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f02%2foperator-overloading%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
   <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
     </div>
@@ -249,7 +342,7 @@
 
 
 
-<a class="resp-sharing-button__link" href="mailto:?subject=Lecture%206&amp;body=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f01%2flecture-6%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
+<a class="resp-sharing-button__link" href="mailto:?subject=Operator%20Overloading&amp;body=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f02%2foperator-overloading%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
   <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
     </div>
@@ -259,7 +352,7 @@
 
 
 
-<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f01%2flecture-6%2f&amp;title=Lecture%206&amp;summary=Lecture%206&amp;source=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f01%2flecture-6%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f02%2foperator-overloading%2f&amp;title=Operator%20Overloading&amp;summary=Operator%20Overloading&amp;source=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f02%2foperator-overloading%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
   <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
     </div>
@@ -286,18 +379,11 @@
 
         <div class="pagination__buttons">
           
-            <span class="button previous">
-              <a href="https://umangja.github.io/posts/2021/02/ucrl2/">
-                <span class="button__icon">←</span>
-                <span class="button__text">UCRL2</span>
-              </a>
-            </span>
-          
 
           
             <span class="button next">
-              <a href="https://umangja.github.io/posts/2021/01/model-free-control/">
-                <span class="button__text">Model Free Control</span>
+              <a href="https://umangja.github.io/posts/2021/02/function-overloading/">
+                <span class="button__text">Function Overloading</span>
                 <span class="button__icon">→</span>
               </a>
             </span>

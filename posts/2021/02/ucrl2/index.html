@@ -5,16 +5,17 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="Umang Jain ">
-<meta name="description" content="" />
+<meta name="description" content="Introduction In a Markov Decision Process (MDP) M with finite space S and finite action space A, a learner in some state &amp;rsquo;s&#39; choose some action &amp;lsquo;a&amp;rsquo; and receives a reward &amp;lsquo;r&amp;rsquo; independently from some probability distribution in [0-1] with mean r_hat(s,a). And then according to some transition probability it transits to some state s&#39;.
+We need to form such a learner that always chooses optimal action which maximizes the expected reward." />
 <meta name="keywords" content=", RL" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="#252627" />
-<link rel="canonical" href="https://umangja.github.io/posts/2021/01/lecture-6/" />
+<link rel="canonical" href="https://umangja.github.io/posts/2021/02/ucrl2/" />
 
 
     <title>
         
-            Lecture 6 :: UMANG JAIN  — Blogs
+            UCRL2 :: UMANG JAIN  — Blogs
         
     </title>
 
@@ -41,11 +42,12 @@
 
 
 
-<meta itemprop="name" content="Lecture 6">
-<meta itemprop="description" content="">
-<meta itemprop="datePublished" content="2021-01-27T12:28:25+05:30" />
-<meta itemprop="dateModified" content="2021-01-27T12:28:25+05:30" />
-<meta itemprop="wordCount" content="0">
+<meta itemprop="name" content="UCRL2">
+<meta itemprop="description" content="Introduction In a Markov Decision Process (MDP) M with finite space S and finite action space A, a learner in some state &rsquo;s&#39; choose some action &lsquo;a&rsquo; and receives a reward &lsquo;r&rsquo; independently from some probability distribution in [0-1] with mean r_hat(s,a). And then according to some transition probability it transits to some state s&#39;.
+We need to form such a learner that always chooses optimal action which maximizes the expected reward.">
+<meta itemprop="datePublished" content="2021-02-19T11:43:11+05:30" />
+<meta itemprop="dateModified" content="2021-02-19T11:43:11+05:30" />
+<meta itemprop="wordCount" content="717">
 <meta itemprop="image" content="https://umangja.github.io"/>
 
 
@@ -55,18 +57,20 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://umangja.github.io"/>
 
-<meta name="twitter:title" content="Lecture 6"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="UCRL2"/>
+<meta name="twitter:description" content="Introduction In a Markov Decision Process (MDP) M with finite space S and finite action space A, a learner in some state &rsquo;s&#39; choose some action &lsquo;a&rsquo; and receives a reward &lsquo;r&rsquo; independently from some probability distribution in [0-1] with mean r_hat(s,a). And then according to some transition probability it transits to some state s&#39;.
+We need to form such a learner that always chooses optimal action which maximizes the expected reward."/>
 
 
 
-    <meta property="og:title" content="Lecture 6" />
-<meta property="og:description" content="" />
+    <meta property="og:title" content="UCRL2" />
+<meta property="og:description" content="Introduction In a Markov Decision Process (MDP) M with finite space S and finite action space A, a learner in some state &rsquo;s&#39; choose some action &lsquo;a&rsquo; and receives a reward &lsquo;r&rsquo; independently from some probability distribution in [0-1] with mean r_hat(s,a). And then according to some transition probability it transits to some state s&#39;.
+We need to form such a learner that always chooses optimal action which maximizes the expected reward." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://umangja.github.io/posts/2021/01/lecture-6/" />
+<meta property="og:url" content="https://umangja.github.io/posts/2021/02/ucrl2/" />
 <meta property="og:image" content="https://umangja.github.io"/>
-<meta property="article:published_time" content="2021-01-27T12:28:25+05:30" />
-<meta property="article:modified_time" content="2021-01-27T12:28:25+05:30" />
+<meta property="article:published_time" content="2021-02-19T11:43:11+05:30" />
+<meta property="article:modified_time" content="2021-02-19T11:43:11+05:30" />
 
 
 
@@ -75,7 +79,7 @@
 
 
 
-    <meta property="article:published_time" content="2021-01-27 12:28:25 &#43;0530 IST" />
+    <meta property="article:published_time" content="2021-02-19 11:43:11 &#43;0530 IST" />
 
 
 
@@ -169,7 +173,7 @@
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        0 minutes
+        4 minutes
 
         
       </p>
@@ -177,13 +181,70 @@
 
     <article>
       <h1 class="post-title">
-        <a href="https://umangja.github.io/posts/2021/01/lecture-6/">Lecture 6</a>
+        <a href="https://umangja.github.io/posts/2021/02/ucrl2/">UCRL2</a>
       </h1>
 
       
 
       <div class="post-content">
-        
+        <h2 id="introduction">Introduction</h2>
+<p>In a Markov Decision Process (MDP) <strong>M</strong> with finite space <strong>S</strong> and finite action space <strong>A</strong>, a learner in some state <strong>&rsquo;s'</strong> choose some action <strong>&lsquo;a&rsquo;</strong> and receives a reward <strong>&lsquo;r&rsquo;</strong> independently from some probability distribution in [0-1] with mean <strong>r_hat(s,a)</strong>. And then according to some transition probability it transits to some state <strong>s'</strong>.</p>
+<p>We need to form such a learner that always chooses optimal action which maximizes the expected reward.</p>
+<p>Until Now, we have considered few ways to do so. All of them follows a general policy which is</p>
+<ol>
+<li>Intialize a random policy</li>
+<li>Repeat 3 - 4</li>
+<li>Evaluate the current policy i.e find state-value function / action-state-value function for current policy</li>
+<li>Move greedily or e-greedily according to current state-value function / action-state-value function and improve current policy.</li>
+</ol>
+<p><strong>So we are considering the performance of the learned policy.</strong></p>
+<p>In UCRL or UCRL2 we are interested in performance of the learning algorithm during learning. We compare the reward collected by the algorithm with the reward of the optimal policy</p>
+<p>We can define the undiscounted accumulated rewards as</p>
+<p>$$  R(s) = \sum r_t  $$
+where s is the starting state</p>
+<p>Above defined reward is a random variable wrt to the stocastic MDP.</p>
+<p>The <strong>expected accumulated reward</strong> is define as</p>
+<p>$$  \sigma(s) = Lim_{T -&gt; inf} (1/T) * E[R]  $$</p>
+<p>where s is the starting state</p>
+<p><strong>Note that this is dependent on intial state</strong></p>
+<p>We need to form a policy that maximizes the axpected accumulated reward or average reward.</p>
+<p>Here we define a new term <strong>Diameter of MDP</strong> : It is defined as the maximal expected time taken to move from any state s to any state s' using an appropiate policy for all s and s'.</p>
+<p>$$ D(M) = max_{s!=s'} min_{all \pi} E[ T(s'| M,\pi,s) ] $$</p>
+<p><strong>Communicating MDP :</strong> These are MDPs with finite Diameter.</p>
+<p><strong>For communicating MDP, optimal average reward is independent of intial state</strong></p>
+<p>$  \sigma = Lim_{T -&gt; inf} (1/T) * E[R]  $  is independent of intial state</p>
+<p><strong>Regret</strong> after time T is :- $ T * \sigma  - R $</p>
+<h2 id="ucrl2-algorithm">UCRL2 ALGORITHM</h2>
+<p>UCRL2 is a extension of UCRL hence it also works on <strong>&ldquo;OPTIMALITY IN THE FACE OF UNCERTAINITY&rdquo;</strong>.</p>
+<p>UCRL2 defines a set of pausible MDPs based on the observation so far, and choose the optimal MDP $ \hat{M} $ and the optimal policy for the optimal MDP $\hat{M}$.</p>
+
+    <img src="https://umangja.github.io/img/posts/ReinforcementLearning/UCRL2/UCRL2.png"  alt="Algorithm"  class="center"  style="border-radius: 8px;"  />
+
+
+<p>In steps 2 and 3 : UCRL2 computes estimates $ \hat{ p_k(s'|s,a) } $ and $ \hat{R_k(s,a) } $  for the mean state transition probability and mean reward from the observation made before episode k.</p>
+<p>In step 4 : A set of statistically pausible MDPs are defined in term of condifidence interval for mean state transition probability and mean reward</p>
+<p>In step 5 : <strong>Extended Value Iteration</strong> is used to find optimal MDP and optimal Policy.</p>
+<p>In step 6 : The policy found in step 5 is executed. Episode k ends when a state-action pair, (s,a) has been visited in current episodes as many times as before current episode.</p>
+<h3 id="extended-value-iteration">Extended Value Iteration</h3>
+<p>Let M be the set of MDPs with same state space S and same action state A, mean transition probability $ \hat{ p}_k(s'|s,a) $ and $ \hat{R}_k(s,a) $ for mean rewards such that for any MDP in M with transition probability $ \tilde{ p}_k(s'|s,a) $ and reward function $ \tilde{R}_k(s,a) $.</p>
+<p>$$    || \hat{ p}_k(s'|s,a) - \tilde{ p}_k(s'|s,a)  &lt;  d(s,a) ||  $$</p>
+<p>$$    || \hat{R}_k(s,a) - \tilde{R}_k(s,a) &lt; d'(s,a) ||          $$</p>
+<p>We can proof that if we combine the whole set of MDP, M into asingle M'  with extended action space A' then finding optimal policy in M' is equivalent to find optimal MDP in M and its corresponding optimal policy.</p>
+
+    <img src="https://umangja.github.io/img/posts/ReinforcementLearning/UCRL2/innerMaximum.png"  alt="Algorithm"  class="center"  style="border-radius: 8px;"  />
+
+
+<p>Let the state value of the ith iteration be $u_i(s)$. Then undiscounted extended value interation :-</p>
+<p>$$ u_0(s) = 0 $$</p>
+<p>$$ u_{i+1}(s) = max_{a} (  \tilde{r}(s,a) + max_{p} ( p[s'] * u_i[s'] ) ) $$</p>
+<p>where $ \tilde{r}(s,a)  = \hat{r}(s,a) + d'(s,a) $</p>
+<p><strong>Note the optimism in face of uncertainity</strong></p>
+<p><strong>Now, in inner maximum can be efficiently computed using above given equation.</strong></p>
+<h2 id="questions--">Questions :-</h2>
+<p>Page 1 :- We are interested in performance of the learnning algorithm during learning.</p>
+<p>page 7 :- How the new MDP containing whole set has continuous action state.</p>
+<p>page 9 :- How does inner maximum work</p>
+
       </div>
     </article>
 
@@ -215,7 +276,7 @@
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        0 Words
+        717 Words
       </p>
 
       <p>
@@ -226,7 +287,7 @@
           <line x1="3" y1="10" x2="21" y2="10"></line>
         </svg>
         
-          2021-01-27 12:28
+          2021-02-19 11:43
         
 
          
@@ -237,7 +298,7 @@
       <hr />
       <div class="sharing-buttons">
         
-<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f01%2flecture-6%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f02%2fucrl2%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
   <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
     </div>
@@ -249,7 +310,7 @@
 
 
 
-<a class="resp-sharing-button__link" href="mailto:?subject=Lecture%206&amp;body=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f01%2flecture-6%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
+<a class="resp-sharing-button__link" href="mailto:?subject=UCRL2&amp;body=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f02%2fucrl2%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
   <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
     </div>
@@ -259,7 +320,7 @@
 
 
 
-<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f01%2flecture-6%2f&amp;title=Lecture%206&amp;summary=Lecture%206&amp;source=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f01%2flecture-6%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f02%2fucrl2%2f&amp;title=UCRL2&amp;summary=UCRL2&amp;source=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f02%2fucrl2%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
   <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
     </div>
@@ -286,18 +347,11 @@
 
         <div class="pagination__buttons">
           
-            <span class="button previous">
-              <a href="https://umangja.github.io/posts/2021/02/ucrl2/">
-                <span class="button__icon">←</span>
-                <span class="button__text">UCRL2</span>
-              </a>
-            </span>
-          
 
           
             <span class="button next">
-              <a href="https://umangja.github.io/posts/2021/01/model-free-control/">
-                <span class="button__text">Model Free Control</span>
+              <a href="https://umangja.github.io/posts/2021/01/lecture-6/">
+                <span class="button__text">Lecture 6</span>
                 <span class="button__icon">→</span>
               </a>
             </span>

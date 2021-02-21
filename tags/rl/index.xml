@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 27 Jan 2021 12:28:25 +0530</lastBuildDate><atom:link href="https://umangja.github.io/tags/rl/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Feb 2021 11:43:11 +0530</lastBuildDate><atom:link href="https://umangja.github.io/tags/rl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>UCRL2</title>
+      <link>https://umangja.github.io/posts/2021/02/ucrl2/</link>
+      <pubDate>Fri, 19 Feb 2021 11:43:11 +0530</pubDate>
+      
+      <guid>https://umangja.github.io/posts/2021/02/ucrl2/</guid>
+      <description>Introduction In a Markov Decision Process (MDP) M with finite space S and finite action space A, a learner in some state &amp;rsquo;s&#39; choose some action &amp;lsquo;a&amp;rsquo; and receives a reward &amp;lsquo;r&amp;rsquo; independently from some probability distribution in [0-1] with mean r_hat(s,a). And then according to some transition probability it transits to some state s&#39;.
+We need to form such a learner that always chooses optimal action which maximizes the expected reward.</description>
+    </item>
+    
     <item>
       <title>Lecture 6</title>
       <link>https://umangja.github.io/posts/2021/01/lecture-6/</link>

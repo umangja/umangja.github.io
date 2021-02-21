@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://umangja.github.io/</loc>
-    <lastmod>2021-02-01T14:26:32+05:30</lastmod>
+    <lastmod>2021-02-19T11:43:11+05:30</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -20,13 +20,13 @@
   
   <url>
     <loc>https://umangja.github.io/posts/</loc>
-    <lastmod>2021-02-01T14:26:32+05:30</lastmod>
+    <lastmod>2021-02-19T11:43:11+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://umangja.github.io/categories/</loc>
-    <lastmod>2021-02-01T14:26:32+05:30</lastmod>
+    <lastmod>2021-02-19T11:43:11+05:30</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -40,23 +40,13 @@
   </url>
   
   <url>
-    <loc>https://umangja.github.io/posts/2021/02/chapter-3/</loc>
-    <lastmod>2021-02-01T14:26:32+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://umangja.github.io/tags/operaing-system/</loc>
-    <lastmod>2021-02-01T14:26:32+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://umangja.github.io/tags/process/</loc>
-    <lastmod>2021-02-01T14:26:32+05:30</lastmod>
+    <loc>https://umangja.github.io/tags/rl/</loc>
+    <lastmod>2021-02-19T11:43:11+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://umangja.github.io/tags/</loc>
-    <lastmod>2021-02-01T14:26:32+05:30</lastmod>
+    <lastmod>2021-02-19T11:43:11+05:30</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -71,7 +61,62 @@
   
   <url>
     <loc>https://umangja.github.io/categories/tutorial/</loc>
+    <lastmod>2021-02-19T11:43:11+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/posts/2021/02/ucrl2/</loc>
+    <lastmod>2021-02-19T11:43:11+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/categories/oops/</loc>
+    <lastmod>2021-02-02T20:54:08+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/posts/2021/02/operator-overloading/</loc>
+    <lastmod>2021-02-02T20:54:08+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/tags/untagged/</loc>
+    <lastmod>2021-02-02T20:54:08+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/tags/operaing-system/</loc>
+    <lastmod>2021-02-02T16:31:58+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/posts/2021/02/threads/</loc>
+    <lastmod>2021-02-02T16:31:58+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/tags/function-overloading/</loc>
+    <lastmod>2021-02-01T19:00:44+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/posts/2021/02/function-overloading/</loc>
+    <lastmod>2021-02-01T19:00:44+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/posts/2021/02/process/</loc>
     <lastmod>2021-02-01T14:26:32+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/tags/process/</loc>
+    <lastmod>2021-02-01T14:26:32+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://umangja.github.io/posts/objectorientedprogramming/</loc>
+    <lastmod>2021-01-31T20:51:24+05:30</lastmod>
   </url>
   
   <url>
@@ -81,11 +126,6 @@
   
   <url>
     <loc>https://umangja.github.io/posts/2021/01/lecture-6/</loc>
-    <lastmod>2021-01-27T12:28:25+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://umangja.github.io/tags/rl/</loc>
     <lastmod>2021-01-27T12:28:25+05:30</lastmod>
   </url>
   

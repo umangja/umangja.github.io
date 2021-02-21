@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Umang Jain ">
+<meta name="description" content="WHERE DOES DIFFERENT KIND OF VARIABLES GOES
+Memory of a process is divided into different memory segments :- stack, heap, data, code.
+code section contain executable instructions.
+Global/Stack Variable :- data
+Const Variable :- code
+Local Variable/Temporay Variables :- stack
+Dynamically allocated memory :- heap
+Pointers :- stack/heap/data. ( const pointer goes to data, non constant pointer goes to stack, ptr itself is in either stack or data but pointed memory may also be a heap)" />
+<meta name="keywords" content=", operaing system" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://umangja.github.io/posts/2021/02/threads/" />
+
+
+    <title>
+        
+            Threads :: UMANG JAIN  — Blogs
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://umangja.github.io/main.a53c5881c12495ab068658c69596fa775d6a0a4162ff4198ccc7ddabd912fb8f.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://umangja.github.io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://umangja.github.io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://umangja.github.io/favicon-16x16.png">
+    <link rel="manifest" href="https://umangja.github.io/site.webmanifest">
+    <link rel="mask-icon" href="https://umangja.github.io/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="https://umangja.github.io/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="Threads">
+<meta itemprop="description" content="WHERE DOES DIFFERENT KIND OF VARIABLES GOES
+Memory of a process is divided into different memory segments :- stack, heap, data, code.
+code section contain executable instructions.
+Global/Stack Variable :- data
+Const Variable :- code
+Local Variable/Temporay Variables :- stack
+Dynamically allocated memory :- heap
+Pointers :- stack/heap/data. ( const pointer goes to data, non constant pointer goes to stack, ptr itself is in either stack or data but pointed memory may also be a heap)">
+<meta itemprop="datePublished" content="2021-02-02T16:31:58+05:30" />
+<meta itemprop="dateModified" content="2021-02-02T16:31:58+05:30" />
+<meta itemprop="wordCount" content="1878">
+<meta itemprop="image" content="https://umangja.github.io"/>
+
+
+
+<meta itemprop="keywords" content="operaing system," />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://umangja.github.io"/>
+
+<meta name="twitter:title" content="Threads"/>
+<meta name="twitter:description" content="WHERE DOES DIFFERENT KIND OF VARIABLES GOES
+Memory of a process is divided into different memory segments :- stack, heap, data, code.
+code section contain executable instructions.
+Global/Stack Variable :- data
+Const Variable :- code
+Local Variable/Temporay Variables :- stack
+Dynamically allocated memory :- heap
+Pointers :- stack/heap/data. ( const pointer goes to data, non constant pointer goes to stack, ptr itself is in either stack or data but pointed memory may also be a heap)"/>
+
+
+
+    <meta property="og:title" content="Threads" />
+<meta property="og:description" content="WHERE DOES DIFFERENT KIND OF VARIABLES GOES
+Memory of a process is divided into different memory segments :- stack, heap, data, code.
+code section contain executable instructions.
+Global/Stack Variable :- data
+Const Variable :- code
+Local Variable/Temporay Variables :- stack
+Dynamically allocated memory :- heap
+Pointers :- stack/heap/data. ( const pointer goes to data, non constant pointer goes to stack, ptr itself is in either stack or data but pointed memory may also be a heap)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://umangja.github.io/posts/2021/02/threads/" />
+<meta property="og:image" content="https://umangja.github.io"/>
+<meta property="article:published_time" content="2021-02-02T16:31:58+05:30" />
+<meta property="article:modified_time" content="2021-02-02T16:31:58+05:30" />
+
+
+
+
+    <meta property="article:section" content="Tutorial" />
+
+
+
+    <meta property="article:published_time" content="2021-02-02 16:31:58 &#43;0530 IST" />
+
+
+
+
+
+
+
+
+        <script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101298385);</script>
+        <script async src="//static.getclicky.com/js"></script>
+    </head>
+
+    <body class="dark-theme">
+
+
+
+
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://umangja.github.io/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">$ cd /home/</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+        <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://umangja.github.io/about/">About</a></li><li><a href="https://umangja.github.io/blogs">Blogs</a></li><li><a href="https://www.linkedin.com/in/umangjain5000/">Contact</a></li><li><a href="https://umangja.github.io/posts/">Posts</a></li><li><a href="https://umangja.github.io/files/resume.pdf">Resume</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        9 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="https://umangja.github.io/posts/2021/02/threads/">Threads</a>
+      </h1>
+
+      
+
+      <div class="post-content">
+        <p><strong>WHERE DOES DIFFERENT KIND OF VARIABLES GOES</strong></p>
+<p>Memory of a process is divided into different memory segments :- stack, heap, data, code.</p>
+<p>code section contain executable instructions.</p>
+<p>Global/Stack Variable :- data</p>
+<p>Const Variable :- code</p>
+<p>Local Variable/Temporay Variables  :- stack</p>
+<p>Dynamically allocated memory :- heap</p>
+<p>Pointers :- stack/heap/data. ( const pointer goes to data, non constant pointer goes to stack, ptr itself is in either stack or data but pointed memory may also be a heap)</p>
+<p>Threads of a process have their own stack, PC, Registers, But it shares code, data, openfiles, address space, etc.</p>
+<p>When we say threads share the same address space we mean that when accessing a variable <code>foo</code> is global scope, all threads will see this <code>foo</code> variable. And similarly all threads will be able to call a exact global function.</p>
+<p>Modern operating system also has a thread local storage for variable of global scope which are not shared. eg <strong>errno</strong>.</p>
+<p><strong>Threads have independent call stack however memory in other thread&rsquo;s stack is still accessible.</strong></p>
+<h6> Why does threads share heap. </h6>
+<p>May be so that they could share data between them that is not global. But now it do need synchronization.</p>
+<p>Memory allocation and deallocation have a significant overhead.</p>
+<h2 id="benefits-of-multi-threading">Benefits of Multi-Threading</h2>
+<ol>
+<li>Efficiency</li>
+<li>Responsive :- In UI</li>
+<li>Resource Sharing</li>
+<li>Multi-Processing</li>
+</ol>
+<h2 id="concurrency-vs-multi-processing">Concurrency vs Multi-processing</h2>
+<p>One process can work at most one process at a time.</p>
+<p>When many process are interleaved with each other. Means one processor is letting many process to make progress giving a illusion of multi-processing.</p>
+<p>Multi-processing is when two process are actually running parally.</p>
+<h2 id="problems-faced-by-programmers-with-multithreading">Problems faced by programmers with multithreading.</h2>
+<ol>
+<li>Identifying</li>
+<li>Balancing</li>
+<li>Data dependency</li>
+<li>Testing and debugging</li>
+</ol>
+<h2 id="data-parallelism-vs-task-parallelism">Data Parallelism vs Task Parallelism</h2>
+<p>In data Parallelism, we perform the same task on different data in parallel.</p>
+<p>In Task Parallelism, we perform different task on same data in parallel.</p>
+<h2 id="multi-threading-models">Multi-Threading Models</h2>
+<p>So, Application Programmers work on user thread but process are actually executed on kernel thread, So we need a mapping from user thread to kernel threads.</p>
+<h3 id="many-to-one-mapping">Many to One Mapping</h3>
+<p>In this many user threads are mapped to only one kernel threads. It has many disadvantages.</p>
+<ol>
+<li>
+<p>If one user thread makes a blocking call, entire process get blocked.</p>
+</li>
+<li>
+<p>As All user thread of a program is mapped to only one kernel thread, Hence multi-processing is not possible even in multicore processors.</p>
+</li>
+</ol>
+<p>This Allows developer to create as many threads as needed but <strong>true</strong> concurrency doesn&rsquo;t happen because only thread can be scheduled at a time.</p>
+<h3 id="one-to-one-mapping">One To One Mapping</h3>
+<p>In this one user thread get mapped to only one kerner thread. It solves problem of many to one mapping.</p>
+<ol>
+<li>
+<p>If one user thread makes a blocking call, other thread of same process can still work.</p>
+</li>
+<li>
+<p>It offers multiprocessing on multicore processors and also a better concurrency that many to one model.</p>
+</li>
+</ol>
+<p><strong>Disadvanges</strong></p>
+<ol>
+<li>As while creating a kernel thread, we need to switch from user mode to kernel mode and make few system call. So creating a kernel thread has a overhead which can burden the system and may lead to depreciated performance. That&rsquo;s why most of its implementation has a restriction on the number of threads available to the user.</li>
+</ol>
+<h3 id="many-to-many-model">Many to Many Model</h3>
+<p>In this many user thread get mapped to only many kerner thread (usually less or equal than user thread).</p>
+<p>The number of kernel threads can be restricted for each application or for machine.</p>
+<p>This allows developers to create as many thread as needed  and also allow better concurrency and multithreading on multi core processors.</p>
+<p>Also blocking call does not lead to blocking while application.</p>
+<p><strong>In pratice most of the modern system uses a two level model which is a combination of 1-1 model and many - many model</strong></p>
+<h2 id="asynchronous-vs-synchronous-threading">Asynchronous vs synchronous threading</h2>
+<p>In Asynchronoud threading, once the parent creates the child, the parent continues So that parent and child executes concurrently. Each thread run <strong>independently</strong> of every other thread and parent thread need not know of its child termination. Hence little data sharing between threads is needed.</p>
+<p>In synchronoud threading, Parent must wait for all its children to terminate before it resumes its execution the so called <strong>fork-join</strong> strategy. Synchronoud threading usually involves great sharing of data.</p>
+<h2 id="thread-libraries">Thread Libraries</h2>
+<p>Thread Libraries provides the API for creating and implementing threading. Thread library can be implemented either in user space and in kernel space.</p>
+<p>In user space, All code and functions exist is user space means invoking a function in the library results in calling a local function not a system call.</p>
+<p>In kernel space, code and functions exist is kernel space means invoking a function in the library results in a system call.</p>
+<h3 id="pthreads">Pthreads</h3>
+<p>This is a <strong>specification</strong> for thread library not <strong>implementation</strong>.</p>
+<p><strong>It&rsquo;s certainly better to create a thread as compared to create a new process</strong> but creating a new thread do take time and new thread will be discarded once its work is completed. <strong>Also we can allow unrestricted creating of threading as it can lead to CPU resource exhaustion.</strong></p>
+<h2 id="implicit-threading">Implicit Threading</h2>
+<p>It&rsquo;s become difficult for Application Programmers to make Application containing 100s to 1000s of threads. One way to solve this is to take the burden of creating threads from Programmer and let kernel do implicit threading.</p>
+<p>One way to do so is <strong>Thread Pool</strong></p>
+<p>Idea is to at the start of the process create a number of thread and place them in a pool where they sit and wait for work.
+So if we need one thread, it awakes a thread from pool and assign work to it and once thread completes it&rsquo;s work thread returns to the pool.</p>
+<ol>
+<li>
+<p>Awakening a thread is better and creating a thread.</p>
+</li>
+<li>
+<p>A Thread pool limits the number of thread at a time.</p>
+</li>
+</ol>
+<p>The number of threads in the pool can be set heuristically based on factors
+such as the number of CPU s in the system, the amount of physical memory,
+and the expected number of concurrent client requests</p>
+<h2 id="threading-issues">Threading issues</h2>
+<h3 id="the-fork-vs-exec-system-call">The fork() vs exec() system call</h3>
+<p>So when we call <strong>fork()</strong>, we have to decide whether we want duplicate all threads, or we want new process to be single threaded.</p>
+<p>We don&rsquo;t have any problem in callling <strong>exec()</strong> as exec replaces process space with new process so only  calling thread need to be duplicated.</p>
+<p>When exec() is called after fork() then only calling thread is need to be duplicated otherwise all thread need to be duplicated.</p>
+<h3 id="signal-handling">Signal Handling</h3>
+<p>Signal are used to notify a process/thread of the happening of some event.</p>
+<ol>
+<li>
+<p>Signal is generated by the occurence of some event.</p>
+</li>
+<li>
+<p>Signal is sent to the process.</p>
+</li>
+<li>
+<p>Process handles signal by invoking signal handler.</p>
+</li>
+</ol>
+<p>Signal can be of two types</p>
+<ol>
+<li>
+<p>Asynchronous Signals :- These signals are generated by external events. Ex. specific keystroke, timer expired.</p>
+</li>
+<li>
+<p>Synchronous Signals :- These signals are generated by internal eventes Ex. Division by 0, segmentation error.</p>
+</li>
+</ol>
+<p>Whenever a signal is generated, we have few options to deliver to</p>
+<ol>
+<li>
+<p>Deliver it to every thread</p>
+</li>
+<li>
+<p>Deliver it to specific thread</p>
+</li>
+<li>
+<p>Deliver it to certain theads.</p>
+</li>
+<li>
+<p>Have a specific thread to receive all signals and deliver it to that thread.</p>
+</li>
+</ol>
+<p><strong>Synchronous signals need to be delivered to the thread generating the signal only</strong></p>
+<p>However <strong>Asynchronoud Signal</strong> have many options.</p>
+<p>Terminating signal need to be sent to all threads.</p>
+<p><strong>kill system call in linux actually generates a Asynchronous signal</strong></p>
+<h3 id="thread-cancelation">Thread Cancelation</h3>
+<p>Thread cancelation means terminating a thread <strong>before</strong> it has completed it&rsquo;s work.</p>
+<p>Thread cancelation can be two types :-</p>
+<ol>
+<li>
+<p>Asynchronous cancelation:- One Thread imidiately terminates the target thread.</p>
+</li>
+<li>
+<p>Deferred cancelation:- The target periodically checks <strong>at safe plces</strong> whether it should terminate or not, This allows the thread for a safe termination.</p>
+</li>
+</ol>
+<p>Asynchronous cancelation has few problems.</p>
+<ol>
+<li>
+<p>what if thread get terminated when it sharing data with other.</p>
+</li>
+<li>
+<p>OS reclaims resources from cancelled threads but will not reclaim all resources. So cancelling a thread asynchronously may not free all resources.</p>
+</li>
+</ol>
+<h3 id="thread-local-storage">Thread Local Storage</h3>
+<p>Threads may need its own copy of certain data. We can store such data in TLS.</p>
+<p>TLS is different from local variable as variable in TLS persist over many function calls.</p>
+<p>TLS is much like static variable with only difference being TLS is local to a thread.</p>
+<h3 id="scheduler-activation">Scheduler Activation</h3>
+<p>A final issue to be considered with multithreaded programs concerns communication between the kernel and the thread library to help ensure the best performance.</p>
+<p>Many systems implementing either the many-to-many or the two-level
+model place an intermediate data structure between the user and kernel
+threads. This data structure —typically known as a lightweight process, or
+LWP.</p>
+<p>To the user-thread library, the LWP appears to be a virtual processor on which the application can schedule a user thread to run. Each LWP is attached to a kernel thread, aand it is kernel threads that OS schedules to run on physical processors.</p>
+<p>If a kernel thread blocks (such as while waiting for an I/O operation to complete), the LWP blocks as well. Up the chain, the user-level thread attached to the LWP also blocks.</p>
+<p>An application may require any number of LWP s to run efficiently. Consider
+a CPU -bound application running on a single processor. In this scenario, only
+one thread can run at at a time, so one LWP is sufficient. An application that is
+I/O -intensive may require multiple LWP s to execute, however. Typically, an LWP
+is required for each concurrent blocking system call. Suppose, for example, that
+five different file-read requests occur simultaneously. Five LWPs are needed,
+because all could be waiting for I/O completion in the kernel. If a process has
+only four LWPs, then the fifth request must wait for one of the LWP s to return
+from the kernel.</p>
+<p>One scheme for communication between the user-thread library and the
+kernel is known as scheduler activation. It works as follows: The kernel
+provides an application with a set of virtual processors ( LWP s), and the
+application can schedule user threads onto an available virtual processor.
+Furthermore, the kernel must inform an application about certain events. This
+procedure is known as an upcall. Upcalls are handled by the thread library
+with an upcall handler, and upcall handlers must run on a virtual processor.
+One event that triggers an upcall occurs when an application thread is about to
+block. In this scenario, the kernel makes an upcall to the application informing
+it that a thread is about to block and identifying the specific thread. The kernel
+then allocates a new virtual processor to the application. The application runs
+an upcall handler on this new virtual processor, which saves the state of the
+blocking thread and relinquishes the virtual processor on which the blocking
+thread is running. The upcall handler then schedules another thread that is
+eligible to run on the new virtual processor. When the event that the blocking
+thread was waiting for occurs, the kernel makes another upcall to the thread
+library informing it that the previously blocked thread is now eligible to run.
+The upcall handler for this event also requires a virtual processor, and the kernel
+may allocate a new virtual processor or preempt one of the user threads and
+run the upcall handler on its virtual processor. After marking the unblocked
+thread as eligible to run, the application schedules an eligible thread to run on
+an available virtual processor.</p>
+
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://umangja.github.io/tags/operaing-system/">operaing system</a></span>
+        
+    </p>
+
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://umangja.github.io/categories/tutorial/">Tutorial</a></span>
+        
+    </p>
+
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        1878 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2021-02-02 16:31
+        
+
+         
+          
+        
+      </p>
+    </div>
+      <hr />
+      <div class="sharing-buttons">
+        
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f02%2fthreads%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
+  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+
+
+
+
+<a class="resp-sharing-button__link" href="mailto:?subject=Threads&amp;body=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f02%2fthreads%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
+  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+    </div>
+  </div>
+</a>
+
+
+
+
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f02%2fthreads%2f&amp;title=Threads&amp;summary=Threads&amp;source=https%3a%2f%2fumangja.github.io%2fposts%2f2021%2f02%2fthreads%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
+  <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+    </div>
+  </div>
+</a>
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h"></span>
+          <hr />
+        </div>
+
+        <div class="pagination__buttons">
+          
+
+          
+            <span class="button next">
+              <a href="https://umangja.github.io/posts/2021/02/process/">
+                <span class="button__text">Process</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2021</span>
+            
+                <span><a href="https://umangja.github.io">Umang Jain</a></span>
+            
+            
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            
+            
+          </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span> <a href="http://github.com/umangja">Developer</a> </span>
+            <span> <a href="https://codeforces.com/profile/TooStupidToWin">Geek</a> </span>
+            
+          </div>
+    </div>
+</footer>
+
+
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://umangja.github.io/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+
+
+
+    </body>
+</html>
